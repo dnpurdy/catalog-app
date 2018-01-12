@@ -1,0 +1,1 @@
+SELECT upc from [views.Product] p JOIN ( SELECT itemId FROM [views.LineItem] l JOIN (SELECT transactionId FROM [views.LineItem] la JOIN [views.Product] pa ON la.itemId = pa.upc WHERE pa.manufacturer like '%ANHEUSER%') t ON l.transactionId = t.transactionId) ti ON p.upc = ti.itemId GROUP BY 1
