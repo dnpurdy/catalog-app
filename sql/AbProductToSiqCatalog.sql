@@ -1,7 +1,12 @@
 SELECT 
 '' productId,
 upc as upc1,
-name as description,
+REGEXP_REPLACE(REGEXP_REPLACE(name, ' [0-9]*/[0-9]*[A-Z]*', ''), ' [0-9]x[0-9]','')+" "+
+CASE 
+WHEN UOM = 'OZ' THEN container+" Pack " + size+" Ounce " +containerDescription  
+WHEN UOM = 'ML' THEN container+" Pack " + size+" Milliliter " +containerDescription 
+ELSE '' 
+END as description,
 '' as department, '' as deptDescription,
 CASE 
 WHEN category = 'Premium' THEN '04-02-00'
