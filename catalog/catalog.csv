@@ -6,7 +6,10 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,1200000297,Mountain Dew 20 Ounce Bottle,,,07-01-00,Carbonated Soft Drinks,Packaged Beverages (Non-alcoholic),PepsiCo,Sparkling Soft Drink,,Sparkling,,,,,,1,1,L,,,Immediate,Bottle,Citrus,Mountain Dew,,,,,,,Mountain Dew,,,,,,,,,2018-01-16 19:27:45.649493
 ,1200000452,Starbucks Mocha Frappuccino 13.7 Ounce Bottle,,,07-06-00,Other Packaged Beverages (Non-alcoholic),Packaged Beverages (Non-alcoholic),PepsiCo,,,,,,,,,,,,,,,,,Starbucks,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
 ,1200081331,Starbucks Vanilla Frappuccino 13.7 Ounce Bottle,,,07-06-00,Other Packaged Beverages (Non-alcoholic),Packaged Beverages (Non-alcoholic),PepsiCo,,,,,,,,,,,,,,,,,Starbucks,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
-,1230000007,Camel Lights Blue Box 1 Pack,,,02-01-00,Premium,Cigarettes,R.J. Reynolds Tobacco,,,,,,,,,,,,,,,,,Camel,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
+,1230000007,Camel Lights Blue Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,,,,,,,PACK,,Camel,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
+,1230000093,Camel Menthol Full Flavor 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,,,,,,,PACK,,Camel,,,,,,,,,,,,,,,,2018-01-18 23:53:31.304363
+,1230000094,Camel Menthol Light Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,,,,,,,PACK,,Camel,,,,,,,,,,,,,,,,2018-01-18 23:53:31.304363
+,1230019741,Camel Crush Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,,,,,,,PACK,,Camel,,,,,,,,,,,,,,,,2018-01-18 23:53:31.304363
 ,1708260073,Jack Link’s Teriyaki Beef Stick 2 Ounce Stick,,,17-01-00,Meat Snacks,Alternative Snacks,Jack Link’s,,,,,,,,,,,,,,,,,Jack Link’s,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
 ,1820000115,Bud Light 6 Pack 16 Ounce Can,,,04-02-00,Premium,Beer,Anheuser-Busch InBev,Premium Light,,Premium,,,,,,6,16,OZ,,,,Can,,Bud Light,AB BRANDS,6.26,7.88,5.2,6PKCAN,Budweiser,,USA,255,6.26,7.88,5.2,Can,Anheuser-Busch,Beer,2018-01-12 02:46:03.408431
 ,1820000769,Bud Light 12 Pack 12 Ounce Bottle,,,04-02-00,Premium,Beer,Anheuser-Busch InBev,Premium Light,,Premium,,,,,,12,12,OZ,,,,Bottle,,Bud Light,AB BRANDS,9.13,9.86,7.4,BOX,Budweiser,,USA,255,9.13,9.86,7.4,Bottle,Anheuser-Busch,Beer,2018-01-12 02:46:03.408431
@@ -20,9 +23,18 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,1820086418,Busch Light 18 Pack 12 Ounce Can,,,04-03-00,Popular,Beer,Anheuser-Busch InBev,Value Light,,Value,,,,,,18,12,OZ,,,,Can,,Busch Light,AB BRANDS,7.87,15.87,4.87,BOX,Busch,,USA,255,7.87,15.87,4.87,Can,Anheuser-Busch,Beer,2018-01-12 02:46:03.408431
 ,2430083520,Little Debbie Frosted Donuts 2.50 Ounce,,,16-02-00,Muffins/Donuts,Packaged Sweet Snacks,McKee Foods Corporation,,,,,,,,,,,,,,,,,Little Debbie,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
 ,2590020626,Swisher Sweets Regular Cigarillos 2 Pack,,,03-02-00,Cigars,Other Tobacco Products,Swisher International Inc.,,,,,,,,,,,,,,,,,Swisher Sweets,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
-,2610000575,Newport Menthol Kings Box 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,,,,,,,,,Newport,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
-,2820000357,Marlboro Cigarettes King Red Pack 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,,,,,,,,,Marlboro,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
-,2820000384,Marlboro Cigarettes King Gold Pack 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,,,,,,,,,Marlboro,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
+,2610000573,Newport Menthol 100's Box 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,,,,,,,PACK,,Newport,,,,,,,,,,,,,,,,2018-01-18 23:53:31.304363
+,2610000575,Newport Menthol Kings Box 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,,,,,,,PACK,,Newport,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
+,2720000867,Pall Mall Filter 100’s Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,,,,,,,PACK,,Pall mall,,,,,,,,,,,,,,,,2018-01-18 23:53:31.304363
+,2820000357,Marlboro Cigarettes King Red Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,,,,,,,PACK,,Marlboro,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
+,2820000363,Marlboro Filter 100's Red Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,,,,,,,PACK,,Marlboro,,,,,,,,,,,,,,,,2018-01-18 23:53:31.304363
+,2820000384,Marlboro Cigarettes King Gold Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,,,,,,,PACK,,Marlboro,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
+,2820000422,Marlboro Special Blend Gold Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,,,,,,,PACK,,Marlboro,,,,,,,,,,,,,,,,2018-01-18 23:53:31.304363
+,2820000465,Marlboro Lights 100's Gold Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,,,,,,,PACK,,Marlboro,,,,,,,,,,,,,,,,2018-01-18 23:53:31.304363
+,2820000477,Marlboro Ultralights Kings Silver Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,,,,,,,PACK,,Marlboro,,,,,,,,,,,,,,,,2018-01-18 23:53:31.304363
+,2820000952,Marlboro Special Blend King Black Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,,,,,,,PACK,,Marlboro ,,,,,,,,,,,,,,,,2018-01-18 23:53:31.304363
+,2820000953,Marlboro Special Blend 100’s King Black Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,,,,,,,PACK,,Marlboro ,,,,,,,,,,,,,,,,2018-01-18 23:53:31.304363
+,2820000963,Marlboro Filter 72's Red Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,,,,,,,PACK,,Marlboro ,,,,,,,,,,,,,,,,2018-01-18 23:53:31.304363
 ,2840028204,Funyuns Onion Flavored Rings 2.375 Ounce Bag,,,15-07-00,Other Salty Snacks,Salty Snacks,Frito-Lay,,,,,,,,,,,,,,,,,Funyuns,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
 ,2840042073,Doritos Flavored Tortilla Chips Nacho Cheese 3.125 Ounce,,,15-02-00,Tortilla/Corn Chips,Salty Snacks,Frito-Lay,,,,,,,,,,,,,,,,,Doritos,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
 ,3400000480,Reese's Peanut Butter 4 Cup King Size 2.8 Ounce,,,08-03-00,Chocolate Bars/Packs,Candy,The Hershey Company,,,,,,,,,,,,,,,,,Reese’s,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
@@ -40,8 +52,9 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,7199030017,Coors Light 18 Pack 12 Ounce Can,,,04-02-00,Premium,Beer,MillerCoors,Premium Light,,Premium,,,,,,18,12,OZ,,,,Can,,Coors Light,COMPETITOR BRANDS,7.57,15.07,5.28,BOX,Coors,,USA,65280,7.57,15.07,5.28,Can,Molson Coors,Beer,2018-01-12 02:46:03.408431
 ,7199030104,Coors Light 9 Pack 16 Ounce Aluminum Bottle,,,04-02-00,Premium,Beer,MillerCoors,Premium Light,,Premium,,,,,,9,16,OZ,,,,Aluminum Bottle,,Coors Light,COMPETITOR BRANDS,7.27,7.79,7.83,BOX,Coors,,USA,65280,7.27,7.79,7.83,Aluminum Bottle,Molson Coors,Beer,2018-01-12 02:46:03.408431
 ,7199031600,Coors Light 24 Pack 12 Ounce Can,,,04-02-00,Premium,Beer,MillerCoors,Premium Light,,Premium,,,,,,24,12,OZ,,,,Can,,Coors Light,COMPETITOR BRANDS,10.05,15.05,5.28,BOX,Coors,,USA,65280,10.05,15.05,5.28,Can,Molson Coors,Beer,2018-01-12 02:46:03.408431
-,7310000121,Copenhagen Long Cut 1.20 Ounce Can,,,03-01-00,Smokeless,Other Tobacco Products,U.S. Smokeless Toobacco Company,,,,,,,,,,,,,,,,,Copenhagen,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
-,7310000876,Copenhagen Wintergreen Long Cut 1.20 Ounce Can,,,03-01-00,Smokeless,Other Tobacco Products,U.S. Smokeless Toobacco Company,,,,,,,,,,,,,,,,,Copenhagen,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
+,7310000107,Copenhagen Fine Cut 1.20 Ounce Can,,,03-01-00,Smokeless,Other Tobacco Products,U.S. Smokeless Tobacco Company,,,,,,,,,,1.2,OZ,,,,Can,,Copenhagen,,,,,,,,,,,,,,,,2018-01-18 23:53:31.304363
+,7310000121,Copenhagen Long Cut 1.20 Ounce Can,,,03-01-00,Smokeless,Other Tobacco Products,U.S. Smokeless Tobacco Company,,,,,,,,,,1.2,OZ,,,,Can,,Copenhagen,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
+,7310000876,Copenhagen Wintergreen Long Cut 1.20 Ounce Can,,,03-01-00,Smokeless,Other Tobacco Products,U.S. Smokeless Tobacco Company,,,,,,,,,,1.2,OZ,,,,Can,,Copenhagen,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
 ,7800008240,Dr Pepper 20 Ounce Bottle,,,07-01-00,Carbonated Soft Drinks,Packaged Beverages (Non-alcoholic),Dr Pepper Snapple Group,Sparkling Soft Drink,,Sparkling,,,,,,1,20,OZ,,,Immediate,Bottle,Cherry,Dr Pepper,,,,,,,Dr Pepper,,,,,,,,,2018-01-16 19:27:45.649493
 ,7969422112,Old Trapper Old Fashioned Beef Jerky 10 Ounce Bag,,,17-01-00,Meat Snacks,Alternative Snacks,"Old Trapper Smoked Products, Inc.",,,,,,,,,,,,,,,,,Old Trapper,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
 ,8066095615,Corona Extra 12 Pack 12 Ounce Bottle,,,04-05-00,Imports,Beer,Crown Imports LLC,Import,,Craft/Import,,,,,,12,12,OZ,,,,Bottle,,Corona Extra,COMPETITOR BRANDS,9.7,10.2,7.6,BOX,Corona,,Mexico,65535,9.7,10.2,7.6,Bottle,Crown Imports LLC,Beer,2018-01-12 02:46:03.408431
