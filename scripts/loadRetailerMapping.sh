@@ -11,18 +11,20 @@
 function usage() {
 	local MSG=$1
 	echo ""
-	echo "Usage: $0 PROJECT_NAME FILE_NAME"
+	echo "Usage: $0 PROJECT_NAME [FILE_NAME]"
 	if [ ! -z "$MSG" ]; then
 		echo "  "$MSG
 	fi
 	exit 1
 }
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 PROJECT_NAME=$1
-FILE_NAME=$2
+FILE_NAME=${2:-"${DIR}/../retailerMapping/${PROJECT_NAME}.csv"}
 
 ## invoke usage if two arguments are not supplied
-[[ $# -ne 2 ]] && usage "Wrong number of arguments!"
+[[ $# -ne 1  ]] && usage "Wrong number of arguments!"
 
 ## invoke usage if project_name doesn't end in "-siq"
 [[ ! $PROJECT_NAME =~ -siq$ ]] && usage "Project name should end in -siq"
