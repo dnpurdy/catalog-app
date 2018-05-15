@@ -56,6 +56,8 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,1100000492,Pyramid Red Box 1 Pack,,,02-01-00,Premium,Cigarettes,Liggett Group,,,,,,,,,1,,PACK,,,,Pack,,Pyramid,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
 ,1100000493,Pyramid Lights Blue Box 1 Pack,,,02-01-00,Premium,Cigarettes,Liggett Group,,,,,,,,,1,,PACK,,,,Pack,,Pyramid,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
 ,1100000563,Liggett Select Menthol Gold Box 1 Pack,,,02-01-00,Premium,Cigarettes,Liggett Group,,,,,,,,,1,,PACK,,,,Pack,,Liggett Select,,,,,,,,,,,,,,,,2018-04-22 16:54:00.219568
+,1100000564,Liggett Select Gold Box 1 Pack,,,02-01-00,Premium,Cigarettes,Liggett Group,,,,,,,,,1,,PACK,,,,Pack,,Liggett Select,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
+,1100000565,Liggett Select 100s Gold Box 1 Pack,,,02-01-00,Premium,Cigarettes,Liggett Group,,,,,,,,,1,,PACK,,,,Pack,,Liggett Select,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,1100000571,Liggett Select Silver Box 1 Pack,,,02-01-00,Premium,Cigarettes,Liggett Group,,,,,,,,,1,,PACK,,,,Pack,,Liggett Select,,,,,,,,,,,,,,,,2018-04-17 17:08:34.095804
 ,1100000572,Liggett Select Gold Box 1 Pack,,,02-01-00,Premium,Cigarettes,Liggett Group,,,,,,,,,1,,PACK,,,,Pack,,Liggett Select,,,,,,,,,,,,,,,,2018-04-22 16:54:00.219568
 ,1100000573,Liggett Select Red Box 1 Pack,,,02-01-00,Premium,Cigarettes,Liggett Group,,,,,,,,,1,,PACK,,,,Pack,,Liggett Select,,,,,,,,,,,,,,,,2018-04-22 16:54:00.219568
@@ -129,6 +131,7 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,1200001269,Lipton Iced Tea Lemon 20 Ounce Bottle,,,07-02-00,Iced Tea (Ready-to-drink),Packaged Beverages (Non-alcoholic),PepsiCo,,,,,,,,,1,20,OZ,,,,Bottle,,Lipton,,,,,,,,,,,,,,,,2018-02-21 18:11:13.836041
 ,1200001275,Lipton Green Tea With Citrus 20 Ounce Bottle,,,07-02-00,Iced Tea (Ready-to-drink),Packaged Beverages (Non-alcoholic),PepsiCo,,,,,,,,,1,20,OZ,,,,Bottle,,Lipton,,,,,,,,,,,,,,,,2018-02-21 18:11:13.836041
 ,1200001278,Diet Lipton Green Tea With Citrus 20 Ounce Bottle,,,07-02-00,Iced Tea (Ready-to-drink),Packaged Beverages (Non-alcoholic),PepsiCo,,,,,,,,,1,20,OZ,,,,Bottle,,Diet Lipton,,,,,,,,,,,,,,,,2018-02-21 18:11:13.836041
+,1200001311,Aquafina 500 Milliliter Bottle 32 Pack,,,07-05-00,Bottled Water,Packaged Beverages (Non-alcoholic),PepsiCo,Water,,Non-Sparkling,,,,,,32,500,ML,,,Immediate,Bottle,,Aquafina,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,1200001643,Mountain Dew AMP 16 Ounce Can,,,07-07-00,Energy Drinks,Packaged Beverages (Non-alcoholic),PepsiCo,Energy,,,,,,,,1,16,OZ,,,Immediate,Can,Citrus,Mountain Dew Amp,,,,,,,,,,,,,,,,2018-02-01 19:10:58.575106
 ,1200001672,Starbucks Caramel Frappuccino 13.7 Ounce Bottle,,,07-06-00,Other Packaged Beverages (Non-alcoholic),Packaged Beverages (Non-alcoholic),PepsiCo,Coffee,,,,,,,,1,13,OZ,,,Immediate,Bottle,Caramel,Starbucks Frappuccino,,,,,,,,,,,,,,,,2018-02-01 19:10:58.575106
 ,1200001880,Diet Pepsi Max 20 Ounce Bottle,,,07-01-00,Carbonated Soft Drinks,Packaged Beverages (Non-alcoholic),PepsiCo,,,,,,,,,1,20,OZ,,,,Bottle,,Diet Pepsi Max,,,,,,,,,,,,,,,,2018-02-21 18:11:13.836041
@@ -451,6 +454,7 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,1497480009,Woodchuck Granny Smith Dft Cdr 6 Pack 12 Ounce Bottle,,,04-07-00,Flavored Malt,Beer,Vermont Hard Cider Company,Craft,,Craft/Import,,,,,,6,12,OZ,,,,Bottle,,Woodchuck Granny Smith Dft Cdr,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,1497490005,Woodchuck Limited Release Srs 1 Pack 12 Ounce Bottle,,,04-07-00,Flavored Malt,Beer,Vermont Hard Cider Company,Craft,,Craft/Import,,,,,,1,12,OZ,,,,Bottle,,Woodchuck Limited Release Srs,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,1497490009,Woodchuck Limited Release Srs 6 Pack 12 Ounce Bottle,,,04-07-00,Flavored Malt,Beer,Vermont Hard Cider Company,Craft,,Craft/Import,,,,,,6,12,OZ,,,,Bottle,,Woodchuck Limited Release Srs,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
+,1564568840,US Stamps 49 Cents Denomination 20 Pack,,,26-07-00,Postal/UPS,Store Services,United States Postal Service,,,,,,,,,20,,,,,,,,,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,1592511486,Millstream Schild Brau Amber 6 Pack 12 Ounce Bottle,,,04-06-00,Microbrews/Craft,Beer,Micro Breweries,Craft,,Craft/Import,,,,,,6,12,OZ,,,,Bottle,,Millstream Schild Brau Amber,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,1592512710,Millstream Old Time Root Beer 6 Pack 12 Ounce Bottle,,,07-06-00,Other Packaged Beverages (Non-alcoholic),Beer,Micro Breweries,Other,,Other,,,,,,6,12,OZ,,,,Bottle,,Millstream Old Time Root Beer,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,1592512940,Millstream Old Time Cream Soda 6 Pack 12 Ounce Bottle,,,07-06-00,Other Packaged Beverages (Non-alcoholic),Beer,Micro Breweries,Other,,Other,,,,,,6,12,OZ,,,,Bottle,,Millstream Old Time Cream Soda,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
@@ -1273,6 +1277,7 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,2100000022,Kraft Mozzarella String Cheese 1 Ounce Package,,,10-01-00,Packaged Cheese,Other Dairy & Deli Products,The Kraft Heinz Company,,,,,,,,,1,1,OZ,,,,Package,,Kraft,,,,,,,,,,,,,,,,2018-03-05 02:11:02.752726
 ,2100000232,Kraft Cracker Barrel Extra Sharp Cheddar 1 Ounce Package,,,10-01-00,Packaged Cheese,Other Dairy & Deli Products,The Kraft Heinz Company,,,,,,,,,1,1,OZ,,,,Package,,Kraft,,,,,,,,,,,,,,,,2018-03-05 02:11:02.752726
 ,2100000398,Kraft Twist-Ums String Cheese 0.75 Ounce Package,,,10-01-00,Packaged Cheese,Other Dairy & Deli Products,The Kraft Heinz Company,,,,,,,,,1,0.75,OZ,,,,Package,,Kraft,,,,,,,,,,,,,,,,2018-03-05 02:11:02.752726
+,2113601054,Topo Chico Mineral Water 20 Ounce Bottle,,,07-05-00,Bottled Water,Packaged Beverages (Non-alcoholic),The Coca-Cola Company,,,,,,,,,1,20,OZ,,,,Bottle,,Topo Chico,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,2124200003,Redhook Long Hammer IPA 1 Pack 12 Ounce Bottle,,,04-06-00,Microbrews/Craft,Beer,Anheuser-Busch InBev,Craft,,Craft/Import,,,,,,1,12,OZ,,,,Bottle,,Redhook Long Hammer IPA,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,2124200004,Redhook Seasonal 1 Pack 12 Ounce Bottle,,,04-06-00,Microbrews/Craft,Beer,Anheuser-Busch InBev,Craft,,Craft/Import,,,,,,1,12,OZ,,,,Bottle,,Redhook Seasonal,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,2124200006,Redhook ESB 1 Pack 12 Ounce Bottle,,,04-06-00,Microbrews/Craft,Beer,Anheuser-Busch InBev,Craft,,Craft/Import,,,,,,1,12,OZ,,,,Bottle,,Redhook ESB,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
@@ -1372,6 +1377,7 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,2259200201,Ozarka Spring Water 1500 Milliliter Bottle,,,07-05-00,Bottled Water,Packaged Beverages (Non-alcoholic),Nestlé S.A.,Water,,Non-Sparkling,,,,,,1,1500,ML,,,Immediate,Bottle,,Ozarka,,,,,,,,,,,,,,,,2018-04-14 17:35:32.297427
 ,2259200401,Ozarka Spring Water 1000 Milliliter Bottle,,,07-05-00,Bottled Water,Packaged Beverages (Non-alcoholic),Nestlé S.A.,Water,,Non-Sparkling,,,,,,1,1000,ML,,,Immediate,Bottle,,Ozarka,,,,,,,,,,,,,,,,2018-04-14 17:35:32.297427
 ,2259200857,Ozarka Spring Water 20 Ounce Bottle,,,07-05-00,Bottled Water,Packaged Beverages (Non-alcoholic),Nestlé S.A.,Water,,Non-Sparkling,,,,,,1,20,OZ,,,Immediate,Bottle,,Ozarka,,,,,,,,,,,,,,,,2018-04-14 17:35:32.297427
+,2259205301,Ozarka Spring Water 500 Milliliter Bottle 24 Pack,,,07-05-00,Bottled Water,Packaged Beverages (Non-alcoholic),Nestlé S.A.,Water,,Non-Sparkling,,,,,,24,500,ML,,,Immediate,Bottle,,Ozarka,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,2259205302,Ozarka Spring Water 500 Milliliter Bottle 24 Pack,,,07-05-00,Bottled Water,Packaged Beverages (Non-alcoholic),Nestlé S.A.,Water,,Non-Sparkling,,,,,,24,500,ML,,,Immediate,Bottle,,Ozarka,,,,,,,,,,,,,,,,2018-04-14 17:35:32.297427
 ,2259243114,Ozarka Spring Water 700 Milliliter Bottle,,,07-05-00,Bottled Water,Packaged Beverages (Non-alcoholic),Nestlé S.A.,Water,,Non-Sparkling,,,,,,1,700,ML,,,Immediate,Bottle,,Ozarka,,,,,,,,,,,,,,,,2018-04-14 17:35:32.297427
 ,2260064203,Trojan Magnum 3 Count Pack,,,21-08-00,Family Planning,Health & Beauty Care,"Church & Dwight Co, Inc.",,,,,,,,,3,,,,,,Pack,,Trojan,,,,,,,,,,,,,,,,2018-03-13 18:03:22.560707
@@ -1532,34 +1538,35 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,2590025339,Swisher Sweets Cigarillos Wild Rush 1 Pouch,,,03-02-00,Cigars,Other Tobacco Products,Swisher International Inc.,,,,,,,,,1,1,POUCH,,,,Pouch,,Swisher Sweets,,,,,,,,,,,,,,,,2018-03-05 02:11:02.752726
 ,2590028039,Gold Strike Robusto 1 Pouch,,,03-02-00,Cigars,Other Tobacco Products,Swisher International Inc.,,,,,,,,,1,1,POUCH,,,,Pouch,,Gold Strike,,,,,,,,,,,,,,,,2018-03-05 02:11:02.752726
 ,2590029003,Gold Strike Toro 1 Pouch,,,03-02-00,Cigars,Other Tobacco Products,Swisher International Inc.,,,,,,,,,1,1,POUCH,,,,Pouch,,Gold Strike,,,,,,,,,,,,,,,,2018-03-05 02:11:02.752726
-,2610000145,Maverick Menthol 100's Box 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,1,,PACK,,,,Pack,,Maverick,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
-,2610000153,Maverick 100's Box 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,1,,PACK,,,,Pack,,Maverick,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
-,2610000304,Newport Menthol Box 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,1,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
-,2610000572,Newport Menthol Light 100's Box 10 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,10,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
-,2610000573,Newport Menthol 100's Box 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,,,,,,,PACK,,Newport,,,,,,,,,,,,,,,,2018-01-18 23:53:31.304363
-,2610000575,Newport Menthol Kings Box 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,,,,,,,PACK,,Newport,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
-,2610000576,Newport Menthol Light Gold Box 10 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,10,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
-,2610000577,Newport Menthol 100's Box 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,1,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
-,2610000578,Newport Menthol Box 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,1,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
-,2610000644,Newport Menthol 100's Box 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,1,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
-,2610000647,Newport Menthol 100's Box 10 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,10,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-04-19 17:22:09.626899
-,2610000656,Newport Non-Menthol Kings Box 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,,,,,,,Pack,,Newport,,,,,,,,,,,,,,,,2016-05-18 13:57:10.000000
-,2610000657,Newport Non-Menthol 100's Box 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,,,,,,,Pack,,Newport,,,,,,,,,,,,,,,,2016-05-18 13:57:11.000000
-,2610000660,Newport Non-Menthol Gold Box 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,1,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
-,2610000661,Newport Non-Menthol 100's Gold Box 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,1,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
-,2610000666,Newport 100's Box $0.50 Off 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,1,,,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-03-16 18:21:07.545310
-,2610000667,Newport Box $0.50 Off 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,1,,,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-03-16 18:21:07.545310
-,2610000668,Newport Smooth Select Menthol 100's Box 10 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,10,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
-,2610000670,Newport Smooth Select Menthol Box 10 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,10,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
-,2610000780,Old Gold Box 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,1,,PACK,,,,Pack,,Old Gold,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
-,2610000790,Old Gold Box 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,1,,PACK,,,,Pack,,Old Gold,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
-,2610000850,Old Gold 100's Box 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,1,,PACK,,,,Pack,,Old Gold,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
+,2610000145,Maverick Menthol 100's Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Maverick,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
+,2610000153,Maverick 100's Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Maverick,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
+,2610000304,Newport Menthol Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
+,2610000307,Newport Menthol Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
+,2610000572,Newport Menthol Light 100's Box 10 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,10,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
+,2610000573,Newport Menthol 100's Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,,,,,,,PACK,,Newport,,,,,,,,,,,,,,,,2018-01-18 23:53:31.304363
+,2610000575,Newport Menthol Kings Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,,,,,,,PACK,,Newport,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
+,2610000576,Newport Menthol Light Gold Box 10 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,10,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
+,2610000577,Newport Menthol 100's Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
+,2610000578,Newport Menthol Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
+,2610000644,Newport Menthol 100's Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
+,2610000647,Newport Menthol 100's Box 10 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,10,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-04-19 17:22:09.626899
+,2610000656,Newport Non-Menthol Kings Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,,,,,,,Pack,,Newport,,,,,,,,,,,,,,,,2016-05-18 13:57:10.000000
+,2610000657,Newport Non-Menthol 100's Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,,,,,,,Pack,,Newport,,,,,,,,,,,,,,,,2016-05-18 13:57:11.000000
+,2610000660,Newport Non-Menthol Gold Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
+,2610000661,Newport Non-Menthol 100's Gold Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
+,2610000666,Newport 100's Box $0.50 Off 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-03-16 18:21:07.545310
+,2610000667,Newport Box $0.50 Off 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-03-16 18:21:07.545310
+,2610000668,Newport Smooth Select Menthol 100's Box 10 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,10,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
+,2610000670,Newport Smooth Select Menthol Box 10 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,10,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
+,2610000780,Old Gold Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Old Gold,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
+,2610000790,Old Gold Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Old Gold,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
+,2610000850,Old Gold 100's Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Old Gold,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
 ,2610001623,Newport Menthol Platinum Blue 100 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-04-15 16:37:27.685780
 ,2610001629,Newport Menthol Platinum Blue King 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-04-15 16:37:27.685780
 ,2610001635,Newport Menthol Platinum 100 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-04-15 16:37:27.685780
 ,2610080572,Newport Menthol Gold 100s 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-04-15 16:37:27.685780
-,2610080573,Newport Menthol 100's Box 10 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,10,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
-,2610080575,Newport Menthol Box 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,1,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
+,2610080573,Newport Menthol 100's Box 10 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,10,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
+,2610080575,Newport Menthol Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
 ,2610080576,Newport Menthol Gold 80s 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-04-15 16:37:27.685780
 ,2610080577,Newport Menthol 100s 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-04-15 16:37:27.685780
 ,2610080578,Newport Menthol Kings 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Newport,,,,,,,,,,,,,,,,2018-04-15 16:37:27.685780
@@ -1686,6 +1693,7 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,2820000127,Marlboro Menthol Gold Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
 ,2820000156,Marlboro Lights Menthol 100's 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
 ,2820000159,Marlboro 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
+,2820000163,Virginia Slims Ulralights Menthol 100's Silver Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,Pack,,Virginia Slims,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,2820000178,Marlboro Ultralights Silver Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
 ,2820000179,Marlboro Ultralights 100's Silver Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
 ,2820000264,Marlboro No. 27 Blend Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,,,,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-02-01 12:53:31.304363
@@ -1754,8 +1762,10 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,2820000801,Marlboro Medium Red Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
 ,2820000805,Parliament Light White Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,Pack,,Parliament,,,,,,,,,,,,,,,,2018-04-19 17:22:09.626899
 ,2820000815,Parliament Ultralights Silver Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,Pack,,Parliment,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
+,2820000818,Marlboro Lights 100's Gold Soft 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,2820000819,Marlboro Light Milds 100's Blue Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
 ,2820000829,Marlboro 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
+,2820000848,Marlboro 100's Red Soft 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,2820000853,Marlboro 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
 ,2820000866,Marlboro Lights 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
 ,2820000869,Marlboro Lights 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
@@ -1781,6 +1791,7 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,2820010530,Marlboro 100's 10 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,10,,PACK,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
 ,2820010660,Marlboro Light Gold Soft 10 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,10,,PACK,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-04-19 17:22:09.626899
 ,2820010690,Marlboro Lights Gold Box 10 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,10,,PACK,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
+,2820011596,Marlboro Menthol Lights Gold Box 10 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,10,,PACK,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,2820011780,Marlboro Ultralights Silver Box 10 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,10,,PACK,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
 ,2820011790,Marlboro Ultralights 100's Silver Box 10 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,10,,PACK,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
 ,2820012640,Marlboro No. 27 Blend Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-03-16 02:51:33.877115
@@ -1803,6 +1814,7 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,2820014220,Marlboro Special Blend Gold Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,,,Marlboro,,,,,,,,,,,,,,,,2018-02-05 15:17:33.323060
 ,2820014230,Marlboro Special Blend 100' Gold Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,,,Marlboro,,,,,,,,,,,,,,,,2018-02-05 15:17:33.323060
 ,2820014240,Marlboro Craft Blend Southern Cut 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-04-15 16:37:27.685780
+,2820014280,Marlboro 72's Box 10 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,10,,PACK,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,2820014370,Marlboro Light 100's Gold Soft 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
 ,2820014650,Marlboro Lights 100’s Gold Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,,,,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2016-05-18 13:57:11.000000
 ,2820014710,Marlboro Menthol Lights 100's Gold Box 10 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,10,,PACK,,,,Pack,,Marlboro,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
@@ -1923,6 +1935,7 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,2820030992,L&M 100's Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,,,,,,,Pack,,L&M,,,,,,,,,,,,,,,,2018-02-01 12:53:31.304363
 ,2820031001,L&M Light Blue Box 10 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,10,,PACK,,,,Pack,,L&M,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
 ,2820031002,L&M Light Blue Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,,,,,,,Pack,,L&M,,,,,,,,,,,,,,,,2016-05-18 13:57:11.000000
+,2820031011,L&M Box 10 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,10,,PACK,,,,Pack,,L&M,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,2820031012,L&M Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,Pack,,L&M,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
 ,2820031021,L&M Light 100's Blue Box 10 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,10,,PACK,,,,Pack,,L&M,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
 ,2820031022,L&M Lights 100's Blue Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,,,L&m,,,,,,,,,,,,,,,,2018-02-05 15:17:33.323060
@@ -1930,7 +1943,9 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,2820031032,L&M Menthol Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,,,,,,,Pack,,L&M,,,,,,,,,,,,,,,,2016-05-18 13:57:08.000000
 ,2820031041,L&M Menthol 100's Box 10 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,10,,PACK,,,,Pack,,L&M,,,,,,,,,,,,,,,,2018-02-06 13:57:10.000000
 ,2820031042,L&M Menthol 100's 1 Carton,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,,,,,,,Carton,,L&M,,,,,,,,,,,,,,,,2016-05-18 13:57:12.000000
+,2820031061,L&M 100's Box 10 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,10,,PACK,,,,Pack,,L&M,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,2820031062,L&M Full Flavor 100’s Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,Pack,,L&M,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
+,2820031071,L&M Light Blue Box 10 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,10,,PACK,,,,Pack,,L&M,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,2820031072,L&M Full Flavor Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,Pack,,L&M,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
 ,2820031082,L&M Lights 100’s Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,Pack,,L&M,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
 ,2820031092,L&M Box 1 Pack,,,02-01-00,Premium,Cigarettes,Altria,,,,,,,,,1,,PACK,,,,Pack,,L&M,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
@@ -2814,6 +2829,7 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,4157005179,Blue Diamond Smokehouse 1.5 Ounce Bag,,,15-04-00,Nuts/Seeds,Salty Snacks,Blue Diamond Growers,,,,,,,,,1,1.5,OZ,,,,Bag,,Blue Diamond,,,,,,,,,,,,,,,,2018-02-18 16:57:08.000000
 ,4157005181,Blue Diamond Whole Natural Tube 1.5 Ounce Bag,,,15-04-00,Nuts/Seeds,Salty Snacks,Blue Diamond Growers,,,,,,,,,1,1.5,OZ,,,,Bag,,Blue Diamond,,,,,,,,,,,,,,,,2018-02-18 16:57:08.000000
 ,4157005230,Blue Diamond Wasabi & Soy Almond 1.5 Ounce Bag,,,15-04-00,Nuts/Seeds,Salty Snacks,Blue Diamond Growers,,,,,,,,,1,1.5,OZ,,,,Bag,,Blue Diamond,,,,,,,,,,,,,,,,2018-02-18 16:57:08.000000
+,4171021798,Crush Orange 20 Ounce Bottle,,,07-01-00,Carbonated Soft Drinks,Packaged Beverages (Non-alcoholic),Dr Pepper Snapple Group,,,,,,,,,1,20,OZ,,,Immediate,Bottle,,Crush,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,4178900143,Maruchan Instant Lunch Hot & Spicy Chicken Flavor 2.25 Ounce Cup,,,19-04-00,Other Edible Grocery,Edible Grocery,Maruchan,,,,,,,,,1,2.25,OZ,,,,Cup,,Maruchan,,,,,,,,,,,,,,,,2018-03-13 18:03:22.560707
 ,4182700005,Harpoon Winter Warmer 1 Pack 12 Ounce Bottle,,,04-06-00,Microbrews/Craft,Beer,Harpoon,Craft,,Craft/Import,,,,,,1,12,OZ,,,,Bottle,,Harpoon Winter Warmer,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,4182700007,Harpoon IPA 1 Pack 12 Ounce Bottle,,,04-06-00,Microbrews/Craft,Beer,Harpoon,Craft,,Craft/Import,,,,,,1,12,OZ,,,,Bottle,,Harpoon IPA,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
@@ -2841,6 +2857,7 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,4198544184,Foxhorn Cabernet Sauvignon 1 Pack 750 Milliliter Bottle,,,05-00-00,Wine,Beer,Wine Products,Other,,Other,,,,,,1,750,ML,,,,Bottle,,Foxhorn Cabernet Sauvignon,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,4198544204,Foxhorn Chardonnay.5B ,,,05-00-00,Wine,Beer,Wine Products,Other,,Other,,,,,,1,2,L,,,,Bottle,,Foxhorn Chardonnay,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,4203710364,BC Headaches/Body Aches & Fever 6 Powders,,,21-01-00,Analgesics,Health & Beauty Care,"Prestige Brands Holdings, Inc.",,,,,,,,,6,,,,,,Pack,,BC,,,,,,,,,,,,,,,,2018-03-16 19:53:19.337965
+,4203710367,Goody’s Extra Strength 6 Count,,,21-01-00,Analgesics,Health & Beauty Care,Goody’s,,,,,,,,,6,,,,,,Packet,,Goody’s,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,4210000004,Grizzly Long Cut Mint 1.2 Ounce Can 5 Pack,,,03-01-00,Smokeless,Other Tobacco Products,Reynolds American,,,,,,,,,5,1.2,OZ,,,,Can,,Grizzly,,,,,,,,,,,,,,,,2018-03-16 19:53:19.337965
 ,4210000234,Kodiak Long Cut Wintergreen 1.20 Ounce Can 5 Pack,,,03-01-00,Smokeless,Other Tobacco Products,Reynolds American,,,,,,,,,5,1.2,OZ,,,,Can,,Kodiak,,,,,,,,,,,,,,,,2018-03-16 19:53:19.337965
 ,4210000294,Kodiak Long Cut Wintergreen 1.20 Ounce Can,,,03-01-00,Smokeless,Other Tobacco Products,Reynolds American,,,,,,,,,1,1.2,OZ,,,,Can,,Kodiak,,,,,,,,,,,,,,,,2018-02-05 15:17:33.323060
@@ -3152,6 +3169,7 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,5230002546,Old Milwaukee NA 24 Pack 12 Ounce Can,,,04-08-00,Non-alcoholic,Beer,Pabst,Non Alcohol,,Non Alcohol,,,,,,24,12,OZ,,,,Can,,Old Milwaukee NA,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,5230002966,Old Milwaukee 24 Pack 12 Ounce Can,,,04-03-00,Popular,Beer,Pabst,Value Regular,,Value,,,,,,24,12,OZ,,,,Can,,Old Milwaukee,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,5230004541,Schlitz Malt 15 Pack 12 Ounce Can,,,04-07-00,Malt Liquor,Beer,Pabst,Value Malt,,Value,,,,,,15,12,OZ,,,,Can,,Schlitz Malt,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
+,5300005302,Borden Sharp Cheddar Cheese Stick 2 Ounce Bar,,,10-01-00,Packaged Cheese,Other Dairy & Deli Products,Grupo Lala,,,,,,,,,1,2,OZ,,,,Bar,,Borden,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,6206700005,Labatt Blue 1 Pack 12 Ounce Bottle,,,04-05-00,Imports,Beer,North American Breweries,Import,,Craft/Import,,,,,,1,12,OZ,,,,Bottle,,Labatt Blue,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,6206700972,Labatt Blue NA 6 Pack 12 Ounce Bottle,,,04-08-00,Non-alcoholic,Beer,North American Breweries,Non Alcohol,,Non Alcohol,,,,,,6,12,OZ,,,,Bottle,,Labatt Blue NA,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,6206701155,Labatt 50 Ale 12 Pack 12 Ounce Bottle,,,04-05-00,Imports,Beer,North American Breweries,Import,,Craft/Import,,,,,,12,12,OZ,,,,Bottle,,Labatt 50 Ale,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
@@ -3486,10 +3504,13 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,7097047125,Mike & Ike Original Theater Box 5 Ounce Box,,,08-05-00,Bagged or Repacked Peg Candy,Candy,Just Born,,,,,,,,,1,5,OZ,,,,Box,,Mike & Ike,,,,,,,,,,,,,,,,2018-04-03 03:34:21.285255
 ,7100703113,El Monterey Burrito Beef & Bean Spicy Red Hot Xx Large 10 Ounce Pouch,,,13-03-00,Other Frozen Foods,Frozen Foods,Ruiz Foods,,,,,,,,,1,10,OZ,,,,Pouch,,El Monterey,,,,,,,,,,,,,,,,2018-03-16 18:21:07.545310
 ,7100754116,"El Monterey Burrito Beef & Bean, XX Large 10 Ounce Pouch",,,13-03-00,Other Frozen Foods,Frozen Foods,Ruiz Foods,,,,,,,,,1,10,OZ,,,,Pouch,,El Monterey,,,,,,,,,,,,,,,,2018-03-16 18:21:07.545310
+,7104310040,AE Skim Milk 1 Gallon Jug,,,09-04-00,Skim/Nonfat Milk,Fluid Milk Products,Andersen Erickson Dairy Company,Milk,,,,,,,,1,1,GAL,,,,Jug,,AE,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,7104310208,A&E Icy Cold To 2% Milk 12 Ounce Bottle,,,09-02-00,2% Milk,Fluid Milk Products,Andersen Erickson,Milk,,,,,,,,1,12,OZ,,,,Bottle,,A&E,,,,,,,,,,,,,,,,2018-03-27 16:36:05.970967
+,7104310222,AE 2% Milk 64 Ounce Bottle,,,09-02-00,2% Milk,Fluid Milk Products,Andersen Erickson Dairy Company,Milk,,,,,,,,1,64,OZ,,,,Bottle,,AE,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,7104310241,A&E 2% Milk 1 Gallon Jug,,,09-02-00,2% Milk,Fluid Milk Products,Andersen Erickson,Milk,,,,,,,,1,1,GAL,,,,Jug,,A&E,,,,,,,,,,,,,,,,2018-03-27 16:36:05.970967
 ,7104310308,A&E Icy Cold To 2% Chocolate Milk 12 Ounce Bottle,,,09-05-00,Flavored Milk,Fluid Milk Products,Andersen Erickson,Milk,,,,,,,,1,12,OZ,,,,Bottle,,A&E,,,,,,,,,,,,,,,,2018-03-27 16:36:05.970967
 ,7104310310,A&E Milk Premium Chocolate 16 Ounce Bottle,,,09-05-00,Flavored Milk,Fluid Milk Products,Andersen Erickson,Milk,,,,,,,,1,16,OZ,,,,Bottle,,A&E,,,,,,,,,,,,,,,,2018-03-27 16:36:05.970967
+,7104310440,AE Whole Milk 1 Gallon Jug,,,09-01-00,Whole Milk,Fluid Milk Products,Andersen Erickson Dairy Company,Milk,,,,,,,,1,1,GAL,,,,Jug,,AE,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,7115378573,STP Gas Treatment 5.25 Ounce Bottle,,,24-05-00,Other Additives,Automotive Products,The Armor All/STP Products Company,,,,,,,,,1,5.25,OZ,,,,Bottle,,STP,,,,,,,,,,,,,,,,2018-03-18 03:51:05.008933
 ,7115907311,Cornnuts Ranch 4 Ounce Bag,,,15-04-00,Nuts/Seeds,Salty Snacks,The Kraft Heinz Company,,,,,,,,,1,4,OZ,,,,Bag,,Cornnuts,,,,,,,,,,,,,,,,2018-02-18 16:57:08.000000
 ,7115907819,Cornnuts Original 4 Ounce Bag,,,15-04-00,Nuts/Seeds,Salty Snacks,The Kraft Heinz Company,,,,,,,,,1,4,OZ,,,,Bag,,Cornnuts,,,,,,,,,,,,,,,,2018-02-18 16:57:08.000000
@@ -3564,6 +3585,8 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,7162100047,Polar Long Life 50/50 Antifreeze 128 Ounce Jug,,,24-02-00,Anti-freeze/Coolants/Window Solvents,Automotive Products,Polar,,,,,,,,,1,128,OZ,,,,Jug,,Polar,,,,,,,,,,,,,,,,2018-03-05 02:11:02.752726
 ,7162110063,Polar De-Icer & Cleaner Fluid 128 Ounce Jug,,,24-02-00,Anti-freeze/Coolants/Window Solvents,Automotive Products,Polar,,,,,,,,,1,128,OZ,,,,Jug,,Polar,,,,,,,,,,,,,,,,2018-03-05 02:11:02.752726
 ,7162110150,Polar 50/50 Antifreeze 128 Ounce Jug,,,24-02-00,Anti-freeze/Coolants/Window Solvents,Automotive Products,Polar,,,,,,,,,1,128,OZ,,,,Jug,,Polar,,,,,,,,,,,,,,,,2018-03-05 02:11:02.752726
+,7162160696,Caseys 50/50 Antifreeze 128 Ounce Jug,,,24-02-00,Anti-freeze/Coolants/Window Solvents,Automotive Products,Caseys,,,,,,,,,1,128,OZ,,,,Jug,,Caseys,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
+,7162173001,Caseys Windshield Wash 128 Ounce Jug,,,24-02-00 ,Anti-freeze/Coolants/Window Solvents,Automotive Products,Old World Industries,,,,,,,,,1,128,OZ,,,,Jug,,Caseys,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,7162173130,Caseys 10w30 32 Ounce Bottle,,,24-01-00,Motor Oil,Automotive Products,Caseys,,,,,,,,,1,32,OZ,,,,Bottle,,Caseys,,,,,,,,,,,,,,,,2018-04-21 17:42:52.268425
 ,7162173530,Caseys 5w30 32 Ounce Bottle,,,24-01-00,Motor Oil,Automotive Products,Caseys,,,,,,,,,1,32,OZ,,,,Bottle,,Caseys,,,,,,,,,,,,,,,,2018-04-21 17:42:52.268425
 ,7167000002,Utica Club 6 Pack 16 Ounce Can,,,04-02-00,Premium,Beer,FX Matt,Premium Regular,,Premium,,,,,,6,16,OZ,,,,Can,,Utica Club,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
@@ -3577,6 +3600,7 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,7167084200,Saranac Adirondack Trail Mix 6 Pack 12 Ounce Bottle,,,04-06-00,Microbrews/Craft,Beer,FX Matt,Craft,,Craft/Import,,,,,,6,12,OZ,,,,Bottle,,Saranac Adirondack Trail Mix,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,7172000008,Tootsie Pop Giant 1 Count,,,08-05-00,Bagged or Repacked Peg Candy,Candy,Tootsie Roll Industries,,,,,,,,,1,,,,,,,,Tootsie Pop,,,,,,,,,,,,,,,,2018-04-03 03:34:21.285255
 ,7181700037,Big Red Soda 20 Ounce Bottle,,,07-01-00,Carbonated Soft Drinks,Packaged Beverages (Non-alcoholic),"Big Red, Inc.",,,,,,,,,1,20,OZ,,,,Bottle,,Big Red,,,,,,,,,,,,,,,,2018-02-21 18:11:13.836041
+,7189905101,Blue Bell Gold Rim Ice Cream 16 Ounce Tub,,,12-02-00,Ice Cream,Packaged Ice Cream/Novelties,Blue Bell Creameries,,,,,,,,,1,16,OZ,,,,Tub,,Blue Bell Gold Rim,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,7192162052,Tombstone 4 Meat Pizza 22.1 Ounce Package,,,13-02-00,Frozen Pizza,Frozen Foods,Nestlé S.A.,,,,,,,,,1,22.1,OZ,,,,Package,,Tombstone,,,,,,,,,,,,,,,,2018-03-05 02:11:02.752726
 ,7192167217,Tombstone Pepperoni Pizza 20.6 Ounce Package,,,13-02-00,Frozen Pizza,Frozen Foods,Nestlé S.A.,,,,,,,,,1,20.6,OZ,,,,Package,,Tombstone,,,,,,,,,,,,,,,,2018-03-05 02:11:02.752726
 ,7192194947,DiGiorno Pizza Original Rising Crust Supreme 31.5 Ounce,,,13-02-00,Frozen Pizza,Frozen Foods,Nestlé S.A.,,,,,,,,,1,31.5,OZ,,,,Package,,DiGiorno,,,,,,,,,,,,,,,,2018-03-05 02:11:02.752726
@@ -3591,6 +3615,7 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,7199000047,Coors 12 Pack 12 Ounce Can,,,04-02-00,Premium,Beer,MillerCoors,Premium Regular,,Premium,,,,,,12,12,OZ,,,,Can,,Coors,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,7199000048,Coors Light 12 Pack 12 Ounce Can,,,04-02-00,Premium,Beer,MillerCoors,Premium Light,,Premium,,,,,,12,12,OZ,,,,Can,,Coors Light,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,7199000528,Coors Light 1 Pack 12 Ounce Can,,,04-02-00,Premium,Beer,MillerCoors,Premium Light,,Premium,,,,,,1,12,OZ,,,,Can,,Coors Light,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
+,7199001118,St Judes $1 Pumpkin 1 Count,,,99-00-00,Store Use/Supply,Store Use/Supply,St. Jude Children's Research Hospital,,,,,,,,,1,,,,,,,,,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,7199001130,Coors Light Citrus Radler 12 Pack 10 Ounce Can,,,04-01-00,Super Premium,Beer,MillerCoors,Premium Plus,,Premium Plus,,,,,,12,10,OZ,,,,Can,,Coors Light Citrus Radler,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,7199001132,Coors Light Citrus Radler 4 Pack 16 Ounce Can,,,04-01-00,Super Premium,Beer,MillerCoors,Premium Plus,,Premium Plus,,,,,,4,16,OZ,,,,Can,,Coors Light Citrus Radler,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,7199001134,Coors Light Citrus Radler 1 Pack 24 Ounce Can,,,04-01-00,Super Premium,Beer,MillerCoors,Premium Plus,,Premium Plus,,,,,,1,24,OZ,,,,Can,,Coors Light Citrus Radler,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
@@ -3850,6 +3875,7 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,7310002595,Copenhagen Straight Long Cut 1.2 Ounce Can 5 Pack,,,03-01-00,Smokeless,Other Tobacco Products,U.S. Smokeless Tobacco Company,,,,,,,,,5,1.2,OZ,,,,Can,,Copenhagen,,,,,,,,,,,,,,,,2018-02-20 13:07:12.000000
 ,7310003036,Copenhagen Long Cut Mint 1.2 Ounce Can,,,03-01-00,Smokeless,Other Tobacco Products,U.S. Smokeless Tobacco Company,,,,,,,,,1,1.2,OZ,,,,Can,,Copenhagen,,,,,,,,,,,,,,,,2018-03-16 17:45:28.953948
 ,7310005467,Copenhagen Long Cut Natural 1.2 Ounce Can,,,03-01-00,Smokeless,Other Tobacco Products,U.S. Smokeless Tobacco Company,,,,,,,,,1,1.2,OZ,,,,Can,,Copenhagen,,,,,,,,,,,,,,,,2018-03-16 17:45:28.953948
+,7317012140,Old Wisconsin Hardwood Smoked Snack Sticks 14 Count,,,17-01-00,Meat Snacks,Alternative Snacks,"Old Wisconsin Sausage, Inc.",,,,,,,,,14,,,,,,Stick,,Old Wisconsin,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,7330920007,Home City Ice 7 Pound Bag,,,28-00-00,Ice,Ice,Home City Ice,,,,,,,,,1,7,LBS,,,,Bag,,Home City Ice,,,,,,,,,,,,,,,,2018-03-27 16:36:05.970967
 ,7330920022,Home City Ice 22 Pound Bag,,,28-00-00,Ice,Ice,Home City Ice,,,,,,,,,1,22,LBS,,,,Bag,,Home City Ice,,,,,,,,,,,,,,,,2018-03-27 16:36:05.970967
 ,7336011106,Old Style 1 Pack 24 Ounce Can,,,04-03-00,Popular,Beer,Pabst,Value Regular,,Value,,,,,,1,24,OZ,,,,Can,,Old Style,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
@@ -3914,7 +3940,7 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,7480400243,Peak Extended Life 50/50 Antifreeze 1 Gallon Jug,,,24-02-00 ,Anti-freeze/Coolants/Window Solvents,Automotive Products,Old World Industries,,,,,,,,,1,1,GAL,,,,Jug,,Peak,,,,,,,,,,,,,,,,2018-04-20 17:56:44.652956
 ,7480400358,Peak Final Charge 50/50 Antifreeze 1 Gallon Jug,,,24-02-00 ,Anti-freeze/Coolants/Window Solvents,Automotive Products,Old World Industries,,,,,,,,,1,1,GAL,,,,Jug,,Peak,,,,,,,,,,,,,,,,2018-04-20 17:56:44.652956
 ,7480400400,Peak Antifreeze 1 Gallon Jug,,,24-02-00 ,Anti-freeze/Coolants/Window Solvents,Automotive Products,Old World Industries,,,,,,,,,1,1,GAL,,,,Jug,,Peak,,,,,,,,,,,,,,,,2018-04-20 17:56:44.652956
-,7480400748,Peak All Weather 32+ Windshield Wash 1 Gallon Jug,,,24-02-00 ,Anti-freeze/Coolants/Window Solvents,Automotive Products,Old World Industries,,,,,,,,,1,1,GAL,,,,Jug,,Peak,,,,,,,,,,,,,,,,2018-04-20 17:56:44.652956
+,7480400748,`,,,24-02-00 ,Anti-freeze/Coolants/Window Solvents,Automotive Products,Old World Industries,,,,,,,,,1,1,GAL,,,,Jug,,Peak,,,,,,,,,,,,,,,,2018-04-20 17:56:44.652956
 ,7480400752,Peak All Weather 20+ Windshield Wash 1 Gallon Jug,,,24-02-00 ,Anti-freeze/Coolants/Window Solvents,Automotive Products,Old World Industries,,,,,,,,,1,1,GAL,,,,Jug,,Peak,,,,,,,,,,,,,,,,2018-04-20 17:56:44.652956
 ,7480400754,Peak All Weather 20+ Windshield Wash 1 Gallon Jug,,,24-02-00 ,Anti-freeze/Coolants/Window Solvents,Automotive Products,Old World Industries,,,,,,,,,1,1,GAL,,,,Jug,,Peak,,,,,,,,,,,,,,,,2018-04-20 17:56:44.652956
 ,7480400944,Peak Long Life 50/50 Antifreeze 1 Gallon Jug,,,24-02-00 ,Anti-freeze/Coolants/Window Solvents,Automotive Products,Old World Industries,,,,,,,,,1,1,GAL,,,,Jug,,Peak,,,,,,,,,,,,,,,,2018-04-20 17:56:44.652956
@@ -4002,6 +4028,7 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,7675010569,PayPower Visa Debit 1 Count,,,33-02-00,Other Pre-paid Cards,Pre-paid Cards,PayPower,,,,,,,,,1,1,COUNT,,,,Card,,,,,,,,,,,,,,,,,,2018-03-28 23:04:21.031104
 ,7675010624,Greendot GPR Visa 1 Count,,,33-02-00,Other Pre-paid Cards,Pre-paid Cards,Green Dot Corporation,,,,,,,,,1,1,COUNT,,,,Card,,,,,,,,,,,,,,,,,,2018-03-28 23:04:21.031104
 ,7675010709,Green Dot Variable Gift Card,,,33-02-00,Other Pre-paid Cards,Pre-paid Cards,"Blackhawk Network Holdings, Inc.",,,,,,,,,1,,CARD,,,,Card,,,,,,,,,,,,,,,,,,2018-04-16 17:01:21.243342
+,7675010738,Amazon.com Variable Gift Card 1 Count,,,33-02-00,Other Pre-paid Cards,Pre-paid Cards,"Blackhawk Network Holdings, Inc.",,,,,,,,,1,,CARD,,,,Card,,,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,7675010745,Verizon $45 Gift Card,,,33-01-00,Pre-paid Telecommunications,Pre-paid Cards,"Blackhawk Network Holdings, Inc.",,,,,,,,,1,,CARD,,,,Card,,,,,,,,,,,,,,,,,,2018-04-16 17:01:21.243342
 ,7675012989,AT&T Variable Gift Card,,,33-01-00,Pre-paid Telecommunications,Pre-paid Cards,"Blackhawk Network Holdings, Inc.",,,,,,,,,1,,CARD,,,,Card,,,,,,,,,,,,,,,,,,2018-04-16 17:01:21.243342
 ,7675014444,Net10 1000 Minute Gift Card,,,33-01-00,Pre-paid Telecommunications,Pre-paid Cards,"Blackhawk Network Holdings, Inc.",,,,,,,,,1,,CARD,,,,Card,,,,,,,,,,,,,,,,,,2018-04-16 17:01:21.243342
@@ -4009,6 +4036,7 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,7675015057,Tracfone 60 Minute Gift Card,,,33-01-00,Pre-paid Telecommunications,Pre-paid Cards,"Blackhawk Network Holdings, Inc.",,,,,,,,,1,,CARD,,,,Card,,,,,,,,,,,,,,,,,,2018-04-16 17:01:21.243342
 ,7675015063,Tracfone 120min Gift Card,,,33-01-00,Pre-paid Telecommunications,Pre-paid Cards,"Blackhawk Network Holdings, Inc.",,,,,,,,,1,,CARD,,,,Card,,,,,,,,,,,,,,,,,,2018-04-16 17:01:21.243342
 ,7675015613,AT&T $45 Gift Card,,,33-01-00,Pre-paid Telecommunications,Pre-paid Cards,"Blackhawk Network Holdings, Inc.",,,,,,,,,1,,CARD,,,,Card,,,,,,,,,,,,,,,,,,2018-04-16 17:01:21.243342
+,7675015686,PayPal Variable Gift Card 1 Count,,,33-02-00,Other Pre-paid Cards,Pre-paid Cards,"Blackhawk Network Holdings, Inc.",,,,,,,,,1,,CARD,,,,Card,,,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,7675015936,Boost Mobile $60 Gift Card,,,33-01-00,Pre-paid Telecommunications,Pre-paid Cards,"Blackhawk Network Holdings, Inc.",,,,,,,,,1,,CARD,,,,Card,,,,,,,,,,,,,,,,,,2018-04-16 17:01:21.243342
 ,7675016061,Amazon Variable Gift Card,,,33-02-00,Other Pre-paid Cards,Pre-paid Cards,"Blackhawk Network Holdings, Inc.",,,,,,,,,1,,CARD,,,,Card,,,,,,,,,,,,,,,,,,2018-04-16 17:01:21.243342
 ,7675016314,Greendot $10 1 Count,,,33-02-00,Other Pre-paid Cards,Pre-paid Cards,Green Dot Corporation,,,,,,,,,1,1,COUNT,,,,Card,,,,,,,,,,,,,,,,,,2018-03-28 23:04:21.031104
@@ -4077,6 +4105,7 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,7800015246,Canada Dry Ginger Ale 2000 Milliliter Bottle,,,07-01-00,Carbonated Soft Drinks,Packaged Beverages (Non-alcoholic),Dr Pepper Snapple Group,,,,,,,,,1,2000,ML,,,,Bottle,,Canada Dry,,,,,,,,,,,,,,,,2018-02-27 21:12:21.028244
 ,7800023040,Sundrop 20 Ounce Bottle,,,07-01-00,Carbonated Soft Drinks,Packaged Beverages (Non-alcoholic),Dr Pepper Snapple Group,,,,,,,,,1,20,OZ,,,,Bottle,,Sundrop,,,,,,,,,,,,,,,,2018-02-27 21:12:21.028244
 ,7800080828,Dr Pepper Real Sugar 20 Ounce Bottle,,,07-01-00,Carbonated Soft Drinks,Packaged Beverages (Non-alcoholic),Dr Pepper Snapple Group,Sparkling Soft Drink,,,,,,,,1,20,OZ,,,Immediate,Bottle,Spicy Cherry,Dr Pepper Cherry,,,,,,,,,,,,,,,,2018-04-28 16:48:55.650636
+,7800091992,MDA $1 Summer Camp 1 Count,,,99-00-00,Store Use/Supply,Store Use/Supply,Muscular Dystrophy Association‎,,,,,,,,,1,,,,,,,,,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,7825000020,St. Ides 1 Pack 22 Ounce Bottle,,,04-07-00,Malt Liquor,Beer,Pabst,Value Malt,,Value,,,,,,1,22,OZ,,,,Bottle,,St. Ides,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,7825000036,Steel Reserve Triple Export 1 Pack 24 Ounce Can,,,04-07-00,Malt Liquor,Beer,MillerCoors,Value Malt,,Value,,,,,,1,24,OZ,,,,Can,,Steel Reserve Triple Export,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,7825000326,Steel Res. High Gravity 1 Pack 22 Ounce Bottle,,,04-07-00,Malt Liquor,Beer,MillerCoors,Value Malt,,Value,,,,,,1,22,OZ,,,,Bottle,,Steel Res. High Gravity,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
@@ -5491,12 +5520,12 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,9050000016,USA Gold 1 Pack,,,02-01-00,Premium,Cigarettes,ITG Brands,,,,,,,,,1,,PACK,,,,Pack,,USA Gold,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
 ,9050000017,USA Gold 1 Pack,,,02-01-00,Premium,Cigarettes,ITG Brands,,,,,,,,,1,,PACK,,,,Pack,,USA Gold,,,,,,,,,,,,,,,,2018-03-23 01:11:55.284458
 ,9050000038,Maverick 100s Box 1 Pack,,,02-01-00,Premium,Cigarettes,ITG Brands,,,,,,,,,1,,PACK,,,,Pack,,Maverick,,,,,,,,,,,,,,,,2018-04-19 17:22:09.626899
-,9050000039,Maverick Gold Box 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,1,,PACK,,,,Pack,,Maverick,,,,,,,,,,,,,,,,2018-04-22 16:54:00.219568
-,9050000043,Maverick Menthol Gold Box 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,1,,PACK,,,,Pack,,Maverick,,,,,,,,,,,,,,,,2018-04-22 16:54:00.219568
-,9050000046,Maverick Box 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,1,,PACK,,,,Pack,,Maverick,,,,,,,,,,,,,,,,2018-04-22 16:54:00.219568
+,9050000039,Maverick Gold Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Maverick,,,,,,,,,,,,,,,,2018-04-22 16:54:00.219568
+,9050000043,Maverick Menthol Gold Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Maverick,,,,,,,,,,,,,,,,2018-04-22 16:54:00.219568
+,9050000046,Maverick Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Maverick,,,,,,,,,,,,,,,,2018-04-22 16:54:00.219568
 ,9050000051,Maverick Menthol 100s Box 1 Pack,,,02-01-00,Premium,Cigarettes,ITG Brands,,,,,,,,,1,,PACK,,,,Pack,,Maverick,,,,,,,,,,,,,,,,2018-04-19 17:22:09.626899
-,9050000053,Maverick Gold 100's Box 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,1,,PACK,,,,Pack,,Maverick,,,,,,,,,,,,,,,,2018-04-22 16:54:00.219568
-,9050000054,Maverick Menthol Box 1 Pack,,,02-01-00,Premium,Cigarettes,Lorillard Tobacco Company,,,,,,,,,1,,PACK,,,,Pack,,Maverick,,,,,,,,,,,,,,,,2018-04-22 16:54:00.219568
+,9050000053,Maverick Gold 100's Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Maverick,,,,,,,,,,,,,,,,2018-04-22 16:54:00.219568
+,9050000054,Maverick Menthol Box 1 Pack,,,02-01-00,Premium,Cigarettes,Reynolds American,,,,,,,,,1,,PACK,,,,Pack,,Maverick,,,,,,,,,,,,,,,,2018-04-22 16:54:00.219568
 ,9050000057,Winston Red Box 1 Pack,,,02-01-00,Premium,Cigarettes,ITG Brands,,,,,,,,,1,,PACK,,,,Pack,,Winston,,,,,,,,,,,,,,,,2018-03-05 02:11:02.752726
 ,9050000058,Winston 100’s Red Box 1 Pack,,,02-01-00,Premium,Cigarettes,ITG Brands,,,,,,,,,1,,PACK,,,,Pack,,Winston,,,,,,,,,,,,,,,,2018-03-05 02:11:02.752726
 ,9050000059,Winston Gold Box 1 Pack,,,02-01-00,Premium,Cigarettes,ITG Brands,,,,,,,,,1,,PACK,,,,Pack,,Winston,,,,,,,,,,,,,,,,2018-03-05 02:11:02.752726
@@ -6587,6 +6616,7 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,72695990867,Boulevard American Kolsch 6 Pack 12 Ounce Can,,,04-06-00,Microbrews/Craft,Beer,Duvel Moortgat,Craft,,Craft/Import,,,,,,6,12,OZ,,,,Can,,Boulevard American Kolsch,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,72695990886,Boulevard Tank 7 Farmhouse Ale 6 Pack 12 Ounce Bottle,,,04-06-00,Microbrews/Craft,Beer,Duvel Moortgat,Craft,,Craft/Import,,,,,,6,12,OZ,,,,Bottle,,Boulevard Tank 7 Farmhouse Ale,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,72695991010,Boulevard Jam Band 6 Pack 12 Ounce Can,,,04-06-00,Microbrews/Craft,Beer,Duvel Moortgat,Craft,,Craft/Import,,,,,,6,12,OZ,,,,Can,,Boulevard Jam Band,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
+,73170182551,Old Wisconsin Beef Snack Sticks In a Jar 1 Count,,,17-01-00,Meat Snacks,Alternative Snacks,"Old Wisconsin Sausage, Inc.",,,,,,,,,1,,,,,,Stick,,Old Wisconsin,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,73176000335,Heavy Seas Loose Canon Hop3 Ale 6 Pack 12 Ounce Bottle,,,04-06-00,Microbrews/Craft,Beer,Micro Breweries,Craft,,Craft/Import,,,,,,6,12,OZ,,,,Bottle,,Heavy Seas Loose Canon Hop3 Ale,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,73176010335,Heavy Seas Loose Canon Hop3 Ale 1 Pack 12 Ounce Bottle,,,04-06-00,Microbrews/Craft,Beer,Micro Breweries,Craft,,Craft/Import,,,,,,1,12,OZ,,,,Bottle,,Heavy Seas Loose Canon Hop3 Ale,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,73309200007,Home City Ice 7 Pound Bag,,,28-00-00,Ice,Ice,Home City Ice,,,,,,,,,1,5,LBS,,,,Bag,,Home City Ice,,,,,,,,,,,,,,,,2018-03-27 16:36:05.970967
@@ -7108,6 +7138,8 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,81547301051,Borden Chocolate Milk 16 Ounce Bottle,,,09-05-00,Flavored Milk,Fluid Milk Products,Grupo Lala,Milk,,,,,,,,1,16,OZ,,,Future,Bottle,Chocolate,Borden,,,,,,,,,,,,,,,,2018-04-14 17:35:32.297427
 ,81547301052,Borden Chocolate Milk 16 Ounce Bottle,,,09-05-00,Flavored Milk,Fluid Milk Products,Grupo Lala,Milk,,,,,,,,1,16,OZ,,,Future,Bottle,Chocolate,Borden,,,,,,,,,,,,,,,,2018-04-14 17:35:32.297427
 ,81547301053,Borden Strawberry Milk 16 Ounce Bottle,,,09-05-00,Flavored Milk,Fluid Milk Products,Grupo Lala,Milk,,,,,,,,1,16,OZ,,,Future,Bottle,Strawberry,Borden,,,,,,,,,,,,,,,,2018-04-14 17:35:32.297427
+,81547301324,Poinsetta 2% Milk 1 Gallon,,,09-02-00,2% Milk,Fluid Milk Products,Grupo Lala,Milk,,,,,,,,1,1,GAL,,,,Jug,,,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
+,81547301325,Poinsetta Whole Milk 1 Gallon,,,09-01-00,Whole Milk,Fluid Milk Products,Grupo Lala,Milk,,,,,,,,1,1,GAL,,,,Jug,,,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,81547301327,Borden 2% Milk 1 Gallon Jug,,,09-02-00,2% Milk,Fluid Milk Products,Grupo Lala,Milk,,,,,,,,1,1,GAL,,,Future,Jug,,Borden,,,,,,,,,,,,,,,,2018-04-14 17:35:32.297427
 ,81547301328,Borden 2% Milk 64 Ounce Jug,,,09-02-00,2% Milk,Fluid Milk Products,Grupo Lala,Milk,,,,,,,,1,64,OZ,,,Future,Jug,,Borden,,,,,,,,,,,,,,,,2018-04-14 17:35:32.297427
 ,81580002002,Duke’s Hatch Green Chile Shorty Sausage 5 Ounce Bag,,,17-01-00,Meat Snacks,Alternative Snacks,THANASI Foods,,,,,,,,,1,5,OZ,,,,Bag,,Dukes,,,,,,,,,,,,,,,,2018-03-13 18:03:22.560707
@@ -7778,6 +7810,7 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,85920000202,Buffalo Bills Alimony Ale 6 Pack 12 Ounce Bottle,,,04-06-00,Microbrews/Craft,Beer,North American Breweries,Craft,,Craft/Import,,,,,,6,12,OZ,,,,Bottle,,Buffalo Bills Alimony Ale,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,85924300300,Tampa Bay Old Elephant Foot 4 Pack 16 Ounce Can,,,04-06-00,Microbrews/Craft,Beer,Micro Breweries,Craft,,Craft/Import,,,,,,4,16,OZ,,,,Can,,Tampa Bay Old Elephant Foot,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,85924300301,Tampa Bay Reef Donkey 4 Pack 16 Ounce Can,,,04-06-00,Microbrews/Craft,Beer,Micro Breweries,Craft,,Craft/Import,,,,,,4,16,OZ,,,,Can,,Tampa Bay Reef Donkey,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
+,85926700105,Childrens Miracle Network $1 Ballon 1 Count,,,99-00-00,Store Use/Supply,Store Use/Supply,Children’s Miracle Network,,,,,,,,,1,,,,,,,,,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,85931300403,Zipline NZ IPA 6 Pack 12 Ounce Bottle,,,04-06-00,Microbrews/Craft,Beer,Micro Breweries,Craft,,Craft/Import,,,,,,6,12,OZ,,,,Bottle,,Zipline NZ IPA,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,85931300404,Zipline Oatmeal Porter 6 Pack 12 Ounce Bottle,,,04-06-00,Microbrews/Craft,Beer,Micro Breweries,Craft,,Craft/Import,,,,,,6,12,OZ,,,,Bottle,,Zipline Oatmeal Porter,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,85931300405,Zipline Copper Alt 6 Pack 12 Ounce Bottle,,,04-06-00,Microbrews/Craft,Beer,Micro Breweries,Craft,,Craft/Import,,,,,,6,12,OZ,,,,Bottle,,Zipline Copper Alt,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
@@ -7904,6 +7937,7 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,88399066185,good2grow Tropical Fruit 6 Ounce Bottle,,,07-04-00,Juice/Juice Drinks,Packaged Beverages (Non-alcoholic),Good 2 Grow,,,,,,,,,1,6,OZ,,,,Bottle,,good2grow,,,,,,,,,,,,,,,,2018-02-21 18:11:13.836041
 ,88399068120,good2grow Grape Juicy Waters 6 Ounce Bottle,,,07-04-00,Juice/Juice Drinks,Packaged Beverages (Non-alcoholic),Good 2 Grow,,,,,,,,,1,6,OZ,,,,Bottle,,good2grow,,,,,,,,,,,,,,,,2018-02-21 18:11:13.836041
 ,88399068121,good2grow Fruit Punch Juicy Waters 6 Ounce Bottle,,,07-04-00,Juice/Juice Drinks,Packaged Beverages (Non-alcoholic),Good 2 Grow,,,,,,,,,1,6,OZ,,,,Bottle,,good2grow,,,,,,,,,,,,,,,,2018-02-21 18:11:13.836041
+,88590991994,Apple iTunes Variable Card 1 Count,,,33-02-00,Other Pre-paid Cards,Pre-paid Cards,"Blackhawk Network Holdings, Inc.",,,,,,,,,1,,CARD,,,,Card,,,,,,,,,,,,,,,,,,2018-05-01 02:01:15.154317
 ,88715100000,Traveler Curious Traveler LmnShn 1 Pack 12 Ounce Bottle,,,04-06-00,Microbrews/Craft,Beer,Boston Beer,Craft,,Craft/Import,,,,,,1,12,OZ,,,,Bottle,,Traveler Curious Traveler LmnShn,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,88715100001,Traveler Curious Traveler LmnShn 6 Pack 12 Ounce Bottle,,,04-06-00,Microbrews/Craft,Beer,Boston Beer,Craft,,Craft/Import,,,,,,6,12,OZ,,,,Bottle,,Traveler Curious Traveler LmnShn,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
 ,88715100005,Traveler Illusive Traveler Shndy 1 Pack 12 Ounce Bottle,,,04-06-00,Microbrews/Craft,Beer,Boston Beer,Craft,,Craft/Import,,,,,,1,12,OZ,,,,Bottle,,Traveler Illusive Traveler Shndy,,,,,,,,,,,,,,,,2018-01-29 19:35:34.698001
@@ -8370,6 +8404,7 @@ productId,upc,description,department,deptDescription,categorySubCode,categorySub
 ,SIQ290502000002,Hot Dog 1 Count,,,29-05-02,Hot Dogs/Roller Grill Products (Proprietary/Control Brand),Foodservice Prepared On-site,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
 ,SIQ290502000003,Corn Dog 1 Count,,,29-05-02,Hot Dogs/Roller Grill Products (Proprietary/Control Brand),Foodservice Prepared On-site,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2018-02-19 13:57:07.000000
 ,SIQ290502000004,Chili Cheese Dog 1 Count,,,29-05-02,Hot Dogs/Roller Grill Products (Proprietary/Control Brand),Foodservice Prepared On-site,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2018-02-19 13:57:07.000000
+,SIQ290502000005,Kolaches 1 Count,,,29-05-02,Hot Dogs/Roller Grill Products (Proprietary/Control Brand),Foodservice Prepared On-site,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2018-02-19 13:57:07.000000
 ,SIQ290602000001,Angus Cheese Burger 1 Count,,,29-06-02,Hamburgers (Proprietary/Control Brand),Foodservice Prepared On-site,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
 ,SIQ290602000002,Bacon Cheese Burger 1 Count,,,29-06-02,Hamburgers (Proprietary/Control Brand),Foodservice Prepared On-site,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2017-12-19 13:57:07.000000
 ,SIQ290602000003,Cheese Burger 1 Count,,,29-06-02,Hamburgers (Proprietary/Control Brand),Foodservice Prepared On-site,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2018-02-19 13:57:07.000000

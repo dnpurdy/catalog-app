@@ -1,0 +1,26 @@
+package com.purdynet.siqproduct.retailer;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Racetrac implements Retailer {
+    @Override
+    public String name() {
+        return "Racetrac";
+    }
+
+    @Override
+    public String projectId() {
+        return "racetrac-siq";
+    }
+
+    @Override
+    public String beerClause() {
+        return " WHERE p.department = '7' ";
+    }
+
+    @Override
+    public String upcLogic() {
+        return " IF(rm.siqId IS NULL,SUBSTR(li.itemId,1,LENGTH(li.itemId)-1),rm.siqId) ";
+    }
+}
