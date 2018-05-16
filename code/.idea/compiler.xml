@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="helloworld-servlet" />
+        <module name="siqproduct" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="helloworld-servlet" target="1.8" />
+      <module name="siqproduct" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
