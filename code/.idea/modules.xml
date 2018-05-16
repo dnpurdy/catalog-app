@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/helloworld-servlet.iml" filepath="$PROJECT_DIR$/helloworld-servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/siqproduct.iml" filepath="$PROJECT_DIR$/siqproduct.iml" />
     </modules>
   </component>
 </project>
