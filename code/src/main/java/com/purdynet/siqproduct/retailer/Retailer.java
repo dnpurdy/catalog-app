@@ -8,5 +8,7 @@ public interface Retailer {
         return " NVL(rm.siqId,li.itemId) ";
     };
 
+    default String allClause() { return ""; };
     String beerClause();
+    String beverageClause();
 }

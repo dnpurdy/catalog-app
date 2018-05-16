@@ -28,7 +28,9 @@ import com.google.api.services.bigquery.model.TableRow;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Collections;
 import java.util.List;
@@ -61,7 +63,6 @@ public class BigqueryUtils {
 
     private static GoogleClientSecrets clientSecrets = null;
 
-
     static GoogleClientSecrets getClientCredential() throws IOException {
         if (clientSecrets == null) {
             clientSecrets = GoogleClientSecrets.load(JSON_FACTORY,
@@ -86,7 +87,20 @@ public class BigqueryUtils {
 
     public BigqueryUtils() throws IOException {
         this.userId = "david@swiftiq.com";
-        this.bigquery = initializeAndBuild(GoogleCredential.getApplicationDefault());
+        //this.bigquery = initializeAndBuild(GoogleCredential.getApplicationDefault());
+        this.bigquery = initializeAndBuild(getCredi());
+    }
+
+    private GoogleCredential getCredi() {
+        try {
+            InputStream credentialsStream = BigqueryUtils.class.getResourceAsStream("/client_secrets.json");
+            return GoogleCredential.fromStream(credentialsStream, HTTP_TRANSPORT, JSON_FACTORY);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        //new GoogleCredential.Builder().setTransport(HTTP_TRANSPORT)
+          //      .setJsonFactory(JSON_FACTORY).setClientSecrets(GoogleClientSecrets.load(JSON_FACTORY, ))
     }
 
     private Bigquery initializeAndBuild(HttpRequestInitializer credential) {
@@ -126,6 +140,8 @@ public class BigqueryUtils {
     }
 
     public void beginQuery(String query) throws RuntimeException {
+        logger.warn(query);
+
         final Job queryJob = makeJob(query);
 
         job = tryToDo(new Callable<Job>() {

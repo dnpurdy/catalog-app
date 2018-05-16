@@ -6,9 +6,9 @@ import org.springframework.stereotype.Service;
 import java.util.function.Function;
 
 @Service
-public class BeerService extends AbstractProductService {
+public class BeverageService extends AbstractProductService {
     @Override
     public Function<Retailer,String> productSelectFunc() {
-        return Retailer::beerClause;
+        return Retailer::beverageClause;
     }
 }
