@@ -18,4 +18,9 @@ public class Caseys implements Retailer {
     public String beerClause() {
         return " WHERE p.department = '5' AND p.categorySubDescription NOT LIKE '%LIQUOR%' AND p.categorySubDescription NOT LIKE '%WINE%' ";
     }
+
+    @Override
+    public String beverageClause() {
+        return " WHERE p.department IN ('10') ";
+    }
 }

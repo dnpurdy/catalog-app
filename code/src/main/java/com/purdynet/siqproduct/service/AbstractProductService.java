@@ -13,14 +13,15 @@ public abstract class AbstractProductService {
 
     public abstract Function<Retailer,String> productSelectFunc();
 
-    protected String productSql(Retailer retailer, Function<Retailer,String> typeClause) {
+    protected String productSql(Retailer retailer, Function<Retailer,String> typeClause, String upcPortion) {
         return "SELECT '"+ retailer.projectId()+"' projectId, "+retailer.upcLogic()+" itemId, p.description descript, p.manufacturer manufacturer, p.deptDescription deptDescript, lastDate, itemTotalVal totalVal, percentTotalVal percentTotalVal FROM (\n" +
                 "    SELECT itemId, itemTotalVal, lastDate, itemTotalVal/totalVal AS percentTotalVal FROM ( SELECT itemId, itemTotalVal, lastDate, SUM(itemTotalVal) OVER () totalVal FROM (\n" +
                 "    SELECT itemId, SUM(ABS(quantity*extendedAmount))/1000 itemTotalVal, MAX(dateProcessed) lastDate FROM ["+retailer.projectId()+":default.LineItem] GROUP BY 1 )) ORDER BY 3 DESC ) li JOIN ["+retailer.projectId()+":default.Product] p ON li.itemId = p.upc \n" +
-                "  LEFT OUTER JOIN ["+retailer.projectId()+":siq.retailerMap] rm ON li.itemId=rm.retailerId " + typeClause.apply(retailer);
+                "  LEFT OUTER JOIN ["+retailer.projectId()+":siq.retailerMap] rm ON li.itemId=rm.retailerId " + typeClause.apply(retailer) +
+                (upcPortion.isEmpty() ? "" : " AND " + retailer.upcLogic() + " LIKE '" + upcPortion + "%' ");
     }
 
-    public String productProgress(List<Retailer> retailers) {
+    public String productProgress(List<Retailer> retailers, String upcPortion) {
         logger.info(retailers.toString());
 
         StringBuilder sql = new StringBuilder();
@@ -28,7 +29,7 @@ public abstract class AbstractProductService {
                 " SELECT rev.itemId itemId, rev.projectId projectId, rev.numProjects numProjects, manufacturer, descript, rev.lastDate, rev.totalVal, rev.percentTotalVal as per FROM (\n" +
                 "  SELECT GROUP_CONCAT(projectId) projectId, EXACT_COUNT_DISTINCT(projectId) numProjects, itemId, GROUP_CONCAT(descript) descript, MAX(deptDescript) deptDescript, GROUP_CONCAT(manufacturer) manufacturer, MAX(lastDate) lastDate, AVG(totalVal) totalVal, SUM(percentTotalVal * totalVal)/SUM(totalVal) percentTotalVal FROM");
 
-        sql.append(String.join(",",retailers.stream().map(r -> "("+productSql(r, productSelectFunc())+")").collect(Collectors.toList())));
+        sql.append(String.join(",",retailers.stream().map(r -> "("+productSql(r, productSelectFunc(), upcPortion)+")").collect(Collectors.toList())));
 
         sql.append(" GROUP BY itemId\n" +
                 " ) rev \n" +

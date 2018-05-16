@@ -23,4 +23,9 @@ public class Racetrac implements Retailer {
     public String upcLogic() {
         return " IF(rm.siqId IS NULL,SUBSTR(li.itemId,1,LENGTH(li.itemId)-1),rm.siqId) ";
     }
+
+    @Override
+    public String beverageClause() {
+        return " WHERE p.department IN ('2','5') ";
+    }
 }

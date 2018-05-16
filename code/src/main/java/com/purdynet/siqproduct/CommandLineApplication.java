@@ -31,7 +31,7 @@ public class CommandLineApplication //implements CommandLineRunner
         }
 
         BigqueryUtils bigqueryUtils = new BigqueryUtils();
-        bigqueryUtils.beginQuery(beerService.productProgress(retailers));
+        bigqueryUtils.beginQuery(beerService.productProgress(retailers, ""));
         System.out.println(bigqueryUtils.getJobStatus());
 
         bigqueryUtils.pollForCompletion();

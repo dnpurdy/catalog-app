@@ -18,4 +18,9 @@ public class Sunoco implements Retailer {
     public String beerClause() {
         return " WHERE p.department = 'R02' AND categorySubCode LIKE '4%' ";
     }
+
+    @Override
+    public String beverageClause() {
+        return " WHERE 1 = 0 ";
+    }
 }
