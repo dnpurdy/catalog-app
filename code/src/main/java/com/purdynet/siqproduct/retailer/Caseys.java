@@ -23,4 +23,9 @@ public class Caseys implements Retailer {
     public String beverageClause() {
         return " WHERE p.department IN ('10') ";
     }
+
+    @Override
+    public String tobaccoClause() {
+        return " WHERE ((p.department = '3' AND p.categorySubCode IN ('CHEW & MST','ALTERNATIVE TOBACCO','CHEW & MST SPECIALS','1 PACK CIGARS','2 PACK CIGARS','ROLL YOUR OWN','5 PACK CIGARS','20 PACK CIGARS','3 PACK CIGARS','LITTLE CIGARS','CARTON CIGARS','10 PACK CIGARS','DISCONTINUED CIGARS','LIGHTERS & ACCESSORIES','2 PACK SPECIALS','1 PACK SPECIALS','MISC NOVELTIES - DSD','2/5 PACK CIGARS','5 PACK SPECIALS','6 PACK CIGARS','2/6 PACK SPECIALS','4 PACK CIGARS','DISCONTINUED SPECIALS','2/5 PACK SPECIALS','7 PACK CIGARS','2/1 PACK SPECIALS')) OR (p.department = '11')) ";
+    }
 }

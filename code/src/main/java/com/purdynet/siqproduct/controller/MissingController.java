@@ -7,6 +7,9 @@ import com.purdynet.siqproduct.service.BeerService;
 import com.purdynet.siqproduct.biqquery.BigqueryUtils;
 import com.purdynet.siqproduct.retailer.Retailer;
 import com.purdynet.siqproduct.service.BeverageService;
+import com.purdynet.siqproduct.service.TobaccoService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,18 +26,22 @@ import static com.purdynet.siqproduct.util.HTMLUtils.toHTMLTableFromMising;
 @RestController
 public class MissingController {
 
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
     private final List<Retailer> retailers;
     private final AllProductService allProductService;
     private final BeerService beerService;
     private final BeverageService beverageService;
+    private final TobaccoService tobaccoService;
 
     @Autowired
     public MissingController(List<Retailer> retailers, AllProductService allProductService,
-                             BeerService beerService, BeverageService beverageService) {
+                             BeerService beerService, BeverageService beverageService, TobaccoService tobaccoService) {
         this.retailers = retailers;
         this.allProductService = allProductService;
         this.beerService = beerService;
         this.beverageService = beverageService;
+        this.tobaccoService = tobaccoService;
     }
 
     @RequestMapping(value = {"/missing","/missing/{upc}"})
@@ -55,8 +62,17 @@ public class MissingController {
         return makeTable(progressFunc.apply(retailers, upc));
     }
 
+    @RequestMapping(value = {"/missing-tobacco","/missing-tobacco/{upc}"})
+    public String missingTobacco(@PathVariable(name = "upc", required = false) String upc) throws IOException {
+        BiFunction<List<Retailer>,String,String> progressFunc = tobaccoService::productProgress;
+        return makeTable(progressFunc.apply(retailers, upc));
+    }
+
     private String makeTable(String sql) throws IOException {
         BigqueryUtils bigqueryUtils = new BigqueryUtils();
+
+        logger.info(sql);
+
         bigqueryUtils.beginQuery(sql);
 
         bigqueryUtils.pollForCompletion();
