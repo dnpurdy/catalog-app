@@ -11,4 +11,5 @@ public interface Retailer {
     default String allClause() { return ""; };
     String beerClause();
     String beverageClause();
+    String tobaccoClause();
 }

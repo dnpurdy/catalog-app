@@ -88,6 +88,11 @@ public class RetailerServiceTest {
             public String beverageClause() {
                 return "";
             }
+
+            @Override
+            public String tobaccoClause() {
+                return "";
+            }
         };
     }
 
@@ -125,6 +130,11 @@ public class RetailerServiceTest {
 
             @Override
             public String beverageClause() {
+                return "";
+            }
+
+            @Override
+            public String tobaccoClause() {
                 return "";
             }
         };

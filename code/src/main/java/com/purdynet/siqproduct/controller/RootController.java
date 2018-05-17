@@ -34,6 +34,7 @@ public class RootController {
         sb.append("<tr><td>").append("All Missing").append("</td><td>").append("<a href=\"/missing\">/missing</a>").append("</td></tr>");
         sb.append("<tr><td>").append("Beer Missing").append("</td><td>").append("<a href=\"/missing-beer\">/missing-beer</a>").append("</td></tr>");
         sb.append("<tr><td>").append("Beverage Missing").append("</td><td>").append("<a href=\"/missing-beverage\">/missing-beverage</a>").append("</td></tr>");
+        sb.append("<tr><td>").append("Tobacco Missing").append("</td><td>").append("<a href=\"/missing-tobacco\">/missing-tobacco</a>").append("</td></tr>");
         sb.append("</table>");
         return sb.toString();
     }

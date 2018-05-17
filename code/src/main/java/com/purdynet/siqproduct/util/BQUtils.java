@@ -10,11 +10,7 @@ public class BQUtils {
     public static String getString(TableRow tableRow, int idx) {
         try {
             Object value = tableRow.getF().get(idx).getV();
-            if (value == null | Data.isNull(value)) {
-                return "";
-            } else {
-                return value.toString();
-            }
+            return Data.isNull(value) ? "" : value.toString();
         } catch (Exception e) {
             return "";
         }

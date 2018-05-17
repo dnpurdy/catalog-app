@@ -21,6 +21,11 @@ public class Sunoco implements Retailer {
 
     @Override
     public String beverageClause() {
-        return " WHERE 1 = 0 ";
+        return " WHERE p.department IN ('111','R05','104') ";
+    }
+
+    @Override
+    public String tobaccoClause() {
+        return " WHERE (p.department IN ('109','114','R03','R24') OR p.categorySubDescription IN ('SMOKELESS TOBACCO','PIPE AND CIGARETTE TOBACCO','CIGARS','OTHER TOBACCO PRODUCTS')) ";
     }
 }

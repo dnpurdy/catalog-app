@@ -23,4 +23,9 @@ public class KumAndGo implements Retailer {
     public String beverageClause() {
         return " WHERE p.deptDescription IN ('CSD DEPOSITS','ENERGY DRINKS','INVENTORY JUICES/TONICS','INVENTORY POP') ";
     }
+
+    @Override
+    public String tobaccoClause() {
+        return " WHERE p.department IN ('3','28','103','128') ";
+    }
 }

@@ -36,6 +36,11 @@ public class UnitedPacific implements Retailer {
 
     @Override
     public String beverageClause() {
-        return " WHERE 1=0 ";
+        return " WHERE p.categorySubCode IN ('7','9') ";
+    }
+
+    @Override
+    public String tobaccoClause() {
+        return " WHERE p.categorySubCode IN ('3','2') ";
     }
 }
