@@ -4,6 +4,10 @@ import com.google.api.services.bigquery.model.TableRow;
 
 import java.math.BigDecimal;
 
+import static com.purdynet.siqproduct.util.BQUtils.getBigDecimal;
+import static com.purdynet.siqproduct.util.BQUtils.getInteger;
+import static com.purdynet.siqproduct.util.BQUtils.getString;
+
 public class ProductProgress {
     private String itemId;
     private String manufacturer;
@@ -23,24 +27,24 @@ public class ProductProgress {
 
     public ProductProgress() {}
 
-    public ProductProgress(TableRow tableRow) {
-        setItemId(tableRow.getF().get(0).getV().toString());
-        setManufacturer(tableRow.getF().get(1).getV().toString());
-        setRetailerItemId(tableRow.getF().get(2).getV().toString());
-        setRevPortion(new BigDecimal(tableRow.getF().get(3).getV().toString()));
-        setDescription(tableRow.getF().get(4).getV().toString());
-        setRetailerDept(tableRow.getF().get(5).getV().toString());
-        setNacsCategory(tableRow.getF().get(6).getV().toString());
-        setComplete(tableRow.getF().get(7).getV().toString());
-        setIsUpc(tableRow.getF().get(8).getV().toString());
-        setCompleteRevenue(new BigDecimal(tableRow.getF().get(9).getV().toString()));
-        setIncompleteRevenue(new BigDecimal(tableRow.getF().get(10).getV().toString()));
-        setCompleteItems(new Integer(tableRow.getF().get(11).getV().toString()));
-        setIncompleteItems(new Integer(tableRow.getF().get(12).getV().toString()));
-        setCompleteDeptRevenue(new BigDecimal(tableRow.getF().get(13).getV().toString()));
-        setIncompleteDeptRevenue(new BigDecimal(tableRow.getF().get(14).getV().toString()));
-
-        int i = 1;
+    public static ProductProgress of(TableRow tableRow) {
+        ProductProgress pp = new ProductProgress();
+        pp.setItemId(getString(tableRow,0));
+        pp.setManufacturer(getString(tableRow,1));
+        pp.setRetailerItemId(getString(tableRow,2));
+        pp.setRevPortion(getBigDecimal(tableRow,3));
+        pp.setDescription(getString(tableRow,4));
+        pp.setRetailerDept(getString(tableRow,5));
+        pp.setNacsCategory(getString(tableRow,6));
+        pp.setComplete(getString(tableRow,7));
+        pp.setIsUpc(getString(tableRow,8));
+        pp.setCompleteRevenue(getBigDecimal(tableRow,9));
+        pp.setIncompleteRevenue(getBigDecimal(tableRow,10));
+        pp.setCompleteItems(getInteger(tableRow,11));
+        pp.setIncompleteItems(getInteger(tableRow,12));
+        pp.setCompleteDeptRevenue(getBigDecimal(tableRow,13));
+        pp.setIncompleteDeptRevenue(getBigDecimal(tableRow,14));
+        return pp;
     }
 
     public String getItemId() {

@@ -15,9 +15,4 @@ public class WebApplication {
             System.setProperty("com.google.api.client.sample.bigquery.appengine.dashboard.projectId", "swiftiq-master");
         }
     }
-
-    @GetMapping("/")
-    public String hello() {
-        return "Hello Spring Boot!";
-    }
 }
