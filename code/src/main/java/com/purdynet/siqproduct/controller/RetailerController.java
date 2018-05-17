@@ -5,6 +5,8 @@ import com.purdynet.siqproduct.biqquery.BqTableData;
 import com.purdynet.siqproduct.model.ProductProgress;
 import com.purdynet.siqproduct.retailer.Retailer;
 import com.purdynet.siqproduct.service.RetailerService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -20,10 +21,13 @@ import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-import static com.purdynet.siqproduct.util.HTMLUtils.toHTMLTable;
+import static com.purdynet.siqproduct.util.HTMLUtils.percentFmt;
+import static com.purdynet.siqproduct.util.HTMLUtils.toHTMLTableFromProgress;
 
 @RestController
 public class RetailerController {
+
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private final List<Retailer> retailers;
     private final RetailerService retailerService;
@@ -34,8 +38,26 @@ public class RetailerController {
         this.retailerService = retailerService;
     }
 
-    @RequestMapping("/retailer/{id}/detail")
+    @RequestMapping("/retailer/{id}/missing")
     public String missing(@PathVariable("id") String requestId) throws IOException {
+        BigqueryUtils bigqueryUtils = new BigqueryUtils();
+
+        Optional<Retailer> projectId = matchRetailer(requestId);
+        if (projectId.isPresent()) {
+            bigqueryUtils.beginQuery(retailerService.progressSql(projectId.get(), 1000, " WHERE c.description IS NULL "));
+
+            bigqueryUtils.pollForCompletion();
+
+            List<ProductProgress> productProgress = makeProgressList(bigqueryUtils.getBqTableData());
+
+            return toHTMLTableFromProgress(productProgress);
+        } else {
+            return requestId + "not found!";
+        }
+    }
+
+    @RequestMapping("/retailer/{id}/detail")
+    public String detail(@PathVariable("id") String requestId) throws IOException {
         BigqueryUtils bigqueryUtils = new BigqueryUtils();
 
         Optional<Retailer> projectId = matchRetailer(requestId);
@@ -44,7 +66,9 @@ public class RetailerController {
 
             bigqueryUtils.pollForCompletion();
 
-            return toHTMLTable(bigqueryUtils.getBqTableData());
+            List<ProductProgress> productProgress = makeProgressList(bigqueryUtils.getBqTableData());
+
+            return toHTMLTableFromProgress(productProgress);
         } else {
             return requestId + "not found!";
         }
@@ -63,13 +87,13 @@ public class RetailerController {
             List<ProductProgress> productProgress = makeProgressList(bigqueryUtils.getBqTableData());
 
             return "<h1>Overall</h1><table>" +
-                    "<tr><td>COMPLETE</td><td>"+longPercentFmt(getTotalRevenue(productProgress, completePred, bothPred))+"</td></tr>" +
-                    "<tr><td>TODO</td><td> "+longPercentFmt(getTotalRevenue(productProgress, incompletePred, bothPred))+"</td></tr>"+
+                    "<tr><td>COMPLETE</td><td>"+percentFmt(getTotalRevenue(productProgress, completePred, bothPred))+"</td></tr>" +
+                    "<tr><td>TODO</td><td> "+percentFmt(getTotalRevenue(productProgress, incompletePred, bothPred))+"</td></tr>"+
                     "</table>" +
                     "<h1>Breakout</h1><table>" +
                     "<tr><td></td><td>UPC</td><td>PLU</td></tr>" +
-                    "<tr><td>COMPLETE</td><td>"+longPercentFmt(getTotalRevenue(productProgress, completePred, upcPred))+"</td><td>"+longPercentFmt(getTotalRevenue(productProgress, completePred, pluPred))+"</td></tr>" +
-                    "<tr><td>TODO</td><td>"+longPercentFmt(getTotalRevenue(productProgress, incompletePred, upcPred))+"</td><td>"+longPercentFmt(getTotalRevenue(productProgress, incompletePred, pluPred))+"</td></tr>" +
+                    "<tr><td>COMPLETE</td><td>"+percentFmt(getTotalRevenue(productProgress, completePred, upcPred))+"</td><td>"+percentFmt(getTotalRevenue(productProgress, completePred, pluPred))+"</td></tr>" +
+                    "<tr><td>TODO</td><td>"+percentFmt(getTotalRevenue(productProgress, incompletePred, upcPred))+"</td><td>"+percentFmt(getTotalRevenue(productProgress, incompletePred, pluPred))+"</td></tr>" +
                     "</table>" +
                     "<h1>Department</h1>" + deptTable(productProgress)+
                     "<h1>Top 25 Products</h1>" + top25Products(productProgress);
@@ -101,8 +125,8 @@ public class RetailerController {
                     List<ProductProgress> deptProgress = productProgress.stream().filter(pp -> pp.getRetailerDept().equals(dept)).collect(Collectors.toList());
                     mTable.append("<tr>")
                             .append("<td>").append(dept).append("</td>")
-                            .append("<td>").append(longPercentFmt(getTotalRevenue(deptProgress, completePred, bothPred))).append("</td>")
-                            .append("<td>").append(longPercentFmt(getTotalRevenue(deptProgress, incompletePred, bothPred))).append("</td>")
+                            .append("<td>").append(percentFmt(getTotalRevenue(deptProgress, completePred, bothPred))).append("</td>")
+                            .append("<td>").append(percentFmt(getTotalRevenue(deptProgress, incompletePred, bothPred))).append("</td>")
                             .append("</tr>");
                 });
         mTable.append("</table>");
@@ -127,19 +151,13 @@ public class RetailerController {
     private List<ProductProgress> makeProgressList(BqTableData bqTableData) {
         if (bqTableData != null) {
             try {
-                return bqTableData.getTableRowList().stream().map(tr -> new ProductProgress(tr)).collect(Collectors.toList());
+                return bqTableData.getTableRowList().stream().map(ProductProgress::of).collect(Collectors.toList());
             } catch (NullPointerException e) {
                 throw new RuntimeException(e);
             }
         } else {
             return new ArrayList<>();
         }
-    }
-
-    public static String longPercentFmt(BigDecimal n) {
-        NumberFormat format = NumberFormat.getPercentInstance();
-        format.setMaximumFractionDigits(3);
-        return format.format(n);
     }
 
     private Optional<Retailer> matchRetailer(String requestId) {

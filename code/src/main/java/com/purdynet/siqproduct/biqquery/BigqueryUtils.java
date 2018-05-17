@@ -140,8 +140,6 @@ public class BigqueryUtils {
     }
 
     public void beginQuery(String query) throws RuntimeException {
-        logger.warn(query);
-
         final Job queryJob = makeJob(query);
 
         job = tryToDo(new Callable<Job>() {
