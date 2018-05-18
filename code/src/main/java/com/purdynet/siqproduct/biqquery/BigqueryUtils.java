@@ -32,9 +32,12 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Callable;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * Utility methods for beginning jobs, waiting for jobs, and instantiating Bigqueries.
@@ -43,15 +46,15 @@ import java.util.concurrent.Callable;
  */
 public class BigqueryUtils {
 
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+    private static final Logger logger = LoggerFactory.getLogger(BigqueryUtils.class);
+
     private static final int TIMEOUT_MS = 60 * 25 * 1000; // TWENTY FIVE MINUTES
     private static final int WAIT_MS = 1000; // ONE SECOND
     private static final int MAX_INTERVAL = 60000;
 
-    static final String projectId =
+    private static final String projectId =
             System.getProperty("com.google.api.client.sample.bigquery.appengine.dashboard.projectId");
 
-    private final String userId;
     final Bigquery bigquery;
     private Job job;
 
@@ -66,7 +69,7 @@ public class BigqueryUtils {
     static GoogleClientSecrets getClientCredential() throws IOException {
         if (clientSecrets == null) {
             clientSecrets = GoogleClientSecrets.load(JSON_FACTORY,
-                    new InputStreamReader(BigqueryUtils.class.getResourceAsStream("/client_secrets.json")));
+                    new InputStreamReader(getClientSecretsStream()));
             Preconditions.checkArgument(!clientSecrets.getDetails().getClientId().startsWith("Enter ")
                             && !clientSecrets.getDetails().getClientSecret().startsWith("Enter "),
                     "Enter Client ID and Secret from https://code.google.com/apis/console/?api=bigquery "
@@ -85,22 +88,21 @@ public class BigqueryUtils {
         return new Bigquery.Builder(HTTP_TRANSPORT, JSON_FACTORY, credential).build();
     }
 
-    public BigqueryUtils() throws IOException {
-        this.userId = "david@swiftiq.com";
+    public BigqueryUtils() {
         //this.bigquery = initializeAndBuild(GoogleCredential.getApplicationDefault());
-        this.bigquery = initializeAndBuild(getCredi());
+        this.bigquery = initializeAndBuild(getCredential());
     }
 
-    private GoogleCredential getCredi() {
+    private GoogleCredential getCredential() {
         try {
-            InputStream credentialsStream = BigqueryUtils.class.getResourceAsStream("/client_secrets.json");
-            return GoogleCredential.fromStream(credentialsStream, HTTP_TRANSPORT, JSON_FACTORY);
+            return GoogleCredential.fromStream(getClientSecretsStream(), HTTP_TRANSPORT, JSON_FACTORY);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
 
-        //new GoogleCredential.Builder().setTransport(HTTP_TRANSPORT)
-          //      .setJsonFactory(JSON_FACTORY).setClientSecrets(GoogleClientSecrets.load(JSON_FACTORY, ))
+    private static InputStream getClientSecretsStream() {
+        return BigqueryUtils.class.getResourceAsStream("/client_secrets.json");
     }
 
     private Bigquery initializeAndBuild(HttpRequestInitializer credential) {
@@ -116,41 +118,10 @@ public class BigqueryUtils {
                 .setGoogleClientRequestInitializer(initializer).build();
     }
 
-    public BigqueryUtils(String userId) throws IOException {
-        this(userId, null);
-    }
-
-    public BigqueryUtils(String userId, final String jobId) throws IOException {
-        this.userId = userId;
-
-        bigquery = loadBigqueryClient(userId);
-
-        if (jobId != null) {
-            job = tryToDo(new Callable<Job>() {
-                @Override
-                public Job call() throws Exception {
-                    return bigquery.jobs().get(projectId, jobId).execute();
-                }
-            });
-
-            if (job == null) {
-                throw new RuntimeException("Wasn't able to get a job for jobId " + jobId);
-            }
-        }
-    }
-
     public void beginQuery(String query) throws RuntimeException {
         final Job queryJob = makeJob(query);
-
-        job = tryToDo(new Callable<Job>() {
-            @Override
-            public Job call() throws Exception {
-                return bigquery.jobs().insert(projectId, queryJob).execute();
-            }
-        });
-
+        job = tryToDo(() -> bigquery.jobs().insert(projectId, queryJob).execute());
         Preconditions.checkNotNull(job);
-        //enqueueWaitingTask();
     }
 
     public boolean jobSucceeded() {
@@ -296,12 +267,29 @@ public class BigqueryUtils {
         }
     }
 
-    public Job pollJob(String projectId, String jobId) {
-        return tryToDo(new Callable<Job>() {
-            @Override
-            public Job call() throws Exception {
-                return bigquery.jobs().get(projectId, jobId).execute();
+    private Job pollJob(String projectId, String jobId) {
+        return tryToDo(() ->  bigquery.jobs().get(projectId, jobId).execute());
+    }
+
+    public static BigqueryUtils runQuerySync(final String sql) {
+        logger.info(sql);
+
+        BigqueryUtils bigqueryUtils = new BigqueryUtils();
+        bigqueryUtils.beginQuery(sql);
+        bigqueryUtils.pollForCompletion();
+
+        return bigqueryUtils;
+    }
+
+    public static <T> List<T> convertTableRowToModel(BqTableData bqTableData, Function<TableRow,T> ofFunc) {
+        if (bqTableData != null) {
+            try {
+                return bqTableData.getTableRowList().stream().map(ofFunc).collect(Collectors.toList());
+            } catch (NullPointerException e) {
+                throw new RuntimeException(e);
             }
-        });
+        } else {
+            return new ArrayList<>();
+        }
     }
 }

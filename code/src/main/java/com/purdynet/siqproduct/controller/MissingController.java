@@ -2,95 +2,86 @@ package com.purdynet.siqproduct.controller;
 
 import com.purdynet.siqproduct.biqquery.BqTableData;
 import com.purdynet.siqproduct.model.MissingItem;
-import com.purdynet.siqproduct.service.AllProductService;
-import com.purdynet.siqproduct.service.BeerService;
+import com.purdynet.siqproduct.service.*;
 import com.purdynet.siqproduct.biqquery.BigqueryUtils;
 import com.purdynet.siqproduct.retailer.Retailer;
-import com.purdynet.siqproduct.service.BeverageService;
-import com.purdynet.siqproduct.service.TobaccoService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.function.BiFunction;
-import java.util.stream.Collectors;
+import java.util.function.Function;
 
+import static com.purdynet.siqproduct.biqquery.BigqueryUtils.convertTableRowToModel;
+import static com.purdynet.siqproduct.biqquery.BigqueryUtils.runQuerySync;
 import static com.purdynet.siqproduct.util.HTMLUtils.toHTMLTableFromMising;
+import static com.purdynet.siqproduct.util.HTMLUtils.wrapHtmlBody;
 
 @RestController
 public class MissingController {
 
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
-
     private final List<Retailer> retailers;
-    private final AllProductService allProductService;
-    private final BeerService beerService;
-    private final BeverageService beverageService;
-    private final TobaccoService tobaccoService;
+    private final ProductService productService;
 
     @Autowired
-    public MissingController(List<Retailer> retailers, AllProductService allProductService,
-                             BeerService beerService, BeverageService beverageService, TobaccoService tobaccoService) {
+    public MissingController(List<Retailer> retailers, ProductService productService) {
         this.retailers = retailers;
-        this.allProductService = allProductService;
-        this.beerService = beerService;
-        this.beverageService = beverageService;
-        this.tobaccoService = tobaccoService;
+        this.productService = productService;
     }
 
-    @RequestMapping(value = {"/missing","/missing/{upc}"})
+    @RequestMapping(value = {"/missing","/missing/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
     public String missing(@PathVariable(name = "upc", required = false) String upc) throws IOException {
-        BiFunction<List<Retailer>,String,String> test = allProductService::productProgress;
-        return makeTable(test.apply(retailers, upc));
+        return makeTable(missingJson(upc));
     }
 
-    @RequestMapping(value = {"/missing-beer","/missing-beer/{upc}"})
+    @RequestMapping(value = {"/missing","/missing/{upc}"}, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MissingItem> missingJson(@PathVariable(name = "upc", required = false) String upc) throws IOException {
+        return makeMissingItemList(upc, Retailer::allClause);
+    }
+
+    @RequestMapping(value = {"/missing-beer","/missing-beer/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
     public String missingBeer(@PathVariable(name = "upc", required = false) String upc) throws IOException {
-        BiFunction<List<Retailer>,String,String> progressFunc = beerService::productProgress;
-        return makeTable(progressFunc.apply(retailers, upc));
+        return makeTable(missingBeerJson(upc));
     }
 
-    @RequestMapping(value = {"/missing-beverage","/missing-beverage/{upc}"})
+    @RequestMapping(value = {"/missing-beer","/missing-beer/{upc}"}, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MissingItem> missingBeerJson(@PathVariable(name = "upc", required = false) String upc) throws IOException {
+        return makeMissingItemList(upc, Retailer::beerClause);
+    }
+
+    @RequestMapping(value = {"/missing-beverage","/missing-beverage/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
     public String missingBeverage(@PathVariable(name = "upc", required = false) String upc) throws IOException {
-        BiFunction<List<Retailer>,String,String> progressFunc = beverageService::productProgress;
-        return makeTable(progressFunc.apply(retailers, upc));
+        return makeTable(missingBeverageJson(upc));
     }
 
-    @RequestMapping(value = {"/missing-tobacco","/missing-tobacco/{upc}"})
+    @RequestMapping(value = {"/missing-beverage","/missing-beverage/{upc}"}, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MissingItem> missingBeverageJson(@PathVariable(name = "upc", required = false) String upc) throws IOException {
+        return makeMissingItemList(upc, Retailer::beverageClause);
+    }
+
+    @RequestMapping(value = {"/missing-tobacco","/missing-tobacco/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
     public String missingTobacco(@PathVariable(name = "upc", required = false) String upc) throws IOException {
-        BiFunction<List<Retailer>,String,String> progressFunc = tobaccoService::productProgress;
-        return makeTable(progressFunc.apply(retailers, upc));
+        return makeTable(missingTobaccoJson(upc));
     }
 
-    private String makeTable(String sql) throws IOException {
-        BigqueryUtils bigqueryUtils = new BigqueryUtils();
+    @RequestMapping(value = {"/missing-tobacco","/missing-tobacco/{upc}"}, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MissingItem> missingTobaccoJson(@PathVariable(name = "upc", required = false) String upc) throws IOException {
+        return makeMissingItemList(upc, Retailer::tobaccoClause);
+    }
 
-        logger.info(sql);
+    private String makeTable(List<MissingItem> missingItems) {
+        return wrapHtmlBody(toHTMLTableFromMising(missingItems));
+    }
 
-        bigqueryUtils.beginQuery(sql);
-
-        bigqueryUtils.pollForCompletion();
-
-        List<MissingItem> missingItems = makeMissingItemList(bigqueryUtils.getBqTableData());
-
-        return toHTMLTableFromMising(missingItems);
+    private List<MissingItem> makeMissingItemList(String upc, Function<Retailer, String> productSelectFnc) throws IOException {
+        BigqueryUtils bigqueryUtils = runQuerySync(productService.productProgress(retailers, upc, productSelectFnc));
+        return makeMissingItemList(bigqueryUtils.getBqTableData());
     }
 
     private List<MissingItem> makeMissingItemList(BqTableData bqTableData) {
-        if (bqTableData != null) {
-            try {
-                return bqTableData.getTableRowList().stream().map(MissingItem::of).collect(Collectors.toList());
-            } catch (NullPointerException e) {
-                throw new RuntimeException(e);
-            }
-        } else {
-            return new ArrayList<>();
-        }
+        return convertTableRowToModel(bqTableData, MissingItem::of);
     }
 }

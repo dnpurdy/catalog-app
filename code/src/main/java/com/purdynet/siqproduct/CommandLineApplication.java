@@ -2,7 +2,7 @@ package com.purdynet.siqproduct;
 
 import com.purdynet.siqproduct.biqquery.BigqueryUtils;
 import com.purdynet.siqproduct.retailer.Retailer;
-import com.purdynet.siqproduct.service.BeerService;
+import com.purdynet.siqproduct.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 
@@ -17,7 +17,7 @@ public class CommandLineApplication //implements CommandLineRunner
     @Autowired
     private List<Retailer> retailers;
     @Autowired
-    private BeerService beerService;
+    private ProductService productService;
 
     public static void main(String[] args) throws Exception {
         SpringApplication.run(CommandLineApplication.class, args);
@@ -31,7 +31,7 @@ public class CommandLineApplication //implements CommandLineRunner
         }
 
         BigqueryUtils bigqueryUtils = new BigqueryUtils();
-        bigqueryUtils.beginQuery(beerService.productProgress(retailers, ""));
+        //bigqueryUtils.beginQuery(beerService.productProgress(retailers, "", Retailer::beerClause));
         System.out.println(bigqueryUtils.getJobStatus());
 
         bigqueryUtils.pollForCompletion();
