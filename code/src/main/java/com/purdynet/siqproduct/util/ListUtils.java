@@ -1,4 +1,4 @@
-package com.purdynet.siqproduct.service;
+package com.purdynet.siqproduct.util;
 
 import java.util.ArrayList;
 import java.util.List;
