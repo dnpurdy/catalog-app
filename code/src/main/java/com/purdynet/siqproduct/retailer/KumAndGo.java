@@ -16,16 +16,16 @@ public class KumAndGo implements Retailer {
 
     @Override
     public String beerClause() {
-        return " WHERE p.department IN ('4','104') ";
+        return " AND p.department IN ('4','104') ";
     }
 
     @Override
     public String beverageClause() {
-        return " WHERE p.deptDescription IN ('CSD DEPOSITS','ENERGY DRINKS','INVENTORY JUICES/TONICS','INVENTORY POP') ";
+        return " AND p.deptDescription IN ('CSD DEPOSITS','ENERGY DRINKS','INVENTORY JUICES/TONICS','INVENTORY POP') ";
     }
 
     @Override
     public String tobaccoClause() {
-        return " WHERE p.department IN ('3','28','103','128') ";
+        return " AND p.department IN ('3','28','103','128') ";
     }
 }

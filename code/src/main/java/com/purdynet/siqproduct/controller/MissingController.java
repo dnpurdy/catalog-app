@@ -77,7 +77,7 @@ public class MissingController {
     }
 
     private List<MissingItem> makeMissingItemList(String upc, Function<Retailer, String> productSelectFnc) throws IOException {
-        BigqueryUtils bigqueryUtils = runQuerySync(productService.productProgress(retailers, upc, productSelectFnc));
+        BigqueryUtils bigqueryUtils = runQuerySync(productService.productProgress(retailers, productSelectFnc, upc));
         return makeMissingItemList(bigqueryUtils.getBqTableData());
     }
 
