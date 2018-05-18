@@ -21,9 +21,7 @@ import java.util.stream.Collectors;
 
 import static com.purdynet.siqproduct.biqquery.BigqueryUtils.convertTableRowToModel;
 import static com.purdynet.siqproduct.biqquery.BigqueryUtils.runQuerySync;
-import static com.purdynet.siqproduct.util.HTMLUtils.percentFmt;
-import static com.purdynet.siqproduct.util.HTMLUtils.toHTMLTableFromProgress;
-import static com.purdynet.siqproduct.util.HTMLUtils.wrapHtmlBody;
+import static com.purdynet.siqproduct.util.HTMLUtils.*;
 
 @RestController
 public class RetailerController {
@@ -91,10 +89,10 @@ public class RetailerController {
         StringBuilder mTable = new StringBuilder("<table><tr><td>UPC/PLU</td><td>ITEMID</td><td>DESC</td><td>MANUF</td></tr>");
         productProgress.stream().filter(incompletePred).sorted(Comparator.comparing(ProductProgress::getRevPortion).reversed()).limit(25).forEach(pp ->
                 mTable.append("<tr>")
-                        .append("<td>").append(pp.getIsUpc()).append("</td>")
-                        .append("<td>").append(pp.getItemId()).append("</td>")
-                        .append("<td>").append(pp.getDescription()).append("</td>")
-                        .append("<td>").append(pp.getManufacturer()).append("</td>")
+                        .append(td(pp.getIsUpc()))
+                        .append(td(pp.getItemId()))
+                        .append(td(pp.getDescription()))
+                        .append(td(pp.getManufacturer()))
                         .append("</tr>")
         );
         mTable.append("</table>");
@@ -109,9 +107,9 @@ public class RetailerController {
                 .forEach(dept -> {
                     List<ProductProgress> deptProgress = productProgress.stream().filter(pp -> pp.getRetailerDept().equals(dept)).collect(Collectors.toList());
                     mTable.append("<tr>")
-                            .append("<td>").append(dept).append("</td>")
-                            .append("<td>").append(percentFmt(getTotalRevenue(deptProgress, completePred, bothPred))).append("</td>")
-                            .append("<td>").append(percentFmt(getTotalRevenue(deptProgress, incompletePred, bothPred))).append("</td>")
+                            .append(td(dept))
+                            .append(td(percentFmt(getTotalRevenue(deptProgress, completePred, bothPred))))
+                            .append(td(percentFmt(getTotalRevenue(deptProgress, incompletePred, bothPred))))
                             .append("</tr>");
                 });
         mTable.append("</table>");

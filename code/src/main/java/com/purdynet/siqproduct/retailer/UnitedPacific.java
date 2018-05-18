@@ -43,4 +43,14 @@ public class UnitedPacific implements Retailer {
     public String tobaccoClause() {
         return " WHERE p.categorySubCode IN ('3','2') ";
     }
+
+    @Override
+    public String fixedUpc() {
+        return "p.productId";
+    }
+
+    @Override
+    public String mapJoin() {
+        return "p.productId";
+    }
 }

@@ -13,4 +13,8 @@ public interface Retailer {
     String beerClause();
     String beverageClause();
     String tobaccoClause();
+
+    default String fixedUpc() { return "p.upc"; }
+
+    default String mapJoin() { return "p.upc"; }
 }

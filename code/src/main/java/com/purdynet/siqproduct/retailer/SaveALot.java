@@ -16,7 +16,7 @@ public class SaveALot implements Retailer {
 
     @Override
     public String isUpcLogic() {
-        return " ((LENGTH(pp.itemId) = 10 OR LENGTH(pp.itemId) == 11) AND NOT(pp.itemId LIKE '51933%') ";
+        return " ((LENGTH(pp.itemId) = 10 OR LENGTH(pp.itemId) == 11) AND NOT(pp.itemId LIKE '51933%')) ";
     }
 
     @Override
