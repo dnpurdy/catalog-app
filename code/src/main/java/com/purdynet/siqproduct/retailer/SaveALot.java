@@ -21,16 +21,16 @@ public class SaveALot implements Retailer {
 
     @Override
     public String beerClause() {
-        return " WHERE 1=0 ";
+        return " AND 1=0 ";
     }
 
     @Override
     public String beverageClause() {
-        return " WHERE 1=0 ";
+        return " AND 1=0 ";
     }
 
     @Override
     public String tobaccoClause() {
-        return " WHERE 1=0 ";
+        return " AND 1=0 ";
     }
 }

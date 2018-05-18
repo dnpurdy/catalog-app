@@ -15,27 +15,22 @@ public class Racetrac implements Retailer {
     }
 
     @Override
-    public String upcLogic() {
-        return " IF(rm.siqId IS NULL,SUBSTR(li.itemId,1,LENGTH(li.itemId)-1),rm.siqId) ";
+    public String fixedUpc() {
+        return "SUBSTR(p.upc,1,LENGTH(p.upc)-1)";
     }
 
     @Override
     public String beerClause() {
-        return " WHERE p.department = '7' ";
+        return " AND p.department = '7' ";
     }
 
     @Override
     public String beverageClause() {
-        return " WHERE p.department IN ('2','5') ";
+        return " AND p.department IN ('2','5') ";
     }
 
     @Override
     public String tobaccoClause() {
-        return " WHERE p.department IN ('9','19') ";
-    }
-
-    @Override
-    public String fixedUpc() {
-        return "SUBSTR(p.upc,1,LENGTH(p.upc)-1)";
+        return " AND p.department IN ('9','19') ";
     }
 }
