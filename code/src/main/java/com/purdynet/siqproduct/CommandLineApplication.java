@@ -26,10 +26,6 @@ public class CommandLineApplication //implements CommandLineRunner
     //access command line arguments
     //@Override
     public void run(String... args) throws Exception {
-        if (System.getProperty("com.google.api.client.sample.bigquery.appengine.dashboard.projectId") == null) {
-            System.setProperty("com.google.api.client.sample.bigquery.appengine.dashboard.projectId", "swiftiq-master");
-        }
-
         BigqueryUtils bigqueryUtils = new BigqueryUtils();
         //bigqueryUtils.beginQuery(beerService.productProgress(retailers, "", Retailer::beerClause));
         System.out.println(bigqueryUtils.getJobStatus());

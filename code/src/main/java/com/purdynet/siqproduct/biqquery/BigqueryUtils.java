@@ -16,15 +16,8 @@ import com.google.api.client.util.Preconditions;
 import com.google.api.services.bigquery.Bigquery;
 import com.google.api.services.bigquery.BigqueryRequest;
 import com.google.api.services.bigquery.BigqueryScopes;
-import com.google.api.services.bigquery.model.Job;
-import com.google.api.services.bigquery.model.JobConfiguration;
-import com.google.api.services.bigquery.model.JobConfigurationQuery;
-import com.google.api.services.bigquery.model.JobReference;
-import com.google.api.services.bigquery.model.Table;
-import com.google.api.services.bigquery.model.TableDataList;
-import com.google.api.services.bigquery.model.TableFieldSchema;
-import com.google.api.services.bigquery.model.TableReference;
-import com.google.api.services.bigquery.model.TableRow;
+import com.google.api.services.bigquery.model.*;
+import com.purdynet.siqproduct.util.ListUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,6 +28,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.UUID;
 import java.util.concurrent.Callable;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -52,8 +46,8 @@ public class BigqueryUtils {
     private static final int WAIT_MS = 1000; // ONE SECOND
     private static final int MAX_INTERVAL = 60000;
 
-    private static final String projectId =
-            System.getProperty("com.google.api.client.sample.bigquery.appengine.dashboard.projectId");
+    private static final String projectId = System.getProperty("com.google.api.client.sample.bigquery.appengine.dashboard.projectId") == null ? "swiftiq-master" :
+        System.getProperty("com.google.api.client.sample.bigquery.appengine.dashboard.projectId");
 
     final Bigquery bigquery;
     private Job job;
@@ -148,13 +142,7 @@ public class BigqueryUtils {
         if (job != null) {
             final TableReference tableReference = job.getConfiguration().getQuery().getDestinationTable();
 
-            Table table = tryToDo(new Callable<Table>() {
-                @Override
-                public Table call() throws IOException {
-                    return bigquery.tables().get(tableReference.getProjectId(), tableReference.getDatasetId(),
-                            tableReference.getTableId()).execute();
-                }
-            });
+            Table table = getTable(tableReference);
 
             Preconditions.checkNotNull(table);
             Preconditions.checkNotNull(table.getSchema());
@@ -162,6 +150,10 @@ public class BigqueryUtils {
             return table.getSchema().getFields();
         }
         return null;
+    }
+
+    public Table getTable(TableReference tableReference) throws RuntimeException {
+        return tryToDo(() -> bigquery.tables().get(tableReference.getProjectId(), tableReference.getDatasetId(), tableReference.getTableId()).execute());
     }
 
     public BqTableData getBqTableData() throws RuntimeException {
@@ -291,5 +283,33 @@ public class BigqueryUtils {
         } else {
             return new ArrayList<>();
         }
+    }
+
+    public void extractTable(TableReference tableReference, String destinationUri) {
+        JobReference jobReference = new JobReference();
+        jobReference.setProjectId(projectId);
+        jobReference.setJobId(UUID.randomUUID().toString());
+
+        JobConfiguration configuration = createJobConfigurationExtract(tableReference,
+                ListUtils.asSingleton(destinationUri));
+
+        final Job extractJob = new Job();
+        extractJob.setConfiguration(configuration);
+        extractJob.setJobReference(jobReference);
+
+        job = tryToDo(() -> bigquery.jobs().insert(tableReference.getProjectId(), extractJob).execute());
+    }
+
+
+    public JobConfiguration createJobConfigurationExtract(TableReference tableReference, List<String> destinationUris) {
+        JobConfigurationExtract extractConfig = new JobConfigurationExtract();
+        extractConfig.setSourceTable(tableReference);
+        extractConfig.setDestinationUris(destinationUris);
+        extractConfig.setDestinationFormat("CSV");
+        extractConfig.setCompression("NONE");
+
+        JobConfiguration jobConfig = new JobConfiguration();
+        jobConfig.setExtract(extractConfig);
+        return jobConfig;
     }
 }
