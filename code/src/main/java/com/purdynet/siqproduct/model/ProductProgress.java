@@ -1,18 +1,20 @@
 package com.purdynet.siqproduct.model;
 
 import com.google.api.services.bigquery.model.TableRow;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.utils.URLEncodedUtils;
+import org.apache.http.message.BasicNameValuePair;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import static com.purdynet.siqproduct.util.BQUtils.*;
 
-public class ProductProgress {
-    private String itemId;
-    private String manufacturer;
+public class ProductProgress extends AbstractCoreItem {
     private String retailerItemId;
     private BigDecimal revPortion;
-    private String description;
     private String retailerDept;
     private String nacsCategory;
     private String complete;
@@ -48,22 +50,6 @@ public class ProductProgress {
         return pp;
     }
 
-    public String getItemId() {
-        return itemId;
-    }
-
-    public void setItemId(String itemId) {
-        this.itemId = itemId;
-    }
-
-    public String getManufacturer() {
-        return manufacturer;
-    }
-
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
-    }
-
     public String getRetailerItemId() {
         return retailerItemId;
     }
@@ -78,14 +64,6 @@ public class ProductProgress {
 
     public void setRevPortion(BigDecimal revPortion) {
         this.revPortion = revPortion;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public String getRetailerDept() {
