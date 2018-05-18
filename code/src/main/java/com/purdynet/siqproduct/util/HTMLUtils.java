@@ -3,8 +3,10 @@ package com.purdynet.siqproduct.util;
 import com.google.api.services.bigquery.model.TableFieldSchema;
 import com.google.api.services.bigquery.model.TableRow;
 import com.purdynet.siqproduct.biqquery.BqTableData;
+import com.purdynet.siqproduct.model.AbstractCoreItem;
 import com.purdynet.siqproduct.model.MissingItem;
 import com.purdynet.siqproduct.model.ProductProgress;
+import com.purdynet.siqproduct.service.ProductService;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
@@ -21,31 +23,23 @@ public class HTMLUtils {
                 "<th>UPC?</th><th>Complete Revenue %</th><th>Incomplete Revenue %</th><th>Complete Department Rev</th><th>Incomplete Department Rev</th><th>Last Date</th></tr>");
         productProgressList.stream()
                 .forEach(pp -> ret.append("<tr>")
-                        .append(td(pp.getItemId()))
+                        .append("<td><a href=\"").append(missingLink(pp)).append("\">").append(pp.getItemId()).append("</a></td>")
                         .append(td(pp.getManufacturer()))
-                        .append("<td>").append(pp.getRetailerItemId()).append("</td>")
-                        .append("<td align=\"right\">").append(percentFmt(pp.getRevPortion(), 6)).append("</td>")
-                        .append("<td>").append(pp.getDescription()).append("</td>")
-                        .append("<td>").append(pp.getRetailerDept()).append("</td>")
-                        .append("<td>").append(pp.getNacsCategory()).append("</td>")
-                        .append("<td>").append(pp.getComplete()).append("</td>")
-                        .append("<td>").append(pp.getIsUpc()).append("</td>")
-                        .append("<td align=\"right\">").append(percentFmt(pp.getCompleteRevenue(), 6)).append("</td>")
-                        .append("<td align=\"right\">").append(percentFmt(pp.getIncompleteRevenue(), 6)).append("</td>")
-                        .append("<td align=\"right\">").append(percentFmt(pp.getCompleteDeptRevenue(), 6)).append("</td>")
-                        .append("<td align=\"right\">").append(percentFmt(pp.getIncompleteDeptRevenue(), 6)).append("</td>")
+                        .append(td(pp.getRetailerItemId()))
+                        .append(tdRight(percentFmt(pp.getRevPortion(), 6)))
+                        .append(td(pp.getDescription()))
+                        .append(td(pp.getRetailerDept()))
+                        .append(td(pp.getNacsCategory()))
+                        .append(td(pp.getComplete()))
+                        .append(td(pp.getIsUpc()))
+                        .append(tdRight(percentFmt(pp.getCompleteRevenue(), 6)))
+                        .append(tdRight(percentFmt(pp.getIncompleteRevenue(), 6)))
+                        .append(tdRight(percentFmt(pp.getCompleteDeptRevenue(), 6)))
+                        .append(tdRight(percentFmt(pp.getIncompleteDeptRevenue(), 6)))
                         .append(td(pp.getLastDate().toString()))
                         .append("</tr>"));
         ret.append("</table>");
         return ret.toString();
-    }
-
-    public static String td(String val) {
-        return td(val,"");
-    }
-
-    public static String td(String val, String t) {
-        return "<td "+t+">"+val+"</td>";
     }
 
     public static String toHTMLTableFromMising(List<MissingItem> missingItems) {
@@ -53,17 +47,33 @@ public class HTMLUtils {
         ret.append("<tr><th>ItemId</th><th>ProjectId</th><th>NumProjects</th><th>Manufacturer</th><th>Description</th><th>LastDate</th><th>TotalRev</th><th>% TotalRev</th></tr>");
         missingItems.stream()
                 .forEach(mi -> ret.append("<tr>")
-                        .append(td(mi.getItemId()))
+                        .append("<td><a href=\"").append(missingLink(mi)).append("\">").append(mi.getItemId()).append("</a></td>")
                         .append(td(mi.getProjectId()))
                         .append(td(mi.getNumProjects().toString()))
                         .append(td(mi.getManufacturer()))
                         .append(td(mi.getDescription()))
                         .append(td(mi.getLastDate().toString()))
-                        .append(td(currencyFmt(mi.getTotalRevenue()), "align=\"right\""))
-                        .append(td(percentFmt(mi.getPercentTotalRevenue(), 6),"align=\"right\""))
+                        .append(tdRight(currencyFmt(mi.getTotalRevenue())))
+                        .append(tdRight(percentFmt(mi.getPercentTotalRevenue(), 6)))
                 .append("</tr>"));
         ret.append("</table>");
         return ret.toString();
+    }
+
+    public static String missingLink(AbstractCoreItem item) {
+        return "/edit?"+item.toQueryParams();
+    }
+
+    public static String td(String val) {
+        return td(val,"");
+    }
+
+    public static String tdRight(String val) {
+        return td(val,"align=\"right\"");
+    }
+
+    public static String td(String val, String t) {
+        return "<td "+t+">"+val+"</td>";
     }
 
     public static String percentFmt(BigDecimal n) {

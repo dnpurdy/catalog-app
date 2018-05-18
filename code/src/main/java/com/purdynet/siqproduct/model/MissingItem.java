@@ -7,17 +7,12 @@ import java.util.Date;
 
 import static com.purdynet.siqproduct.util.BQUtils.*;
 
-public class MissingItem {
-    private String itemId;
+public class MissingItem extends AbstractCoreItem {
     private String projectId;
     private Integer numProjects;
-    private String manufacturer;
-    private String description;
     private Date lastDate;
     private BigDecimal totalRevenue;
     private BigDecimal percentTotalRevenue;
-
-    public MissingItem() {}
 
     public static MissingItem of(TableRow tableRow) {
         MissingItem missingItem = new MissingItem();
@@ -30,14 +25,6 @@ public class MissingItem {
         missingItem.setTotalRevenue(getBigDecimal(tableRow, 6));
         missingItem.setPercentTotalRevenue(getBigDecimal(tableRow, 7));
         return missingItem;
-    }
-
-    public String getItemId() {
-        return itemId;
-    }
-
-    public void setItemId(String itemId) {
-        this.itemId = itemId;
     }
 
     public String getProjectId() {
@@ -54,22 +41,6 @@ public class MissingItem {
 
     public void setNumProjects(Integer numProjects) {
         this.numProjects = numProjects;
-    }
-
-    public String getManufacturer() {
-        return manufacturer;
-    }
-
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public Date getLastDate() {
