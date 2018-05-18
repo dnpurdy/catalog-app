@@ -39,8 +39,12 @@ public class HTMLUtils {
         return ret.toString();
     }
 
-    private static String td(String val) {
-        return "<td>"+val+"</td>";
+    public static String td(String val) {
+        return td(val,"");
+    }
+
+    public static String td(String val, String t) {
+        return "<td "+t+">"+val+"</td>";
     }
 
     public static String toHTMLTableFromMising(List<MissingItem> missingItems) {
@@ -48,14 +52,14 @@ public class HTMLUtils {
         ret.append("<tr><th>ItemId</th><th>ProjectId</th><th>NumProjects</th><th>Manufacturer</th><th>Description</th><th>LastDate</th><th>TotalRev</th><th>% TotalRev</th></tr>");
         missingItems.stream()
                 .forEach(mi -> ret.append("<tr>")
-                        .append("<td>").append(mi.getItemId()).append("</td>")
-                        .append("<td>").append(mi.getProjectId()).append("</td>")
-                        .append("<td>").append(mi.getNumProjects()).append("</td>")
-                        .append("<td>").append(mi.getManufacturer()).append("</td>")
-                        .append("<td>").append(mi.getDescription()).append("</td>")
-                        .append("<td>").append(mi.getLastDate()).append("</td>")
-                        .append("<td align=\"right\">").append(currencyFmt(mi.getTotalRevenue())).append("</td>")
-                        .append("<td align=\"right\">").append(percentFmt(mi.getPercentTotalRevenue(), 6)).append("</td>")
+                        .append(td(mi.getItemId()))
+                        .append(td(mi.getProjectId()))
+                        .append(td(mi.getNumProjects().toString()))
+                        .append(td(mi.getManufacturer()))
+                        .append(td(mi.getDescription()))
+                        .append(td(mi.getLastDate().toString()))
+                        .append(td(currencyFmt(mi.getTotalRevenue()), "align=\"right\""))
+                        .append(td(percentFmt(mi.getPercentTotalRevenue(), 6),"align=\"right\""))
                 .append("</tr>"));
         ret.append("</table>");
         return ret.toString();

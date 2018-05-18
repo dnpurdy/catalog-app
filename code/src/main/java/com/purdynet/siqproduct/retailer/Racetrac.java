@@ -33,4 +33,9 @@ public class Racetrac implements Retailer {
     public String tobaccoClause() {
         return " WHERE p.department IN ('9','19') ";
     }
+
+    @Override
+    public String fixedUpc() {
+        return "SUBSTR(p.upc,1,LENGTH(p.upc)-1)";
+    }
 }
