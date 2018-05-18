@@ -7,13 +7,13 @@ import static org.junit.Assert.*;
 
 public class RetailerServiceTest {
 
-    RetailerService retailerService = new RetailerService();
+    private RetailerService retailerService = new RetailerService();
 
     @Test
     public void progressSql() {
         String progressSql = retailerService.progressSql(getTestRetailer());
         assertEquals("SQL dpesn't match!", "SELECT pp.itemId itemId, pp.manufacturer manufacturer, pp.retailerItemId retailerItemId, pp.per revPortion, NVL(c.description,pp.description) description, pp.deptDescription as retailerDept, c.category as nacsCategory, \n" +
-                " IF(c.description IS NULL,\"TODO\",\"COMPLETE\") as complete, IF(LENGTH(pp.itemId) = 10 OR LENGTH(pp.itemId) == 11,\"UPC\",\"PLU\") isUpc,\n" +
+                " IF(c.description IS NULL,\"TODO\",\"COMPLETE\") as complete, IF( (LENGTH(pp.itemId) = 10 OR LENGTH(pp.itemId) == 11) ,\"UPC\",\"PLU\") isUpc,\n" +
                 " IF(c.description IS NULL,0,pp.per) as completeRevenue, IF(c.description IS NULL,pp.per,0) as incompleteRevenue, \n" +
                 " IF(c.description IS NULL,0,1) as completeItems, IF(c.description IS NULL,1,0) as incompleteItems,\n" +
                 " IF(c.description IS NULL,0,pp.perDept) as completeDeptRevenue, IF(c.description IS NULL,pp.perDept,0) as incompleteDeptRevenue FROM ( \n" +
@@ -26,7 +26,7 @@ public class RetailerServiceTest {
 
         String progressSql2 = retailerService.progressSql(getTestRetailer2());
         assertEquals("SQL dpesn't match!", "SELECT pp.itemId itemId, pp.manufacturer manufacturer, pp.retailerItemId retailerItemId, pp.per revPortion, NVL(c.description,pp.description) description, pp.deptDescription as retailerDept, c.category as nacsCategory, \n" +
-                " IF(c.description IS NULL,\"TODO\",\"COMPLETE\") as complete, IF(LENGTH(pp.itemId) = 10 OR LENGTH(pp.itemId) == 11,\"UPC\",\"PLU\") isUpc,\n" +
+                " IF(c.description IS NULL,\"TODO\",\"COMPLETE\") as complete, IF( (LENGTH(pp.itemId) = 10 OR LENGTH(pp.itemId) == 11) ,\"UPC\",\"PLU\") isUpc,\n" +
                 " IF(c.description IS NULL,0,pp.per) as completeRevenue, IF(c.description IS NULL,pp.per,0) as incompleteRevenue, \n" +
                 " IF(c.description IS NULL,0,1) as completeItems, IF(c.description IS NULL,1,0) as incompleteItems,\n" +
                 " IF(c.description IS NULL,0,pp.perDept) as completeDeptRevenue, IF(c.description IS NULL,pp.perDept,0) as incompleteDeptRevenue FROM ( \n" +
@@ -42,7 +42,7 @@ public class RetailerServiceTest {
     public void progressSql1() {
         String progressSql = retailerService.progressSql(getTestRetailer(), 1000);
         assertEquals("SQL dpesn't match!", "SELECT pp.itemId itemId, pp.manufacturer manufacturer, pp.retailerItemId retailerItemId, pp.per revPortion, NVL(c.description,pp.description) description, pp.deptDescription as retailerDept, c.category as nacsCategory, \n" +
-                " IF(c.description IS NULL,\"TODO\",\"COMPLETE\") as complete, IF(LENGTH(pp.itemId) = 10 OR LENGTH(pp.itemId) == 11,\"UPC\",\"PLU\") isUpc,\n" +
+                " IF(c.description IS NULL,\"TODO\",\"COMPLETE\") as complete, IF( (LENGTH(pp.itemId) = 10 OR LENGTH(pp.itemId) == 11) ,\"UPC\",\"PLU\") isUpc,\n" +
                 " IF(c.description IS NULL,0,pp.per) as completeRevenue, IF(c.description IS NULL,pp.per,0) as incompleteRevenue, \n" +
                 " IF(c.description IS NULL,0,1) as completeItems, IF(c.description IS NULL,1,0) as incompleteItems,\n" +
                 " IF(c.description IS NULL,0,pp.perDept) as completeDeptRevenue, IF(c.description IS NULL,pp.perDept,0) as incompleteDeptRevenue FROM ( \n" +
@@ -55,7 +55,7 @@ public class RetailerServiceTest {
 
         String progressSql2 = retailerService.progressSql(getTestRetailer2(), 1000);
         assertEquals("SQL dpesn't match!", "SELECT pp.itemId itemId, pp.manufacturer manufacturer, pp.retailerItemId retailerItemId, pp.per revPortion, NVL(c.description,pp.description) description, pp.deptDescription as retailerDept, c.category as nacsCategory, \n" +
-                " IF(c.description IS NULL,\"TODO\",\"COMPLETE\") as complete, IF(LENGTH(pp.itemId) = 10 OR LENGTH(pp.itemId) == 11,\"UPC\",\"PLU\") isUpc,\n" +
+                " IF(c.description IS NULL,\"TODO\",\"COMPLETE\") as complete, IF( (LENGTH(pp.itemId) = 10 OR LENGTH(pp.itemId) == 11) ,\"UPC\",\"PLU\") isUpc,\n" +
                 " IF(c.description IS NULL,0,pp.per) as completeRevenue, IF(c.description IS NULL,pp.per,0) as incompleteRevenue, \n" +
                 " IF(c.description IS NULL,0,1) as completeItems, IF(c.description IS NULL,1,0) as incompleteItems,\n" +
                 " IF(c.description IS NULL,0,pp.perDept) as completeDeptRevenue, IF(c.description IS NULL,pp.perDept,0) as incompleteDeptRevenue FROM ( \n" +
