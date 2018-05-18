@@ -3,10 +3,9 @@ package com.purdynet.siqproduct.model;
 import com.google.api.services.bigquery.model.TableRow;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
-import static com.purdynet.siqproduct.util.BQUtils.getBigDecimal;
-import static com.purdynet.siqproduct.util.BQUtils.getInteger;
-import static com.purdynet.siqproduct.util.BQUtils.getString;
+import static com.purdynet.siqproduct.util.BQUtils.*;
 
 public class ProductProgress {
     private String itemId;
@@ -24,6 +23,7 @@ public class ProductProgress {
     private Integer incompleteItems;
     private BigDecimal completeDeptRevenue;
     private BigDecimal incompleteDeptRevenue;
+    private Date lastDate;
 
     public ProductProgress() {}
 
@@ -44,6 +44,7 @@ public class ProductProgress {
         pp.setIncompleteItems(getInteger(tableRow,12));
         pp.setCompleteDeptRevenue(getBigDecimal(tableRow,13));
         pp.setIncompleteDeptRevenue(getBigDecimal(tableRow,14));
+        pp.setLastDate(getDate(tableRow, 15));
         return pp;
     }
 
@@ -169,6 +170,14 @@ public class ProductProgress {
 
     public void setIncompleteDeptRevenue(BigDecimal incompleteDeptRevenue) {
         this.incompleteDeptRevenue = incompleteDeptRevenue;
+    }
+
+    public Date getLastDate() {
+        return lastDate;
+    }
+
+    public void setLastDate(Date lastDate) {
+        this.lastDate = lastDate;
     }
 
     public boolean isNotComplete() {

@@ -18,7 +18,7 @@ public class HTMLUtils {
     public static String toHTMLTableFromProgress(List<ProductProgress> productProgressList) {
         StringBuilder ret = new StringBuilder("<table class=\"data\">");
         ret.append("<tr><th>Item Id</th><th>Manufacturer</th><th>Retailer Item Id</th><th>Revenue %</th><th>Description</th><th>Reatiler Dept</th><th>NACS Category</th><th>Complete?</th>" +
-                "<th>UPC?</th><th>Complete Revenue %</th><th>Incomplete Revenue %</th><th>Complete Department Rev</th><th>Incomplete Department Rev</th></tr>");
+                "<th>UPC?</th><th>Complete Revenue %</th><th>Incomplete Revenue %</th><th>Complete Department Rev</th><th>Incomplete Department Rev</th><th>Last Date</th></tr>");
         productProgressList.stream()
                 .forEach(pp -> ret.append("<tr>")
                         .append(td(pp.getItemId()))
@@ -34,6 +34,7 @@ public class HTMLUtils {
                         .append("<td align=\"right\">").append(percentFmt(pp.getIncompleteRevenue(), 6)).append("</td>")
                         .append("<td align=\"right\">").append(percentFmt(pp.getCompleteDeptRevenue(), 6)).append("</td>")
                         .append("<td align=\"right\">").append(percentFmt(pp.getIncompleteDeptRevenue(), 6)).append("</td>")
+                        .append(td(pp.getLastDate().toString()))
                         .append("</tr>"));
         ret.append("</table>");
         return ret.toString();
