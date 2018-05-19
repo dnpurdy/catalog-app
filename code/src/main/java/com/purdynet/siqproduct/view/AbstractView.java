@@ -4,6 +4,7 @@ import com.google.api.services.bigquery.model.TableFieldSchema;
 import com.google.api.services.bigquery.model.TableRow;
 import com.purdynet.siqproduct.biqquery.BqTableData;
 import com.purdynet.siqproduct.model.AbstractCoreItem;
+import com.purdynet.siqproduct.model.Function;
 import com.purdynet.siqproduct.model.MissingItem;
 import com.purdynet.siqproduct.model.ProductProgress;
 
@@ -41,6 +42,15 @@ public class AbstractView {
 
     public String wrapHtmlBody(String content) {
         return "<html><head><link href=\"/style.css\" rel=\"stylesheet\"/></head><body>"+content+"</body></html>";
+    }
+
+    public String wrapAGHtmlBody(String content) {
+        return "<html><head>\n" +
+                "    <link href=\"/style.css\" rel=\"stylesheet\"/>\n" +
+                "    <script src=\"https://unpkg.com/ag-grid/dist/ag-grid.min.noStyle.js\"></script>\n" +
+                "    <link rel=\"stylesheet\" href=\"https://unpkg.com/ag-grid/dist/styles/ag-grid.css\">\n" +
+                "    <link rel=\"stylesheet\" href=\"https://unpkg.com/ag-grid/dist/styles/ag-theme-balham.css\">\n"+
+                "</head><body>"+content+"</body></html>";
     }
 
     public String toHTMLTableFromProgress(List<ProductProgress> productProgressList) {
@@ -125,4 +135,52 @@ public class AbstractView {
             return format.format(n);
         }
     }
+
+    public String makeTableAG(Function<String> colFunc, String uri) {
+        return wrapAGHtmlBody("  <div id=\"myGrid\" class=\"ag-theme-balham\"></div>\n" +
+                "\n" +
+                "  <script type=\"text/javascript\" charset=\"utf-8\">\n" +
+                "    // specify the columns\n" +
+                colFunc.invoke() +
+                "    \n" +
+                "    // let the grid know which columns and what data to use\n" +
+                "    var gridOptions = {\n" +
+                "  columnDefs: columnDefs,\n" +
+                "  enableSorting: true,\n" +
+                "  enableFilter: true\n" +
+                "};" +
+                "function currencyFormatter(params) {\n" +
+                        "    return '$' + formatNumber(params.value);\n" +
+                        "}\n" +
+                        "\n" +
+                        "function formatNumber(number) {\n" +
+                        "    // this puts commas into the number eg 1000 goes to 1,000,\n" +
+                        "    // i pulled this from stack overflow, i have no idea how it works\n" +
+                        "    return Number(number).toFixed(2).toString();\n" +
+                        "}\n "+
+                "function formatNumber2(number) {\n" +
+                "    // this puts commas into the number eg 1000 goes to 1,000,\n" +
+                "    // i pulled this from stack overflow, i have no idea how it works\n" +
+                "    return Number(number).toFixed(6).toString();\n" +
+                "}\n "+
+                        "\n" +
+                        "function percentFormatter(params) {\n" +
+                        "    return formatNumber2(params.value*100)+'%';\n" +
+                        "}\n" +
+                        "\n"+
+                "\n" +
+                "  // lookup the container we want the Grid to use\n" +
+                "  var eGridDiv = document.querySelector('#myGrid');\n" +
+                "\n" +
+                "  // create the grid passing in the div to use together with the columns & data we want to use\n" +
+                "  new agGrid.Grid(eGridDiv, gridOptions);\n" +
+                "\n" +
+                "  fetch('"+uri+"').then(function(response) {\n" +
+                "    return response.json();\n" +
+                "  }).then(function(data) {\n" +
+                "    gridOptions.api.setRowData(data);\n" +
+                "  })" +
+                "  </script>");
+    }
+
 }

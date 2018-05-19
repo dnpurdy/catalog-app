@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
+import static com.purdynet.siqproduct.util.BQUtils.*;
+
 @Component
 public class RetailerView extends AbstractView {
 
@@ -75,5 +77,25 @@ public class RetailerView extends AbstractView {
                 .filter(secondPred)
                 .map(ProductProgress::getRevPortion)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
+    }
+
+    public String getCatalogAGCol() {
+        return "    var columnDefs = [\n" +
+                "      {headername: \"itemId\", field: \"itemId\"},\n" +
+                "      {headername: \"manufacturer\", field: \"manufacturer\"},\n" +
+                "      {headername: \"retailerItemId\", field: \"retailerItemId\"},\n" +
+                "      {headername: \"revPortion\", field: \"revPortion\", valueFormatter: percentFormatter},\n" +
+                "      {headername: \"description\", field: \"description\"},\n" +
+                "      {headername: \"nacsCategory\", field: \"nacsCategory\"},\n" +
+                "      {headername: \"complete\", field: \"complete\"},\n" +
+                "      {headername: \"isUpc\", field: \"isUpc\"},\n" +
+                "      {headername: \"completeRevenue\", field: \"completeRevenue\", valueFormatter: percentFormatter},\n" +
+                "      {headername: \"incompleteRevenue\", field: \"incompleteRevenue\", valueFormatter: percentFormatter},\n" +
+                "      {headername: \"completeItems\", field: \"completeItems\"},\n" +
+                "      {headername: \"incompleteItems\", field: \"incompleteItems\"},\n" +
+                "      {headername: \"completeDeptRevenue\", field: \"completeDeptRevenue\", valueFormatter: percentFormatter},\n" +
+                "      {headername: \"incompleteDeptRevenue\", field: \"incompleteDeptRevenue\", valueFormatter: percentFormatter},\n" +
+                "      {headername: \"lastDate\", field: \"lastDate\"},\n" +
+                "    ];\n";
     }
 }
