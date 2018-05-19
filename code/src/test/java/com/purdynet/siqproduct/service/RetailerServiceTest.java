@@ -1,18 +1,21 @@
 package com.purdynet.siqproduct.service;
 
+import com.purdynet.siqproduct.SiqproductApplicationTests;
 import com.purdynet.siqproduct.retailer.KumAndGo;
 import com.purdynet.siqproduct.retailer.Retailer;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.Assert.*;
 
-public class RetailerServiceTest {
+public class RetailerServiceTest extends SiqproductApplicationTests {
 
-    private Logger logger = LoggerFactory.getLogger(RetailerServiceTest.class);
-
-    private RetailerService retailerService = new RetailerService();
+    @Autowired
+    private RetailerService retailerService;
 
     @Test
     public void getBaseRevKG() {
