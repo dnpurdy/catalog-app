@@ -35,42 +35,62 @@ public class MissingController {
     }
 
     @RequestMapping(value = {"/missing","/missing/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
-    public String missing(@PathVariable(name = "upc", required = false) String upc) throws IOException {
+    public String missingHTML(@PathVariable(name = "upc", required = false) String upc) {
         return missingView.makeTable(missingJson(upc));
     }
 
+    @RequestMapping(value = {"/missing-ag","/missing-ag/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
+    public String missingAG(@PathVariable(name = "upc", required = false) String upc) {
+        return missingView.makeTableAG(missingView::getCatalogAGCol, "/missing" + (upc != null ? "/"+upc : ""));
+    }
+
     @RequestMapping(value = {"/missing","/missing/{upc}"}, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<MissingItem> missingJson(@PathVariable(name = "upc", required = false) String upc) throws IOException {
+    public List<MissingItem> missingJson(@PathVariable(name = "upc", required = false) String upc) {
         return makeMissingItemList(upc, Retailer::allClause);
     }
 
     @RequestMapping(value = {"/missing-beer","/missing-beer/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
-    public String missingBeer(@PathVariable(name = "upc", required = false) String upc) throws IOException {
+    public String missingBeerHTML(@PathVariable(name = "upc", required = false) String upc) {
         return missingView.makeTable(missingBeerJson(upc));
     }
 
+    @RequestMapping(value = {"/missing-ag-beer","/missing-ag-beer/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
+    public String missingBeerAG(@PathVariable(name = "upc", required = false) String upc) {
+        return missingView.makeTableAG(missingView::getCatalogAGCol, "/missing-beer" + (upc != null ? "/"+upc : ""));
+    }
+
     @RequestMapping(value = {"/missing-beer","/missing-beer/{upc}"}, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<MissingItem> missingBeerJson(@PathVariable(name = "upc", required = false) String upc) throws IOException {
+    public List<MissingItem> missingBeerJson(@PathVariable(name = "upc", required = false) String upc) {
         return makeMissingItemList(upc, Retailer::beerClause);
     }
 
     @RequestMapping(value = {"/missing-beverage","/missing-beverage/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
-    public String missingBeverage(@PathVariable(name = "upc", required = false) String upc) throws IOException {
+    public String missingBeverageHTML(@PathVariable(name = "upc", required = false) String upc) {
         return missingView.makeTable(missingBeverageJson(upc));
     }
 
+    @RequestMapping(value = {"/missing-ag-beverage","/missing-ag-beverage/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
+    public String missingBeverageAG(@PathVariable(name = "upc", required = false) String upc) {
+        return missingView.makeTableAG(missingView::getCatalogAGCol, "/missing-beverage" + (upc != null ? "/"+upc : ""));
+    }
+
     @RequestMapping(value = {"/missing-beverage","/missing-beverage/{upc}"}, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<MissingItem> missingBeverageJson(@PathVariable(name = "upc", required = false) String upc) throws IOException {
+    public List<MissingItem> missingBeverageJson(@PathVariable(name = "upc", required = false) String upc) {
         return makeMissingItemList(upc, Retailer::beverageClause);
     }
 
     @RequestMapping(value = {"/missing-tobacco","/missing-tobacco/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
-    public String missingTobacco(@PathVariable(name = "upc", required = false) String upc) throws IOException {
+    public String missingTobaccoHTML(@PathVariable(name = "upc", required = false) String upc) {
         return missingView.makeTable(missingTobaccoJson(upc));
     }
 
+    @RequestMapping(value = {"/missing-ag-tobacco","/missing-ag-tobacco/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
+    public String missingTobaccoAG(@PathVariable(name = "upc", required = false) String upc) {
+        return missingView.makeTableAG(missingView::getCatalogAGCol, "/missing-tobacco" + (upc != null ? "/"+upc : ""));
+    }
+
     @RequestMapping(value = {"/missing-tobacco","/missing-tobacco/{upc}"}, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<MissingItem> missingTobaccoJson(@PathVariable(name = "upc", required = false) String upc) throws IOException {
+    public List<MissingItem> missingTobaccoJson(@PathVariable(name = "upc", required = false) String upc) {
         return makeMissingItemList(upc, Retailer::tobaccoClause);
     }
 

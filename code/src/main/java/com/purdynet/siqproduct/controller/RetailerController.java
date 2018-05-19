@@ -32,8 +32,13 @@ public class RetailerController {
     }
 
     @RequestMapping(value = "/retailer/{id}/missing", produces = MediaType.TEXT_HTML_VALUE)
-    public String missing(@PathVariable("id") String requestId) {
+    public String missingHTML(@PathVariable("id") String requestId) {
         return retailerView.makeTable(missingJson(requestId));
+    }
+
+    @RequestMapping(value = "/retailer/{id}/missing-ag", produces = MediaType.TEXT_HTML_VALUE)
+    public String missingAG(@PathVariable("id") String requestId) {
+        return retailerView.makeTableAG(retailerView::getCatalogAGCol, "/retailer/"+requestId+"/missing");
     }
 
     @RequestMapping(value = "/retailer/{id}/missing", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -42,8 +47,13 @@ public class RetailerController {
     }
 
     @RequestMapping(value = "/retailer/{id}/detail", produces = MediaType.TEXT_HTML_VALUE)
-    public String detail(@PathVariable("id") String requestId) {
+    public String detailHTML(@PathVariable("id") String requestId) {
         return retailerView.makeTable(detailJson(requestId));
+    }
+
+    @RequestMapping(value = "/retailer/{id}/detail-ag", produces = MediaType.TEXT_HTML_VALUE)
+    public String detailAG(@PathVariable("id") String requestId) {
+        return retailerView.makeTableAG(retailerView::getCatalogAGCol, "/retailer/"+requestId+"/detail");
     }
 
     @RequestMapping(value = "/retailer/{id}/detail", produces = MediaType.APPLICATION_JSON_VALUE)

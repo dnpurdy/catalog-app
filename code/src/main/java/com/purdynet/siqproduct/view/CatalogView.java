@@ -1,6 +1,7 @@
 package com.purdynet.siqproduct.view;
 
 import com.purdynet.siqproduct.model.CatalogItem;
+import com.purdynet.siqproduct.model.Function;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -84,5 +85,52 @@ public class CatalogView extends AbstractView {
                         .append("</tr>"));
         ret.append("</table>");
         return ret.toString();
+    }
+
+    public String getCatalogAGCol() {
+        return "    var columnDefs = [\n" +
+                "      {headername: \"productId\", field: \"productId\"},\n" +
+                "      {headername: \"itemId\", field: \"itemId\"},\n" +
+                "      {headername: \"description\", field: \"description\"},\n" +
+                "      {headername: \"department\", field: \"department\"},\n" +
+                "      {headername: \"deptDescription\", field: \"deptDescription\"},\n" +
+                "      {headername: \"categorySubCode\", field: \"categorySubCode\"},\n" +
+                "      {headername: \"categorySubDescription\", field: \"categorySubDescription\"},\n" +
+                "      {headername: \"category\", field: \"category\"},\n" +
+                "      {headername: \"manufacturer\", field: \"manufacturer\"},\n" +
+                "      {headername: \"subSegmentDescription\", field: \"subSegmentDescription\"},\n" +
+                "      {headername: \"subSegmentId\", field: \"subSegmentId\"},\n" +
+                "      {headername: \"segmentDescription\", field: \"segmentDescription\"},\n" +
+                "      {headername: \"segmentId\", field: \"segmentId\"},\n" +
+                "      {headername: \"subCategoryDescription\", field: \"subCategoryDescription\"},\n" +
+                "      {headername: \"subCategoryId\", field: \"subCategoryId\"},\n" +
+                "      {headername: \"majorDepartmentDescription\", field: \"majorDepartmentDescription\"},\n" +
+                "      {headername: \"majorDepartmentId\", field: \"majorDepartmentId\"},\n" +
+                "      {headername: \"container\", field: \"container\"},\n" +
+                "      {headername: \"size\", field: \"size\"},\n" +
+                "      {headername: \"uom\", field: \"uom\"},\n" +
+                "      {headername: \"active\", field: \"active\"},\n" +
+                "      {headername: \"privateLabelFlag\", field: \"privateLabelFlag\"},\n" +
+                "      {headername: \"consumption\", field: \"consumption\"},\n" +
+                "      {headername: \"pkg\", field: \"pkg\"},\n" +
+                "      {headername: \"flavor\", field: \"flavor\"},\n" +
+                "      {headername: \"brand\", field: \"brand\"},\n" +
+                "      {headername: \"brandType\", field: \"brandType\"},\n" +
+                "      {headername: \"height\", field: \"height\"},\n" +
+                "      {headername: \"width\", field: \"width\"},\n" +
+                "      {headername: \"depth\", field: \"depth\"},\n" +
+                "      {headername: \"shapeId\", field: \"shapeId\"},\n" +
+                "      {headername: \"family\", field: \"family\"},\n" +
+                "      {headername: \"trademark\", field: \"trademark\"},\n" +
+                "      {headername: \"country\", field: \"country\"},\n" +
+                "      {headername: \"color\", field: \"color\"},\n" +
+                "      {headername: \"alternateHeight\", field: \"alternateHeight\"},\n" +
+                "      {headername: \"alternateWeight\", field: \"alternateWeight\"},\n" +
+                "      {headername: \"alternateDepth\", field: \"alternateDepth\"},\n" +
+                "      {headername: \"containerDescription\", field: \"containerDescription\"},\n" +
+                "      {headername: \"distributor\", field: \"distributor\"},\n" +
+                "      {headername: \"industryType\", field: \"industryType\"},\n" +
+                "      {headername: \"dateCreated\", field: \"dateCreated\"},\n" +
+                "    ];\n";
     }
 }
