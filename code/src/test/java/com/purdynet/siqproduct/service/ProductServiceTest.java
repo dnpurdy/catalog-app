@@ -1,18 +1,26 @@
 package com.purdynet.siqproduct.service;
 
+import com.purdynet.siqproduct.SiqproductApplicationTests;
 import com.purdynet.siqproduct.retailer.*;
 import com.purdynet.siqproduct.util.ListUtils;
+import junit.runner.BaseTestRunner;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.context.annotation.Bean;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class ProductServiceTest {
+public class ProductServiceTest extends SiqproductApplicationTests {
 
-    private Logger logger = LoggerFactory.getLogger(ProductServiceTest.class);
-
-    private ProductService productService = new ProductService(new RetailerService());
+    @Autowired
+    private ProductService productService;
 
     @Test
     public void productSql() {

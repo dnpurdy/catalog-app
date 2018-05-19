@@ -1,23 +1,19 @@
-package com.purdynet.siqproduct.util;
+package com.purdynet.siqproduct.view;
 
-import com.google.api.services.bigquery.model.TableFieldSchema;
-import com.google.api.services.bigquery.model.TableRow;
-import com.purdynet.siqproduct.biqquery.BqTableData;
 import com.purdynet.siqproduct.model.AbstractCoreItem;
 import com.purdynet.siqproduct.model.MissingItem;
 import com.purdynet.siqproduct.model.ProductProgress;
-import com.purdynet.siqproduct.service.ProductService;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.List;
 
-public class HTMLUtils {
-    public static String wrapHtmlBody(String content) {
+public class AbstractView {
+    public String wrapHtmlBody(String content) {
         return "<html><head><link href=\"/style.css\" rel=\"stylesheet\"/></head><body>"+content+"</body></html>";
     }
 
-    public static String toHTMLTableFromProgress(List<ProductProgress> productProgressList) {
+    public String toHTMLTableFromProgress(List<ProductProgress> productProgressList) {
         StringBuilder ret = new StringBuilder("<table class=\"data\">");
         ret.append("<tr><th>Item Id</th><th>Manufacturer</th><th>Retailer Item Id</th><th>Revenue %</th><th>Description</th><th>Reatiler Dept</th><th>NACS Category</th><th>Complete?</th>" +
                 "<th>UPC?</th><th>Complete Revenue %</th><th>Incomplete Revenue %</th><th>Complete Department Rev</th><th>Incomplete Department Rev</th><th>Last Date</th></tr>");
@@ -42,7 +38,7 @@ public class HTMLUtils {
         return ret.toString();
     }
 
-    public static String toHTMLTableFromMising(List<MissingItem> missingItems) {
+    public String toHTMLTableFromMising(List<MissingItem> missingItems) {
         StringBuilder ret = new StringBuilder("<table class=\"data\">");
         ret.append("<tr><th>ItemId</th><th>ProjectId</th><th>NumProjects</th><th>Manufacturer</th><th>Description</th><th>LastDate</th><th>TotalRev</th><th>% TotalRev</th></tr>");
         missingItems.stream()
@@ -55,32 +51,32 @@ public class HTMLUtils {
                         .append(td(mi.getLastDate().toString()))
                         .append(tdRight(currencyFmt(mi.getTotalRevenue())))
                         .append(tdRight(percentFmt(mi.getPercentTotalRevenue(), 6)))
-                .append("</tr>"));
+                        .append("</tr>"));
         ret.append("</table>");
         return ret.toString();
     }
 
-    public static String missingLink(AbstractCoreItem item) {
+    public String missingLink(AbstractCoreItem item) {
         return "/edit?"+item.toQueryParams();
     }
 
-    public static String td(String val) {
+    public String td(String val) {
         return td(val,"");
     }
 
-    public static String tdRight(String val) {
+    public String tdRight(String val) {
         return td(val,"align=\"right\"");
     }
 
-    public static String td(String val, String t) {
+    public String td(String val, String t) {
         return "<td "+t+">"+val+"</td>";
     }
 
-    public static String percentFmt(BigDecimal n) {
+    public String percentFmt(BigDecimal n) {
         return percentFmt(n,3);
     }
 
-    public static String percentFmt(BigDecimal n, Integer numDigits) {
+    public String percentFmt(BigDecimal n, Integer numDigits) {
         NumberFormat format = NumberFormat.getPercentInstance();
         format.setMaximumFractionDigits(numDigits);
         if (n==null) {
@@ -90,7 +86,7 @@ public class HTMLUtils {
         }
     }
 
-    public static String currencyFmt(BigDecimal n) {
+    public String currencyFmt(BigDecimal n) {
         NumberFormat format = NumberFormat.getCurrencyInstance();
         format.setMaximumFractionDigits(2);
         if (n == null) {

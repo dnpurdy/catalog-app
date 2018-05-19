@@ -5,6 +5,7 @@ import com.purdynet.siqproduct.model.MissingItem;
 import com.purdynet.siqproduct.service.*;
 import com.purdynet.siqproduct.biqquery.BigqueryUtils;
 import com.purdynet.siqproduct.retailer.Retailer;
+import com.purdynet.siqproduct.view.MissingView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,24 +18,25 @@ import java.util.function.Function;
 
 import static com.purdynet.siqproduct.biqquery.BigqueryUtils.convertTableRowToModel;
 import static com.purdynet.siqproduct.biqquery.BigqueryUtils.runQuerySync;
-import static com.purdynet.siqproduct.util.HTMLUtils.toHTMLTableFromMising;
-import static com.purdynet.siqproduct.util.HTMLUtils.wrapHtmlBody;
 
 @RestController
 public class MissingController {
 
-    private final List<Retailer> retailers;
+    private final RetailerService retailerService;
     private final ProductService productService;
 
+    private final MissingView missingView;
+
     @Autowired
-    public MissingController(List<Retailer> retailers, ProductService productService) {
-        this.retailers = retailers;
+    public MissingController(RetailerService retailerService, ProductService productService, MissingView missingView) {
+        this.retailerService = retailerService;
         this.productService = productService;
+        this.missingView = missingView;
     }
 
     @RequestMapping(value = {"/missing","/missing/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
     public String missing(@PathVariable(name = "upc", required = false) String upc) throws IOException {
-        return makeTable(missingJson(upc));
+        return missingView.makeTable(missingJson(upc));
     }
 
     @RequestMapping(value = {"/missing","/missing/{upc}"}, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -44,7 +46,7 @@ public class MissingController {
 
     @RequestMapping(value = {"/missing-beer","/missing-beer/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
     public String missingBeer(@PathVariable(name = "upc", required = false) String upc) throws IOException {
-        return makeTable(missingBeerJson(upc));
+        return missingView.makeTable(missingBeerJson(upc));
     }
 
     @RequestMapping(value = {"/missing-beer","/missing-beer/{upc}"}, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -54,7 +56,7 @@ public class MissingController {
 
     @RequestMapping(value = {"/missing-beverage","/missing-beverage/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
     public String missingBeverage(@PathVariable(name = "upc", required = false) String upc) throws IOException {
-        return makeTable(missingBeverageJson(upc));
+        return missingView.makeTable(missingBeverageJson(upc));
     }
 
     @RequestMapping(value = {"/missing-beverage","/missing-beverage/{upc}"}, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -64,7 +66,7 @@ public class MissingController {
 
     @RequestMapping(value = {"/missing-tobacco","/missing-tobacco/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
     public String missingTobacco(@PathVariable(name = "upc", required = false) String upc) throws IOException {
-        return makeTable(missingTobaccoJson(upc));
+        return missingView.makeTable(missingTobaccoJson(upc));
     }
 
     @RequestMapping(value = {"/missing-tobacco","/missing-tobacco/{upc}"}, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -72,12 +74,8 @@ public class MissingController {
         return makeMissingItemList(upc, Retailer::tobaccoClause);
     }
 
-    private String makeTable(List<MissingItem> missingItems) {
-        return wrapHtmlBody(toHTMLTableFromMising(missingItems));
-    }
-
-    private List<MissingItem> makeMissingItemList(String upc, Function<Retailer, String> productSelectFnc) throws IOException {
-        BigqueryUtils bigqueryUtils = runQuerySync(productService.productProgress(retailers, productSelectFnc, upc));
+    private List<MissingItem> makeMissingItemList(String upc, Function<Retailer, String> productSelectFnc) {
+        BigqueryUtils bigqueryUtils = runQuerySync(productService.productProgress(retailerService.getRetailers(), productSelectFnc, upc));
         return makeMissingItemList(bigqueryUtils.getBqTableData());
     }
 

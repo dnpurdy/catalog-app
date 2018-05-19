@@ -1,10 +1,28 @@
 package com.purdynet.siqproduct.service;
 
 import com.purdynet.siqproduct.retailer.Retailer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 @Service
 public class RetailerService {
+
+    private final List<Retailer> retailers;
+
+    @Autowired
+    public RetailerService(List<Retailer> retailers) {
+        this.retailers = retailers;
+        retailers.sort(Comparator.comparing(Retailer::name));
+    }
+
+    public List<Retailer> getRetailers() {
+        return retailers;
+    }
+
     public String progressSql(Retailer retailer, Integer limit, String where) {
         return "SELECT pp.itemId itemId, pp.manufacturer manufacturer, pp.retailerItemId retailerItemId, pp.per revPortion, " +
                 "NVL(c.description,pp.description) description, pp.deptDescription as retailerDept, c.category as nacsCategory, " +
