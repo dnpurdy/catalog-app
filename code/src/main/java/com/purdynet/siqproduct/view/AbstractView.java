@@ -1,5 +1,8 @@
 package com.purdynet.siqproduct.view;
 
+import com.google.api.services.bigquery.model.TableFieldSchema;
+import com.google.api.services.bigquery.model.TableRow;
+import com.purdynet.siqproduct.biqquery.BqTableData;
 import com.purdynet.siqproduct.model.AbstractCoreItem;
 import com.purdynet.siqproduct.model.MissingItem;
 import com.purdynet.siqproduct.model.ProductProgress;
@@ -9,6 +12,33 @@ import java.text.NumberFormat;
 import java.util.List;
 
 public class AbstractView {
+    public String toHTMLTable(BqTableData bqTableData) {
+        StringBuilder ret = new StringBuilder("<table>");
+        ret.append(toHTMLTable(bqTableData.getSchemaFieldNames()));
+        bqTableData.getTableRowList().forEach(row -> ret.append(toHTMLTable(row)));
+        ret.append("</table>");
+        return ret.toString();
+    }
+
+    public String toHTMLTable(TableRow tableRow) {
+        StringBuilder ret = new StringBuilder("<tr>");
+        tableRow.getF().stream()
+                .map(f -> f.getV().toString())
+                .map(val -> "<td>"+val+"</td>")
+                .forEach(r -> ret.append(r));
+        ret.append("</tr>");
+        return ret.toString();
+    }
+
+    public String toHTMLTable(List<TableFieldSchema> schemaFieldNames) {
+        StringBuilder ret = new StringBuilder("<tr>");
+        schemaFieldNames.stream()
+                .map(tfs -> "<th>"+tfs.getName()+"</th>")
+                .forEach(r -> ret.append(r));
+        ret.append("</tr>");
+        return ret.toString();
+    }
+
     public String wrapHtmlBody(String content) {
         return "<html><head><link href=\"/style.css\" rel=\"stylesheet\"/></head><body>"+content+"</body></html>";
     }
@@ -48,7 +78,7 @@ public class AbstractView {
                         .append(td(mi.getNumProjects().toString()))
                         .append(td(mi.getManufacturer()))
                         .append(td(mi.getDescription()))
-                        .append(td(mi.getLastDate().toString()))
+                        .append(td(mi.getLastDateString()))
                         .append(tdRight(currencyFmt(mi.getTotalRevenue())))
                         .append(tdRight(percentFmt(mi.getPercentTotalRevenue(), 6)))
                         .append("</tr>"));

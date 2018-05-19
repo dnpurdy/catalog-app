@@ -158,7 +158,7 @@ public class BigqueryUtils {
 
     public BqTableData getBqTableData() throws RuntimeException {
         if (job != null) {
-            BqTableData bqTableData = new BqTableData(job.getConfiguration().getQuery().getDestinationTable());
+            BqTableData bqTableData = new BqTableData();
             bqTableData.setSchemaFieldNames(getSchemaFieldNames());
             bqTableData.setTableRowList(getTableData());
             return bqTableData;

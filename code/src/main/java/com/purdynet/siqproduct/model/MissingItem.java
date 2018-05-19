@@ -47,6 +47,14 @@ public class MissingItem extends AbstractCoreItem {
         return lastDate;
     }
 
+    public String getLastDateString() {
+        if (lastDate != null ) {
+            return lastDate.toString();
+        } else {
+            return "";
+        }
+    }
+
     public void setLastDate(Date lastDate) {
         this.lastDate = lastDate;
     }
