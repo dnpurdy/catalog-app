@@ -1,3 +1,11 @@
+h1 {
+    text-align: center;
+}
+
+h3 {
+    padding-top:30px;
+}
+
 .data {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;

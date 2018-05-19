@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76dbf523-deeb-49fd-83ee-61581128fd24" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/controller/CatalogController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/model/CatalogItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/service/CatalogService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/view/CatalogView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/purdynet/siqproduct/service/CatalogServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/siqproduct.iml" beforeDir="false" afterPath="$PROJECT_DIR$/siqproduct.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/biqquery/BigqueryUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/biqquery/BigqueryUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/biqquery/BqTableData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/biqquery/BqTableData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/controller/EditController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/controller/EditController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/model/MissingItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/model/MissingItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/service/ScheduleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/service/ScheduleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/view/AbstractView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/view/AbstractView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/controller/RootController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/controller/RootController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/model/CatalogItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/model/CatalogItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/view/CatalogView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/view/CatalogView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/view/RootView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/view/RootView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/style.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -43,11 +34,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractView.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AbstractView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/view/AbstractView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="80" column="55" selection-start-line="80" selection-start-column="55" selection-end-line="80" selection-end-column="55" />
+            <state>
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,8 +48,8 @@
       <file leaf-file-name="MissingItem.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/model/MissingItem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="49" column="35" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="35" />
+            <state relative-caret-position="311">
+              <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="55" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1422#1423#0" expanded="true" />
@@ -77,53 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CatalogServiceTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/purdynet/siqproduct/service/CatalogServiceTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SiqproductApplicationTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/purdynet/siqproduct/SiqproductApplicationTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RootController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/controller/RootController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Integer.class" pinned="false" current-in-tab="false">
-        <entry file="jar:///usr/java/java8/jre/lib/rt.jar!/java/lang/Integer.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="150" selection-start-line="150" selection-end-line="150" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CatalogItem.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/model/CatalogItem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="62" column="56" selection-start-line="60" selection-start-column="8" selection-end-line="62" selection-end-column="56" />
+            <state relative-caret-position="315">
+              <caret line="77" column="31" lean-forward="true" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2140#2141#0" expanded="true" />
@@ -277,11 +225,36 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="EditItem.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/model/EditItem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="426">
+              <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractCoreItem.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/model/AbstractCoreItem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#524#525#0" expanded="true" />
+                <element signature="e#560#561#0" expanded="true" />
+                <element signature="e#598#599#0" expanded="true" />
+                <element signature="e#632#633#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CatalogView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/view/CatalogView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="48" column="50" lean-forward="true" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="50" />
+            <state>
+              <caret column="37" lean-forward="true" selection-start-column="37" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1136#1137#0" expanded="true" />
@@ -291,14 +264,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/controller/EditController.java">
+      <file leaf-file-name="RootView.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/view/RootView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="28" column="64" selection-start-line="28" selection-start-column="64" selection-end-line="28" selection-end-column="64" />
+            <state relative-caret-position="45">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RootController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/controller/RootController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#702#703#0" expanded="true" />
+                <element signature="e#790#791#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -324,6 +317,8 @@
       <find>getTa</find>
       <find>`</find>
       <find>insert</find>
+      <find>getDate</find>
+      <find>== null</find>
     </findStrings>
     <replaceStrings>
       <replace>testretailer-siq</replace>
@@ -335,7 +330,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/service/AbstractProductService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/model/RetailerMissingItem.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/util/BQUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/service/TobaccoService.java" />
@@ -364,11 +358,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/view/RetailerView.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/view/MissingView.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/view/RootVie.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/view/RootView.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/service/RetailerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/controller/MissingController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/controller/RetailerController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/controller/RootController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/service/BaseTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/purdynet/siqproduct/SiqproductApplicationTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/purdynet/siqproduct/service/RetailerServiceTest.java" />
@@ -378,14 +370,17 @@
         <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/biqquery/BigqueryUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/controller/CatalogController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/service/ScheduleService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/model/CatalogItem.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/controller/EditController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/view/CatalogView.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/purdynet/siqproduct/service/CatalogServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/service/CatalogService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/model/MissingItem.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/view/AbstractView.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/model/CatalogItem.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/view/CatalogView.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/style.css" />
+        <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/controller/RootController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/view/RootView.java" />
       </list>
     </option>
   </component>
@@ -794,7 +789,7 @@
       <workItem from="1526611055858" duration="9188000" />
       <workItem from="1526643724042" duration="3621000" />
       <workItem from="1526658592041" duration="10868000" />
-      <workItem from="1526688302603" duration="11350000" />
+      <workItem from="1526688302603" duration="12215000" />
     </task>
     <task id="LOCAL-00001" summary="MISC: Add SaveaLot, simply lots of functional calls; stylize tables">
       <created>1526612445150</created>
@@ -895,7 +890,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65087000" />
+    <option name="totallyTimeSpent" value="65952000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -908,9 +903,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1920" height="849" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50053364" side_tool="true" visible="true" weight="0.32780084" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.32924226" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info id="Capture Tool" order="2" />
@@ -927,11 +923,11 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32780084" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4994664" visible="true" weight="0.32780084" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.2558783" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4969072" visible="true" weight="0.24919957" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4969072" visible="true" weight="0.24919957" />
       <window_info anchor="right" id="Bean Validation" order="4" />
       <window_info id="Web" order="2" sideWeight="0.50309277" side_tool="true" weight="0.24919957" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32780084" />
@@ -1088,13 +1084,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/retailer/Racetrac.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/retailer/SaveALot.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1155,13 +1144,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="134">
           <caret line="17" column="31" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/model/EditItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1255,9 +1237,6 @@
           <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/view/RootView.java">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/service/RetailerService.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1388,19 +1367,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/model/AbstractCoreItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#524#525#0" expanded="true" />
-            <element signature="e#560#561#0" expanded="true" />
-            <element signature="e#598#599#0" expanded="true" />
-            <element signature="e#632#633#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
@@ -1415,22 +1381,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/view/CatalogView.java">
+    <entry file="jar:///usr/java/java8/jre/lib/rt.jar!/java/lang/Integer.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="48" column="50" lean-forward="true" selection-start-line="48" selection-start-column="50" selection-end-line="48" selection-end-column="50" />
+        <state relative-caret-position="126">
+          <caret line="150" selection-start-line="150" selection-end-line="150" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/controller/EditController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="28" column="64" selection-start-line="28" selection-start-column="64" selection-end-line="28" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1136#1137#0" expanded="true" />
-            <element signature="e#1182#1183#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/purdynet/siqproduct/SiqproductApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/purdynet/siqproduct/service/CatalogServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/service/CatalogService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#800#801#0" expanded="true" />
+            <element signature="e#848#849#0" expanded="true" />
+            <element signature="e#887#888#0" expanded="true" />
+            <element signature="e#917#918#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/view/AbstractView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/model/AbstractCoreItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#524#525#0" expanded="true" />
+            <element signature="e#560#561#0" expanded="true" />
+            <element signature="e#598#599#0" expanded="true" />
+            <element signature="e#632#633#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/model/EditItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/model/MissingItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="55" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1422#1423#0" expanded="true" />
+            <element signature="e#1453#1454#0" expanded="true" />
+            <element signature="e#1633#1634#0" expanded="true" />
+            <element signature="e#1673#1674#0" expanded="true" />
+            <element signature="e#1716#1717#0" expanded="true" />
+            <element signature="e#1751#1752#0" expanded="true" />
+            <element signature="e#1811#1812#0" expanded="true" />
+            <element signature="e#1859#1860#0" expanded="true" />
+            <element signature="e#1909#1910#0" expanded="true" />
+            <element signature="e#1951#1952#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/model/CatalogItem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="62" column="56" selection-start-line="60" selection-start-column="8" selection-end-line="62" selection-end-column="56" />
+        <state relative-caret-position="315">
+          <caret line="77" column="31" lean-forward="true" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2140#2141#0" expanded="true" />
@@ -1583,91 +1635,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///usr/java/java8/jre/lib/rt.jar!/java/lang/Integer.class">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="150" selection-start-line="150" selection-end-line="150" />
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/view/CatalogView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="37" lean-forward="true" selection-start-column="37" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1136#1137#0" expanded="true" />
+            <element signature="e#1182#1183#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/controller/RootController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="330">
+          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#702#703#0" expanded="true" />
+            <element signature="e#790#791#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/controller/EditController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/view/RootView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="28" column="64" selection-start-line="28" selection-start-column="64" selection-end-line="28" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/purdynet/siqproduct/SiqproductApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/purdynet/siqproduct/service/CatalogServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/service/CatalogService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#800#801#0" expanded="true" />
-            <element signature="e#848#849#0" expanded="true" />
-            <element signature="e#887#888#0" expanded="true" />
-            <element signature="e#917#918#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/model/MissingItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="49" column="35" selection-start-line="49" selection-start-column="18" selection-end-line="49" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1422#1423#0" expanded="true" />
-            <element signature="e#1453#1454#0" expanded="true" />
-            <element signature="e#1633#1634#0" expanded="true" />
-            <element signature="e#1673#1674#0" expanded="true" />
-            <element signature="e#1716#1717#0" expanded="true" />
-            <element signature="e#1751#1752#0" expanded="true" />
-            <element signature="e#1811#1812#0" expanded="true" />
-            <element signature="e#1859#1860#0" expanded="true" />
-            <element signature="e#1909#1910#0" expanded="true" />
-            <element signature="e#1951#1952#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/purdynet/siqproduct/view/AbstractView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="80" column="55" selection-start-line="80" selection-start-column="55" selection-end-line="80" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="45">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
