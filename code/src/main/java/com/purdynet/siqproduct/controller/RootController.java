@@ -20,6 +20,6 @@ public class RootController {
 
     @GetMapping("/")
     public String summary() {
-        return rootView.summaryPage(retailerService.getRetailers());
+        return rootView.wrapHtmlBody(rootView.summaryPage(retailerService.getRetailers()));
     }
 }

@@ -12,13 +12,27 @@ import java.util.List;
 public class RootView extends AbstractView {
 
     public String summaryPage(List<Retailer> retailers) {
-        StringBuilder sb = new StringBuilder("<html><body><head><style>h3 {padding-top:30px;}</style></head><table width=\"100%\">");
+        StringBuilder sb = new StringBuilder();
 
+        sb.append("<h1>SwiftIQ Product Catalog App</h1>");
+
+        sb.append("<h2>Catalog Information</h2>");
+        sb.append("<table width=\"100%\">");
+        sb.append("<tr>").append(td(catalogExplorer())).append(td(categoryTable())).append("</tr>");
+        sb.append("</table>");
+
+        sb.append("<h2>Retailer Information</h2>");
+        sb.append("<table width=\"100%\">");
         sb.append("<tr><td>").append(retailersTable(retailers)).append("</td><td>").append(summaryTable(retailers)).append("</td></tr>");
         sb.append("<tr><td>").append(missingTable(retailers)).append("</td><td>").append(detailTable(retailers)).append("</td></tr>");
-        sb.append("<tr><td>").append(categoryTable()).append("</td></tr>");
+        sb.append("</table>");
 
-        sb.append("</table></body></html>");
+        return sb.toString();
+    }
+
+    private String catalogExplorer() {
+        StringBuilder sb = new StringBuilder("<h3>Catalog Explorer</h3>");
+        sb.append("<a href=\"/catalog\">/catalog</a>");
         return sb.toString();
     }
 

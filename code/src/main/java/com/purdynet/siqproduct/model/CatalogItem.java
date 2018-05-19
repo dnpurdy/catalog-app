@@ -406,6 +406,14 @@ public class CatalogItem extends AbstractCoreItem {
         return dateCreated;
     }
 
+    public String getDateCreatedString() {
+        if (dateCreated != null ) {
+            return dateCreated.toString();
+        } else {
+            return "";
+        }
+    }
+
     public void setDateCreated(Date dateCreated) {
         this.dateCreated = dateCreated;
     }
