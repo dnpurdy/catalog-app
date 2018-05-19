@@ -8,18 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BqTableData {
-    private final TableReference tableReference;
-
     private List<TableRow> tableRowList = new ArrayList<>();
     private List<TableFieldSchema> schemaFieldNames = new ArrayList<>();
 
-    public BqTableData(TableReference tableReference) {
-        this.tableReference = tableReference;
-    }
-
-    public TableReference getTableReference() {
-        return tableReference;
-    }
+    public BqTableData() {}
 
     public List<TableRow> getTableRowList() {
         return tableRowList;

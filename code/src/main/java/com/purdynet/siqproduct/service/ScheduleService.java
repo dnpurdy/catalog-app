@@ -5,6 +5,7 @@ import com.purdynet.siqproduct.biqquery.BigqueryUtils;
 import com.purdynet.siqproduct.util.BQUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -17,8 +18,15 @@ public class ScheduleService {
     private static final Logger logger = LoggerFactory.getLogger(ScheduleService.class);
     private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
 
+    private final CatalogService catalogService;
+
+    @Autowired
+    public ScheduleService(CatalogService catalogService) {
+        this.catalogService = catalogService;
+    }
+
     @Scheduled(fixedRate = 86400000L, initialDelay = 3600000L)
-    public void scheduleTaskWithCronExpression() {
+    public void backupCatalog() {
         String fileName = "catalog_"+dateTimeFormatter.format(LocalDateTime.now())+".csv";
         logger.info("Cron Task :: Execution Time - {}", fileName);
         BigqueryUtils bigqueryUtils = new BigqueryUtils();
@@ -30,5 +38,11 @@ public class ScheduleService {
 
         bigqueryUtils.extractTable(catalog, "gs://swiftiq-master/catalog/"+fileName);
         bigqueryUtils.pollForCompletion();
+    }
+
+    @Scheduled(fixedRate = 21600000L)
+    public void updateInMemCatalog() {
+        logger.info("Updating in memory catalog...");
+        catalogService.updateCatalog();
     }
 }
