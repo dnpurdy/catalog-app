@@ -1,13 +1,12 @@
 package com.purdynet.siqproduct.service;
 
 import com.google.api.services.bigquery.model.TableReference;
-import com.purdynet.siqproduct.biqquery.BigqueryUtils;
-import com.purdynet.siqproduct.util.BQUtils;
+import com.purdynet.siqproduct.biqquery.BQClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -18,10 +17,12 @@ public class ScheduleService {
     private static final Logger logger = LoggerFactory.getLogger(ScheduleService.class);
     private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
 
+    private final String projectId;
     private final CatalogService catalogService;
 
     @Autowired
-    public ScheduleService(CatalogService catalogService) {
+    public ScheduleService(@Value("${project.id}") String projectId, CatalogService catalogService) {
+        this.projectId = projectId;
         this.catalogService = catalogService;
     }
 
@@ -29,15 +30,15 @@ public class ScheduleService {
     public void backupCatalog() {
         String fileName = "catalog_"+dateTimeFormatter.format(LocalDateTime.now())+".csv";
         logger.info("Cron Task :: Execution Time - {}", fileName);
-        BigqueryUtils bigqueryUtils = new BigqueryUtils();
+        BQClient BQClient = new BQClient(projectId);
 
         TableReference catalog = new TableReference();
         catalog.setProjectId("swiftiq-master");
         catalog.setDatasetId("siq");
         catalog.setTableId("Catalog");
 
-        bigqueryUtils.extractTable(catalog, "gs://swiftiq-master/catalog/"+fileName);
-        bigqueryUtils.pollForCompletion();
+        BQClient.extractTable(catalog, "gs://swiftiq-master/catalog/"+fileName);
+        BQClient.pollForCompletion();
     }
 
     @Scheduled(fixedRate = 21600000L)

@@ -1,9 +1,6 @@
 package com.purdynet.siqproduct.view;
 
-import com.purdynet.siqproduct.model.EditItem;
-import com.purdynet.siqproduct.model.NacsCategories;
-import com.purdynet.siqproduct.retailer.Retailer;
-import org.apache.logging.log4j.util.Strings;
+import com.purdynet.siqproduct.model.retailer.Retailer;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

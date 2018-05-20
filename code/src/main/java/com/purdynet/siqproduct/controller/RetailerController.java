@@ -1,12 +1,13 @@
 package com.purdynet.siqproduct.controller;
 
-import com.purdynet.siqproduct.biqquery.BigqueryUtils;
+import com.purdynet.siqproduct.biqquery.BQClient;
 import com.purdynet.siqproduct.biqquery.BqTableData;
 import com.purdynet.siqproduct.model.ProductProgress;
-import com.purdynet.siqproduct.retailer.Retailer;
+import com.purdynet.siqproduct.model.retailer.Retailer;
 import com.purdynet.siqproduct.service.RetailerService;
 import com.purdynet.siqproduct.view.RetailerView;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,17 +17,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static com.purdynet.siqproduct.biqquery.BigqueryUtils.convertTableRowToModel;
-import static com.purdynet.siqproduct.biqquery.BigqueryUtils.runQuerySync;
+import static com.purdynet.siqproduct.biqquery.BQClient.convertTableRowToModel;
+import static com.purdynet.siqproduct.biqquery.BQClient.runQuerySync;
 
 @RestController
 public class RetailerController {
 
+    private final String projectId;
     private final RetailerService retailerService;
     private final RetailerView retailerView;
 
     @Autowired
-    public RetailerController(RetailerService retailerService, RetailerView retailerView) {
+    public RetailerController(@Value("${project.id}") String projectId, RetailerService retailerService, RetailerView retailerView) {
+        this.projectId = projectId;
         this.retailerService = retailerService;
         this.retailerView = retailerView;
     }
@@ -67,9 +70,9 @@ public class RetailerController {
     }
 
     private Optional<List<ProductProgress>> runProductProgress(final String requestId, final String where, final Integer limit) {
-        return matchRetailer(requestId).map(projectId -> {
-            BigqueryUtils bigqueryUtils = runQuerySync(retailerService.progressSql(projectId, limit, where));
-            return makeProgressList(bigqueryUtils.getBqTableData());
+        return matchRetailer(requestId).map(retailer -> {
+            BQClient BQClient = runQuerySync(projectId, retailerService.progressSql(retailer, limit, where));
+            return makeProgressList(BQClient.getBqTableData());
         });
     }
 

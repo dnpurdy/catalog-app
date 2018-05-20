@@ -21,7 +21,6 @@ import com.purdynet.siqproduct.util.ListUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -33,37 +32,26 @@ import java.util.concurrent.Callable;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-/**
- * Utility methods for beginning jobs, waiting for jobs, and instantiating Bigqueries.
- *
- * @author lparkinson@google.com (Laura Parkinson)
- */
-public class BigqueryUtils {
+public class BQClient {
 
-    private static final Logger logger = LoggerFactory.getLogger(BigqueryUtils.class);
+    private static final Logger logger = LoggerFactory.getLogger(BQClient.class);
+
+    private static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
+    private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
 
     private static final int TIMEOUT_MS = 60 * 25 * 1000; // TWENTY FIVE MINUTES
     private static final int WAIT_MS = 1000; // ONE SECOND
     private static final int MAX_INTERVAL = 60000;
 
-    private static final String projectId = System.getProperty("com.google.api.client.sample.bigquery.appengine.dashboard.projectId") == null ? "swiftiq-master" :
-        System.getProperty("com.google.api.client.sample.bigquery.appengine.dashboard.projectId");
-
-    final Bigquery bigquery;
+    private final String projectId;
+    private final Bigquery bigquery;
     private Job job;
-
-    /** Global instance of the HTTP transport. */
-    static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
-
-    /** Global instance of the JSON factory. */
-    static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
 
     private static GoogleClientSecrets clientSecrets = null;
 
     static GoogleClientSecrets getClientCredential() throws IOException {
         if (clientSecrets == null) {
-            clientSecrets = GoogleClientSecrets.load(JSON_FACTORY,
-                    new InputStreamReader(getClientSecretsStream()));
+            clientSecrets = GoogleClientSecrets.load(JSON_FACTORY, new InputStreamReader(getClientSecretsStream()));
             Preconditions.checkArgument(!clientSecrets.getDetails().getClientId().startsWith("Enter ")
                             && !clientSecrets.getDetails().getClientSecret().startsWith("Enter "),
                     "Enter Client ID and Secret from https://code.google.com/apis/console/?api=bigquery "
@@ -82,8 +70,9 @@ public class BigqueryUtils {
         return new Bigquery.Builder(HTTP_TRANSPORT, JSON_FACTORY, credential).build();
     }
 
-    public BigqueryUtils() {
+    public BQClient(final String projectId) {
         //this.bigquery = initializeAndBuild(GoogleCredential.getApplicationDefault());
+        this.projectId = projectId;
         this.bigquery = initializeAndBuild(getCredential());
     }
 
@@ -96,7 +85,7 @@ public class BigqueryUtils {
     }
 
     private static InputStream getClientSecretsStream() {
-        return BigqueryUtils.class.getResourceAsStream("/client_secrets.json");
+        return BQClient.class.getResourceAsStream("/client_secrets.json");
     }
 
     private Bigquery initializeAndBuild(HttpRequestInitializer credential) {
@@ -263,14 +252,14 @@ public class BigqueryUtils {
         return tryToDo(() ->  bigquery.jobs().get(projectId, jobId).execute());
     }
 
-    public static BigqueryUtils runQuerySync(final String sql) {
+    public static BQClient runQuerySync(final String projectId, final String sql) {
         logger.info(sql);
 
-        BigqueryUtils bigqueryUtils = new BigqueryUtils();
-        bigqueryUtils.beginQuery(sql);
-        bigqueryUtils.pollForCompletion();
+        BQClient BQClient = new BQClient(projectId);
+        BQClient.beginQuery(sql);
+        BQClient.pollForCompletion();
 
-        return bigqueryUtils;
+        return BQClient;
     }
 
     public static <T> List<T> convertTableRowToModel(BqTableData bqTableData, Function<TableRow,T> ofFunc) {

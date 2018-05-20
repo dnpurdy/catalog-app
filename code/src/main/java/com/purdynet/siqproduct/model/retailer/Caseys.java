@@ -1,4 +1,4 @@
-package com.purdynet.siqproduct.retailer;
+package com.purdynet.siqproduct.model.retailer;
 
 import org.springframework.stereotype.Component;
 
