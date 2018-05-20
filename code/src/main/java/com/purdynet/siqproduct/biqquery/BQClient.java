@@ -1,6 +1,5 @@
 package com.purdynet.siqproduct.biqquery;
 
-import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.googleapis.auth.oauth2.GoogleAuthorizationCodeFlow;
 import com.google.api.client.googleapis.auth.oauth2.GoogleClientSecrets;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
@@ -65,19 +64,14 @@ public class BQClient {
                 getClientCredential(), Collections.singleton(BigqueryScopes.BIGQUERY)).setAccessType("offline").build();
     }
 
-    static Bigquery loadBigqueryClient(String userId) throws IOException {
-        Credential credential = newFlow().loadCredential(userId);
-        return new Bigquery.Builder(HTTP_TRANSPORT, JSON_FACTORY, credential).build();
-    }
-
     public BQClient(final String projectId) {
-        //this.bigquery = initializeAndBuild(GoogleCredential.getApplicationDefault());
         this.projectId = projectId;
         this.bigquery = initializeAndBuild(getCredential());
     }
 
     private GoogleCredential getCredential() {
         try {
+            //return GoogleCredential.getApplicationDefault();
             return GoogleCredential.fromStream(getClientSecretsStream(), HTTP_TRANSPORT, JSON_FACTORY);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -290,7 +284,7 @@ public class BQClient {
     }
 
 
-    public JobConfiguration createJobConfigurationExtract(TableReference tableReference, List<String> destinationUris) {
+    private JobConfiguration createJobConfigurationExtract(TableReference tableReference, List<String> destinationUris) {
         JobConfigurationExtract extractConfig = new JobConfigurationExtract();
         extractConfig.setSourceTable(tableReference);
         extractConfig.setDestinationUris(destinationUris);
