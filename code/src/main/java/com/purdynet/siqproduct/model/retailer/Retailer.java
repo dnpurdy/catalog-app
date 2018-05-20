@@ -1,4 +1,4 @@
-package com.purdynet.siqproduct.retailer;
+package com.purdynet.siqproduct.model.retailer;
 
 public interface Retailer {
     String name();

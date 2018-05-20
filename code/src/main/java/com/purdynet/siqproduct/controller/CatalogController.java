@@ -1,20 +1,13 @@
 package com.purdynet.siqproduct.controller;
 
-import com.purdynet.siqproduct.biqquery.BqTableData;
 import com.purdynet.siqproduct.model.CatalogItem;
-import com.purdynet.siqproduct.model.EditItem;
-import com.purdynet.siqproduct.model.Function;
-import com.purdynet.siqproduct.model.ProductProgress;
 import com.purdynet.siqproduct.service.CatalogService;
 import com.purdynet.siqproduct.view.CatalogView;
-import com.purdynet.siqproduct.view.EditView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
-import static com.purdynet.siqproduct.biqquery.BigqueryUtils.convertTableRowToModel;
 
 @RestController
 public class CatalogController {

@@ -3,24 +3,26 @@ package com.purdynet.siqproduct.controller;
 import com.purdynet.siqproduct.biqquery.BqTableData;
 import com.purdynet.siqproduct.model.MissingItem;
 import com.purdynet.siqproduct.service.*;
-import com.purdynet.siqproduct.biqquery.BigqueryUtils;
-import com.purdynet.siqproduct.retailer.Retailer;
+import com.purdynet.siqproduct.biqquery.BQClient;
+import com.purdynet.siqproduct.model.retailer.Retailer;
 import com.purdynet.siqproduct.view.MissingView;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
 import java.util.List;
 import java.util.function.Function;
 
-import static com.purdynet.siqproduct.biqquery.BigqueryUtils.convertTableRowToModel;
-import static com.purdynet.siqproduct.biqquery.BigqueryUtils.runQuerySync;
+import static com.purdynet.siqproduct.biqquery.BQClient.convertTableRowToModel;
+import static com.purdynet.siqproduct.biqquery.BQClient.runQuerySync;
 
 @RestController
 public class MissingController {
+
+    private final String projectId;
 
     private final RetailerService retailerService;
     private final ProductService productService;
@@ -28,7 +30,8 @@ public class MissingController {
     private final MissingView missingView;
 
     @Autowired
-    public MissingController(RetailerService retailerService, ProductService productService, MissingView missingView) {
+    public MissingController(@Value("${project.id}") String projectId, RetailerService retailerService, ProductService productService, MissingView missingView) {
+        this.projectId = projectId;
         this.retailerService = retailerService;
         this.productService = productService;
         this.missingView = missingView;
@@ -95,8 +98,8 @@ public class MissingController {
     }
 
     private List<MissingItem> makeMissingItemList(String upc, Function<Retailer, String> productSelectFnc) {
-        BigqueryUtils bigqueryUtils = runQuerySync(productService.productProgress(retailerService.getRetailers(), productSelectFnc, upc));
-        return makeMissingItemList(bigqueryUtils.getBqTableData());
+        BQClient BQClient = runQuerySync(projectId, productService.productProgress(retailerService.getRetailers(), productSelectFnc, upc));
+        return makeMissingItemList(BQClient.getBqTableData());
     }
 
     private List<MissingItem> makeMissingItemList(BqTableData bqTableData) {
