@@ -13,14 +13,14 @@ public class MissingView extends AbstractView {
 
     public String getCatalogAGCol() {
         return "    var columnDefs = [\n" +
-                "      {headername: \"itemId\", field: \"itemId\"},\n" +
-                "      {headername: \"projectId\", field: \"projectId\"},\n" +
-                "      {headername: \"numProjects\", field: \"numProjects\"},\n" +
-                "      {headername: \"manufacturer\", field: \"manufacturer\"},\n" +
-                "      {headername: \"description\", field: \"description\"},\n" +
-                "      {headername: \"lastDate\", field: \"lastDate\"},\n" +
-                "      {headername: \"totalRevenue\", field: \"totalRevenue\", cellStyle: { 'text-align': 'right' }, valueFormatter: currencyFormatter},\n" +
-                "      {headername: \"percentTotalRevenue\", field: \"percentTotalRevenue\", valueFormatter: percentFormatter},\n" +
+                "      {headerName: \"UPC\", field: \"itemId\", width: 110},\n" +
+                "      {headerName: \"projectId\", field: \"projectId\"},\n" +
+                "      {headerName: \"# Projects\", field: \"numProjects\", width: 100},\n" +
+                "      {headerName: \"manufacturer\", field: \"manufacturer\", width: 450},\n" +
+                "      {headerName: \"description\", field: \"description\", width: 450},\n" +
+                "      {headerName: \"lastDate\", field: \"lastDate\"},\n" +
+                "      {headerName: \"totalRevenue\", field: \"totalRevenue\", cellStyle: { 'text-align': 'right' }, valueFormatter: currencyFormatter},\n" +
+                "      {headerName: \"percentTotalRevenue\", field: \"percentTotalRevenue\", valueFormatter: percentFormatter},\n" +
                 "    ];\n";
     }
 }

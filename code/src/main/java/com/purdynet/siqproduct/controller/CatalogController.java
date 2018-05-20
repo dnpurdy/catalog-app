@@ -63,4 +63,9 @@ public class CatalogController {
         catalogService.updateCatalog();
         return "Update complete!";
     }
+
+    @GetMapping(value = "/catalog-near/{upc}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<CatalogItem> catalogNearJSON(@PathVariable(name = "upc", required = false) String upc) {
+        return catalogService.genNearMatches(upc);
+    }
 }
