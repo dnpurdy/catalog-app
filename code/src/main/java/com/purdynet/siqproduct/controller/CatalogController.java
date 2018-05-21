@@ -2,6 +2,7 @@ package com.purdynet.siqproduct.controller;
 
 import com.purdynet.siqproduct.model.CatalogItem;
 import com.purdynet.siqproduct.service.CatalogService;
+import com.purdynet.siqproduct.util.CSVUtils;
 import com.purdynet.siqproduct.view.CatalogView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -24,6 +25,11 @@ public class CatalogController {
     @GetMapping(value = "/catalog", produces = MediaType.TEXT_HTML_VALUE)
     public String catalogViewHTML() {
         return catalogView.makeTable(catalogService.getCatalog());
+    }
+
+    @GetMapping(value = "/catalog-csv", produces = MediaType.TEXT_PLAIN_VALUE)
+    public String catalogCSV() {
+        return CSVUtils.catalogItemtoCSV(catalogService.getCatalog());
     }
 
     @GetMapping(value = "/catalog-ag", produces = MediaType.TEXT_HTML_VALUE)

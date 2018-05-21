@@ -6,6 +6,8 @@ import com.google.api.services.bigquery.model.TableRow;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.function.BiFunction;
 
 public class BqTableData {
     private List<TableRow> tableRowList = new ArrayList<>();

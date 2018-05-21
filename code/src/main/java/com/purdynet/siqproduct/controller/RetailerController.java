@@ -77,7 +77,7 @@ public class RetailerController {
     }
 
     private List<ProductProgress> makeProgressList(BqTableData bqTableData) {
-        return convertTableRowToModel(bqTableData, ProductProgress::of);
+        return convertTableRowToModel(bqTableData, retailerService::productProgressOf);
     }
 
     private Optional<Retailer> matchRetailer(String requestId) {

@@ -1,6 +1,10 @@
 package com.purdynet.siqproduct.service;
 
+import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
+import com.purdynet.siqproduct.biqquery.NamedRow;
 import com.purdynet.siqproduct.model.CatalogItem;
+import com.purdynet.siqproduct.model.EditItem;
+import com.purdynet.siqproduct.model.NacsCategories;
 
 import java.util.List;
 
@@ -9,4 +13,9 @@ public interface CatalogService {
     List<CatalogItem> genNearMatches(final String upc);
     List<CatalogItem> getCatalogPartialItemId(final String partial);
     void updateCatalog();
+
+    CatalogItem convert(EditItem editItem, NacsCategories nacsCategories);
+    TableDataInsertAllResponse insertCatalogRow(CatalogItem catalogItem);
+
+    CatalogItem catalogItemOf(NamedRow nr);
 }

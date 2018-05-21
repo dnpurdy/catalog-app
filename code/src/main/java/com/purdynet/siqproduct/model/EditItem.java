@@ -8,6 +8,7 @@ public class EditItem extends AbstractCoreItem {
     private String uom;
     private String pkg;
     private String brand;
+    private String nacs;
 
     public EditItem() {}
 
@@ -49,5 +50,13 @@ public class EditItem extends AbstractCoreItem {
 
     public void setBrand(String brand) {
         this.brand = brand;
+    }
+
+    public String getNacs() {
+        return nacs;
+    }
+
+    public void setNacs(String nacs) {
+        this.nacs = nacs;
     }
 }

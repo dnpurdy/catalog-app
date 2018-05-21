@@ -1,6 +1,7 @@
 package com.purdynet.siqproduct.model;
 
 import com.google.api.services.bigquery.model.TableRow;
+import com.purdynet.siqproduct.biqquery.NamedRow;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -13,19 +14,6 @@ public class MissingItem extends AbstractCoreItem {
     private Date lastDate;
     private BigDecimal totalRevenue;
     private BigDecimal percentTotalRevenue;
-
-    public static MissingItem of(TableRow tableRow) {
-        MissingItem missingItem = new MissingItem();
-        missingItem.setItemId(getString(tableRow, 0));
-        missingItem.setProjectId(getString(tableRow, 1));
-        missingItem.setNumProjects(getInteger(tableRow, 2));
-        missingItem.setManufacturer(getString(tableRow, 3));
-        missingItem.setDescription(getString(tableRow, 4));
-        missingItem.setLastDate(getDate(tableRow, 5));
-        missingItem.setTotalRevenue(getBigDecimal(tableRow, 6));
-        missingItem.setPercentTotalRevenue(getBigDecimal(tableRow, 7));
-        return missingItem;
-    }
 
     public String getProjectId() {
         return projectId;

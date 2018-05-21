@@ -23,11 +23,9 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 import java.util.concurrent.Callable;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -256,10 +254,12 @@ public class BQClient {
         return BQClient;
     }
 
-    public static <T> List<T> convertTableRowToModel(BqTableData bqTableData, Function<TableRow,T> ofFunc) {
+    public static <T> List<T> convertTableRowToModel(BqTableData bqTableData, Function<NamedRow, T> ofFunc) {
         if (bqTableData != null) {
             try {
-                return bqTableData.getTableRowList().stream().map(ofFunc).collect(Collectors.toList());
+                return bqTableData.getTableRowList().stream().map((tr) -> {
+                    return NamedRow.of(bqTableData.getSchemaFieldNames(), tr);
+                }).map(ofFunc).collect(Collectors.toList());
             } catch (NullPointerException e) {
                 throw new RuntimeException(e);
             }
@@ -294,5 +294,9 @@ public class BQClient {
         JobConfiguration jobConfig = new JobConfiguration();
         jobConfig.setExtract(extractConfig);
         return jobConfig;
+    }
+
+    public TableDataInsertAllResponse insertAll(String datasetId, String tableId, TableDataInsertAllRequest content) {
+        return tryToDo(() -> bigquery.tabledata().insertAll(projectId, datasetId, tableId, content).execute() );
     }
 }

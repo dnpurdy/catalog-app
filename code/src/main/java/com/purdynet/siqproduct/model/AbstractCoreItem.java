@@ -6,9 +6,10 @@ import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.message.BasicNameValuePair;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
-public abstract class AbstractCoreItem {
+public abstract class AbstractCoreItem implements Comparable<AbstractCoreItem> {
     private String itemId;
     private String description;
     private String manufacturer;
@@ -52,5 +53,10 @@ public abstract class AbstractCoreItem {
         params.add(new BasicNameValuePair("description", getDescription()));
         params.add(new BasicNameValuePair("manufacturer", getManufacturer()));
         return URLEncodedUtils.format(params,"UTF-8");
+    }
+
+    @Override
+    public int compareTo(AbstractCoreItem i1) {
+        return this.getItemId().compareTo(i1.getItemId());
     }
 }
