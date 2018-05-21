@@ -28,4 +28,9 @@ public class KumAndGo implements Retailer {
     public String tobaccoClause() {
         return " AND p.department IN ('3','28','103','128') ";
     }
+
+    @Override
+    public String saltySnacksClause() {
+        return " AND p.department IN ('14') ";
+    }
 }

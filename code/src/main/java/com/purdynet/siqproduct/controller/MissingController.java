@@ -97,6 +97,21 @@ public class MissingController {
         return makeMissingItemList(upc, Retailer::tobaccoClause);
     }
 
+    @RequestMapping(value = {"/missing-saltysnack","/missing-saltysnack/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
+    public String missingSaltySnackHTML(@PathVariable(name = "upc", required = false) String upc) {
+        return missingView.makeTable(missingSaltySnackJson(upc));
+    }
+
+    @RequestMapping(value = {"/ag/missing-saltysnack","/ag/missing-saltysnack/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
+    public String missingSaltySnackAG(@PathVariable(name = "upc", required = false) String upc) {
+        return missingView.makeTableAG(missingView::getCatalogAGCol, "/missing-saltysnack" + (upc != null ? "/"+upc : ""));
+    }
+
+    @RequestMapping(value = {"/missing-saltysnack","/missing-saltysnack/{upc}"}, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<MissingItem> missingSaltySnackJson(@PathVariable(name = "upc", required = false) String upc) {
+        return makeMissingItemList(upc, Retailer::saltySnacksClause);
+    }
+
     private List<MissingItem> makeMissingItemList(String upc, Function<Retailer, String> productSelectFnc) {
         BQClient BQClient = runQuerySync(projectId, productService.productProgress(retailerService.getRetailers(), productSelectFnc, upc));
         return makeMissingItemList(BQClient.getBqTableData());

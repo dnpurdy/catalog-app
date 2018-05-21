@@ -28,4 +28,9 @@ public class Sunoco implements Retailer {
     public String tobaccoClause() {
         return " AND (p.department IN ('109','114','R03','R24') OR p.categorySubDescription IN ('SMOKELESS TOBACCO','PIPE AND CIGARETTE TOBACCO','CIGARS','OTHER TOBACCO PRODUCTS')) ";
     }
+
+    @Override
+    public String saltySnacksClause() {
+        return " AND p.categorySubDescription IN ('OTHER SALTY SNACKS','POTATO CHIPS','TORTILLA/CORN CHIPS','CHIPS','NUTS/SEEDS','NUTS AND SEEDS','TORTILLA/CORN CHIPS','SALTY SNACKS OTHER','PRETZELS','CRACKERS','PACKAGED READY TO EAT POPCORN','DSD DIPS','POPCORN','PRETZELS') ";
+    }
 }

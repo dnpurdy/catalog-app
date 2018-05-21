@@ -33,4 +33,9 @@ public class SaveALot implements Retailer {
     public String tobaccoClause() {
         return " AND 1=0 ";
     }
+
+    @Override
+    public String saltySnacksClause() {
+        return " AND 1=0 ";
+    }
 }

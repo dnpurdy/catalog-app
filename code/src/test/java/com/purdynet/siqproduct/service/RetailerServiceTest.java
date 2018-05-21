@@ -62,6 +62,11 @@ public class RetailerServiceTest extends BaseTest {
             public String tobaccoClause() {
                 return "";
             }
+
+            @Override
+            public String saltySnacksClause() {
+                return "";
+            }
         };
     }
 
@@ -94,6 +99,11 @@ public class RetailerServiceTest extends BaseTest {
 
             @Override
             public String tobaccoClause() {
+                return "";
+            }
+
+            @Override
+            public String saltySnacksClause() {
                 return "";
             }
         };

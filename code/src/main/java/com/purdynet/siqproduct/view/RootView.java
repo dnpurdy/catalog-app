@@ -40,6 +40,7 @@ public class RootView extends AbstractView {
         sb.append("<tr>").append(td("Beer Missing")).append(td("<a href=\"/missing-beer\">/missing-beer</a>")).append(td("<a href=\"/ag/missing-beer\">/ag/missing-beer</a>")).append("</tr>");
         sb.append("<tr>").append(td("Beverage Missing")).append(td("<a href=\"/missing-beverage\">/missing-beverage</a>")).append(td("<a href=\"/ag/missing-beverage\">/ag/missing-beverage</a>")).append("</tr>");
         sb.append("<tr>").append(td("Tobacco Missing")).append(td("<a href=\"/missing-tobacco\">/missing-tobacco</a>")).append(td("<a href=\"/ag/missing-tobacco\">/ag/missing-tobacco</a>")).append("</tr>");
+        sb.append("<tr>").append(td("Salty Snack Missing")).append(td("<a href=\"/missing-saltysnack\">/missing-saltysnack</a>")).append(td("<a href=\"/ag/missing-saltysnack\">/ag/missing-saltysnack</a>")).append("</tr>");
         sb.append("</table>");
         return sb.toString();
     }
