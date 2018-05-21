@@ -18,7 +18,7 @@ public class MissingView extends AbstractView {
                 "      {headerName: \"# Projects\", field: \"numProjects\", width: 100},\n" +
                 "      {headerName: \"manufacturer\", field: \"manufacturer\", width: 450},\n" +
                 "      {headerName: \"description\", field: \"description\", width: 450},\n" +
-                "      {headerName: \"lastDate\", field: \"lastDate\"},\n" +
+                "      {headerName: \"lastDate\", field: \"lastDate\", valueFormatter: dateFormatter},\n" +
                 "      {headerName: \"totalRevenue\", field: \"totalRevenue\", cellStyle: { 'text-align': 'right' }, valueFormatter: currencyFormatter},\n" +
                 "      {headerName: \"percentTotalRevenue\", field: \"percentTotalRevenue\", valueFormatter: percentFormatter},\n" +
                 "    ];\n";

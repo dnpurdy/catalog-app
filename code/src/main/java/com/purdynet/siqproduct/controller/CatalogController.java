@@ -32,7 +32,7 @@ public class CatalogController {
         return CSVUtils.catalogItemtoCSV(catalogService.getCatalog());
     }
 
-    @GetMapping(value = "/catalog-ag", produces = MediaType.TEXT_HTML_VALUE)
+    @GetMapping(value = "/ag/catalog", produces = MediaType.TEXT_HTML_VALUE)
     public String catalogViewAG() {
         return catalogView.makeTableAG(catalogView::getCatalogAGCol, "/catalog");
     }
@@ -47,7 +47,7 @@ public class CatalogController {
         return catalogView.makeTable(catalogService.getCatalogPartialItemId(upc));
     }
 
-    @GetMapping(value = "/catalog-ag/{upc}", produces = MediaType.TEXT_HTML_VALUE)
+    @GetMapping(value = "/ag/catalog/{upc}", produces = MediaType.TEXT_HTML_VALUE)
     public String catalogViewPartialAG(@PathVariable(name = "upc", required = false) String upc) {
         return catalogView.makeTableAG(catalogView::getCatalogAGCol, "/catalog/"+upc);
     }

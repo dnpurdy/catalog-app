@@ -42,7 +42,7 @@ public class MissingController {
         return missingView.makeTable(missingJson(upc));
     }
 
-    @RequestMapping(value = {"/missing-ag","/missing-ag/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
+    @RequestMapping(value = {"/ag/missing","/missing-ag/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
     public String missingAG(@PathVariable(name = "upc", required = false) String upc) {
         return missingView.makeTableAG(missingView::getCatalogAGCol, "/missing" + (upc != null ? "/"+upc : ""));
     }
@@ -57,7 +57,7 @@ public class MissingController {
         return missingView.makeTable(missingBeerJson(upc));
     }
 
-    @RequestMapping(value = {"/missing-ag-beer","/missing-ag-beer/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
+    @RequestMapping(value = {"/ag/missing-beer","/ag/missing-beer/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
     public String missingBeerAG(@PathVariable(name = "upc", required = false) String upc) {
         return missingView.makeTableAG(missingView::getCatalogAGCol, "/missing-beer" + (upc != null ? "/"+upc : ""));
     }
@@ -72,7 +72,7 @@ public class MissingController {
         return missingView.makeTable(missingBeverageJson(upc));
     }
 
-    @RequestMapping(value = {"/missing-ag-beverage","/missing-ag-beverage/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
+    @RequestMapping(value = {"/ag/missing-beverage","/ag/missing-beverage/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
     public String missingBeverageAG(@PathVariable(name = "upc", required = false) String upc) {
         return missingView.makeTableAG(missingView::getCatalogAGCol, "/missing-beverage" + (upc != null ? "/"+upc : ""));
     }
@@ -87,7 +87,7 @@ public class MissingController {
         return missingView.makeTable(missingTobaccoJson(upc));
     }
 
-    @RequestMapping(value = {"/missing-ag-tobacco","/missing-ag-tobacco/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
+    @RequestMapping(value = {"/ag/missing-tobacco","/ag/missing-tobacco/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
     public String missingTobaccoAG(@PathVariable(name = "upc", required = false) String upc) {
         return missingView.makeTableAG(missingView::getCatalogAGCol, "/missing-tobacco" + (upc != null ? "/"+upc : ""));
     }
