@@ -30,16 +30,16 @@ public class RootView extends AbstractView {
     private String catalogExplorer() {
         StringBuilder sb = new StringBuilder("<h3>Catalog Explorer</h3>");
         sb.append("<a href=\"/catalog\">/catalog</a><br/>");
-        sb.append("<a href=\"/catalog-ag\">/catalog-ag</a>");
+        sb.append("<a href=\"/ag/catalog\">/ag/catalog</a>");
         return sb.toString();
     }
 
     private String categoryTable() {
         StringBuilder sb = new StringBuilder("<h3>Product Type Analysis</h3><table><tr><th>Name</th><th>Link</th><th>AG Link</th></tr>");
-        sb.append("<tr>").append(td("All Missing")).append(td("<a href=\"/missing\">/missing</a>")).append(td("<a href=\"/missing-ag\">/missing-ag</a>")).append("</tr>");
-        sb.append("<tr>").append(td("Beer Missing")).append(td("<a href=\"/missing-beer\">/missing-beer</a>")).append(td("<a href=\"/missing-ag-beer\">/missing-ag-beer</a>")).append("</tr>");
-        sb.append("<tr>").append(td("Beverage Missing")).append(td("<a href=\"/missing-beverage\">/missing-beverage</a>")).append(td("<a href=\"/missing-ag-beverage\">/missing-ag-beverage</a>")).append("</tr>");
-        sb.append("<tr>").append(td("Tobacco Missing")).append(td("<a href=\"/missing-tobacco\">/missing-tobacco</a>")).append(td("<a href=\"/missing-ag-tobacco\">/missing-ag-tobacco</a>")).append("</tr>");
+        sb.append("<tr>").append(td("All Missing")).append(td("<a href=\"/missing\">/missing</a>")).append(td("<a href=\"/ag/missing\">/ag/missing</a>")).append("</tr>");
+        sb.append("<tr>").append(td("Beer Missing")).append(td("<a href=\"/missing-beer\">/missing-beer</a>")).append(td("<a href=\"/ag/missing-beer\">/ag/missing-beer</a>")).append("</tr>");
+        sb.append("<tr>").append(td("Beverage Missing")).append(td("<a href=\"/missing-beverage\">/missing-beverage</a>")).append(td("<a href=\"/ag/missing-beverage\">/ag/missing-beverage</a>")).append("</tr>");
+        sb.append("<tr>").append(td("Tobacco Missing")).append(td("<a href=\"/missing-tobacco\">/missing-tobacco</a>")).append(td("<a href=\"/ag/missing-tobacco\">/ag/missing-tobacco</a>")).append("</tr>");
         sb.append("</table>");
         return sb.toString();
     }
@@ -63,7 +63,7 @@ public class RootView extends AbstractView {
         retailers.forEach(r -> sb.append("<tr>")
                 .append(td(r.name()))
                 .append(td(String.format("<a href=\"/retailer/%s/missing\">/retailer/%s/missing</a>", r.projectId(), r.projectId())))
-                .append(td(String.format("<a href=\"/retailer/%s/missing-ag\">/retailer/%s/missing-ag</a>", r.projectId(), r.projectId())))
+                .append(td(String.format("<a href=\"/ag/retailer/%s/missing\">/ag/retailer/%s/missing</a>", r.projectId(), r.projectId())))
                 .append("</tr>"));
         sb.append("</table>");
         return sb.toString();
@@ -76,7 +76,7 @@ public class RootView extends AbstractView {
         retailers.forEach(r -> sb.append("<tr>")
                 .append(td(r.name()))
                 .append(td(String.format("<a href=\"/retailer/%s/detail\">/retailer/%s/detail</a>", r.projectId(), r.projectId())))
-                .append(td(String.format("<a href=\"/retailer/%s/detail-ag\">/retailer/%s/detail-ag</a>", r.projectId(), r.projectId())))
+                .append(td(String.format("<a href=\"/ag/retailer/%s/detail\">/ag/retailer/%s/detail</a>", r.projectId(), r.projectId())))
                 .append("</tr>"));
         sb.append("</table>");
         return sb.toString();

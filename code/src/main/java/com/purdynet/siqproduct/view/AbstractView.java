@@ -149,6 +149,17 @@ public class AbstractView {
                 "  enableSorting: true,\n" +
                 "  enableFilter: true\n" +
                 "};" +
+                " function dateFormatter(params) {\n" +
+                " console.log(params);\n"+
+                " var dateobj = new Date(params.value);\n" +
+                "  var mm = dateobj.getMonth() + 1; // getMonth() is zero-based\n" +
+                "  var dd = dateobj.getDate();\n" +
+                "\n" +
+                "  return [dateobj.getFullYear(),\n" +
+                "          (mm>9 ? '' : '0') + mm,\n" +
+                "          (dd>9 ? '' : '0') + dd\n" +
+                "         ].join('-');\n" +
+                "};" +
                 "function currencyFormatter(params) {\n" +
                         "    return '$' + formatNumber(params.value);\n" +
                         "}\n" +

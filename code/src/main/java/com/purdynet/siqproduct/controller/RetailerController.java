@@ -39,7 +39,7 @@ public class RetailerController {
         return retailerView.makeTable(missingJson(requestId));
     }
 
-    @RequestMapping(value = "/retailer/{id}/missing-ag", produces = MediaType.TEXT_HTML_VALUE)
+    @RequestMapping(value = "/ag/retailer/{id}/missing", produces = MediaType.TEXT_HTML_VALUE)
     public String missingAG(@PathVariable("id") String requestId) {
         return retailerView.makeTableAG(retailerView::getCatalogAGCol, "/retailer/"+requestId+"/missing");
     }
@@ -54,7 +54,7 @@ public class RetailerController {
         return retailerView.makeTable(detailJson(requestId));
     }
 
-    @RequestMapping(value = "/retailer/{id}/detail-ag", produces = MediaType.TEXT_HTML_VALUE)
+    @RequestMapping(value = "/ag/retailer/{id}/detail", produces = MediaType.TEXT_HTML_VALUE)
     public String detailAG(@PathVariable("id") String requestId) {
         return retailerView.makeTableAG(retailerView::getCatalogAGCol, "/retailer/"+requestId+"/detail");
     }

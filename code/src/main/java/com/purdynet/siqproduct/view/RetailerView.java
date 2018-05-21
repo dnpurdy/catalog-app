@@ -81,21 +81,21 @@ public class RetailerView extends AbstractView {
 
     public String getCatalogAGCol() {
         return "    var columnDefs = [\n" +
-                "      {headername: \"itemId\", field: \"itemId\"},\n" +
-                "      {headername: \"manufacturer\", field: \"manufacturer\"},\n" +
-                "      {headername: \"retailerItemId\", field: \"retailerItemId\"},\n" +
-                "      {headername: \"revPortion\", field: \"revPortion\", valueFormatter: percentFormatter},\n" +
-                "      {headername: \"description\", field: \"description\"},\n" +
-                "      {headername: \"nacsCategory\", field: \"nacsCategory\"},\n" +
-                "      {headername: \"complete\", field: \"complete\"},\n" +
-                "      {headername: \"isUpc\", field: \"isUpc\"},\n" +
-                "      {headername: \"completeRevenue\", field: \"completeRevenue\", valueFormatter: percentFormatter},\n" +
-                "      {headername: \"incompleteRevenue\", field: \"incompleteRevenue\", valueFormatter: percentFormatter},\n" +
-                "      {headername: \"completeItems\", field: \"completeItems\"},\n" +
-                "      {headername: \"incompleteItems\", field: \"incompleteItems\"},\n" +
-                "      {headername: \"completeDeptRevenue\", field: \"completeDeptRevenue\", valueFormatter: percentFormatter},\n" +
-                "      {headername: \"incompleteDeptRevenue\", field: \"incompleteDeptRevenue\", valueFormatter: percentFormatter},\n" +
-                "      {headername: \"lastDate\", field: \"lastDate\"},\n" +
+                "      {headerName: \"itemId\", field: \"itemId\"},\n" +
+                "      {headerName: \"manufacturer\", field: \"manufacturer\"},\n" +
+                "      {headerName: \"retailerItemId\", field: \"retailerItemId\"},\n" +
+                "      {headerName: \"revPortion\", field: \"revPortion\", valueFormatter: percentFormatter},\n" +
+                "      {headerName: \"description\", field: \"description\"},\n" +
+                "      {headerName: \"nacsCategory\", field: \"nacsCategory\"},\n" +
+                "      {headerName: \"complete\", field: \"complete\"},\n" +
+                "      {headerName: \"isUpc\", field: \"isUpc\"},\n" +
+                "      {headerName: \"completeRevenue\", field: \"completeRevenue\", valueFormatter: percentFormatter},\n" +
+                "      {headerName: \"incompleteRevenue\", field: \"incompleteRevenue\", valueFormatter: percentFormatter},\n" +
+                "      {headerName: \"completeItems\", field: \"completeItems\"},\n" +
+                "      {headerName: \"incompleteItems\", field: \"incompleteItems\"},\n" +
+                "      {headerName: \"completeDeptRevenue\", field: \"completeDeptRevenue\", valueFormatter: percentFormatter},\n" +
+                "      {headerName: \"incompleteDeptRevenue\", field: \"incompleteDeptRevenue\", valueFormatter: percentFormatter},\n" +
+                "      {headerName: \"lastDate\", field: \"lastDate\", valueFormatter: dateFormatter},\n" +
                 "    ];\n";
     }
 }
