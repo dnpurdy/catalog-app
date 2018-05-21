@@ -38,4 +38,9 @@ public class UnitedPacific implements Retailer {
     public String tobaccoClause() {
         return " AND p.categorySubCode IN ('3','2') ";
     }
+
+    @Override
+    public String saltySnacksClause() {
+        return " AND p.categorySubCode IN ('15','17') ";
+    }
 }

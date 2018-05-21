@@ -10,6 +10,7 @@ public interface Retailer {
     String beerClause();
     String beverageClause();
     String tobaccoClause();
+    String saltySnacksClause();
 
     default String fixedUpc() { return "p.upc"; }
 

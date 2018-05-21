@@ -33,4 +33,9 @@ public class Racetrac implements Retailer {
     public String tobaccoClause() {
         return " AND p.department IN ('9','19') ";
     }
+
+    @Override
+    public String saltySnacksClause() {
+        return " AND p.categorySubDescription IN ('SALTY SNACKS','NUTS-SEEDS-FRUIT') ";
+    }
 }
