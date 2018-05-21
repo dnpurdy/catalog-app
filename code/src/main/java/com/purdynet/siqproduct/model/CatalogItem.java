@@ -4,12 +4,15 @@ import com.google.api.services.bigquery.model.TableRow;
 import com.opencsv.bean.CsvDate;
 import com.purdynet.siqproduct.biqquery.NamedRow;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import static com.purdynet.siqproduct.util.BQUtils.getDate;
 import static com.purdynet.siqproduct.util.BQUtils.getString;
 
 public class CatalogItem extends AbstractCoreItem {
+    private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSSSS"); //2018-04-22 16:54:00.219568
+
     private String productId;
     //itemId
     //description
@@ -51,7 +54,6 @@ public class CatalogItem extends AbstractCoreItem {
     private String containerDescription;
     private String distributor;
     private String industryType;
-    @CsvDate("yyyy-MM-dd HH:mm:ss")
     private Date dateCreated;
 
     public String getProductId() {
@@ -360,6 +362,14 @@ public class CatalogItem extends AbstractCoreItem {
 
     public Date getDateCreated() {
         return dateCreated;
+    }
+
+    public String getDateCreatedBQ() {
+        try {
+            return sdf.format(dateCreated);
+        } catch (NullPointerException e) {
+            return sdf.format(new Date());
+        }
     }
 
     public String getDateCreatedString() {

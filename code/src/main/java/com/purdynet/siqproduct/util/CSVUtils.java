@@ -2,8 +2,10 @@ package com.purdynet.siqproduct.util;
 
 import com.google.api.services.bigquery.model.TableFieldSchema;
 import com.google.api.services.bigquery.model.TableRow;
+import com.google.common.base.Joiner;
 import com.opencsv.CSVWriter;
 import com.opencsv.bean.ColumnPositionMappingStrategy;
+import com.opencsv.bean.HeaderColumnNameMappingStrategy;
 import com.opencsv.bean.StatefulBeanToCsv;
 import com.opencsv.bean.StatefulBeanToCsvBuilder;
 import com.purdynet.siqproduct.biqquery.BqTableData;
@@ -37,10 +39,12 @@ public class CSVUtils {
             catalog.sort(Comparator.comparing(CatalogItem::getItemId));
             ColumnPositionMappingStrategy<CatalogItem> strat = new ColumnPositionMappingStrategy<>();
             strat.setType(CatalogItem.class);
-            String[] columns = new String[] {"productId", "itemId", "description", "department", "deptDescription", "categorySubCode", "categorySubDescription", "category", "manufacturer", "subSegmentDescription", "subSegmentId", "segmentDescription", "segmentId", "subCategoryDescription", "subCategoryId", "majorDepartmentDescription", "majorDepartmentId", "container", "size", "uom", "active", "privateLabelFlag", "consumption", "package", "flavor", "brand", "brandType", "height", "width", "depth", "shapeId", "family", "trademark", "country", "color", "alternateHeight", "alternateWeight", "alternateDepth", "containerDescription", "distributor", "industryType", "dateCreated"}; // the fields to bind do in your JavaBean
+            String[] columns = new String[] {"productId", "itemId", "description", "department", "deptDescription", "categorySubCode", "categorySubDescription", "category", "manufacturer", "subSegmentDescription", "subSegmentId", "segmentDescription", "segmentId", "subCategoryDescription", "subCategoryId", "majorDepartmentDescription", "majorDepartmentId", "container", "size", "uom", "active", "privateLabelFlag", "consumption", "package", "flavor", "brand", "brandType", "height", "width", "depth", "shapeId", "family", "trademark", "country", "color", "alternateHeight", "alternateWeight", "alternateDepth", "containerDescription", "distributor", "industryType", "dateCreatedBQ"}; // the fields to bind do in your JavaBean
             strat.setColumnMapping(columns);
 
             StringWriter stringWriter = new StringWriter();
+            Joiner joiner = Joiner.on(",");
+            stringWriter.write(joiner.join(columns)+"\n");
             StatefulBeanToCsv<CatalogItem> beanToCsv = new StatefulBeanToCsvBuilder<CatalogItem>(stringWriter).withMappingStrategy(strat).build();
             beanToCsv.write(catalog);
             stringWriter.close();
