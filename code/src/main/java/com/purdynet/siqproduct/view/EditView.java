@@ -29,7 +29,7 @@ public class EditView extends AbstractView {
 
     private String nacs() {
         StringBuilder sb = new StringBuilder();
-        sb.append("<select>");
+        sb.append("<select name=\"nacs\">");
         for (NacsCategories nacsCategories : NacsCategories.values()) {
             sb.append("<option value=\""+nacsCategories.name()+"\">"+nacsCategories.getCategoryCode()+" - "+nacsCategories.getCategory()+" - "+nacsCategories.getSubCategory()+"</option>");
         }

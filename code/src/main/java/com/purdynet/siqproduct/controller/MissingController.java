@@ -103,6 +103,6 @@ public class MissingController {
     }
 
     private List<MissingItem> makeMissingItemList(BqTableData bqTableData) {
-        return convertTableRowToModel(bqTableData, MissingItem::of);
+        return convertTableRowToModel(bqTableData, productService::missingItemOf);
     }
 }

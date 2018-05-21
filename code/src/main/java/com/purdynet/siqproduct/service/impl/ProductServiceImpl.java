@@ -1,5 +1,8 @@
 package com.purdynet.siqproduct.service.impl;
 
+import com.purdynet.siqproduct.biqquery.NamedRow;
+import com.purdynet.siqproduct.model.MissingItem;
+import com.purdynet.siqproduct.model.ProductProgress;
 import com.purdynet.siqproduct.model.retailer.Retailer;
 import com.purdynet.siqproduct.service.ProductService;
 import com.purdynet.siqproduct.service.RetailerService;
@@ -50,5 +53,20 @@ public class ProductServiceImpl implements ProductService {
                 "AND c.upc IS NULL\n" +
                 "ORDER BY a.numProjects DESC, a.per DESC");
         return sql.toString();
+    }
+
+    @Override
+    public MissingItem missingItemOf(NamedRow nr) {
+        MissingItem missingItem = new MissingItem();
+        missingItem.setItemId(nr.getString("itemId"));
+        missingItem.setProjectId(nr.getString("projectId"));
+        missingItem.setNumProjects(nr.getInteger("numProjects"));
+        missingItem.setManufacturer(nr.getString("manufacturer"));
+        missingItem.setDescription(nr.getString("description"));
+        missingItem.setLastDate(nr.getDate("lastDate"));
+        missingItem.setTotalRevenue(nr.getBigDecimal("totalRevenue"));
+        missingItem.setPercentTotalRevenue(nr.getBigDecimal("percentTotalRevenue"));
+
+        return missingItem;
     }
 }

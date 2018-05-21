@@ -1,6 +1,7 @@
 package com.purdynet.siqproduct.model;
 
 import com.google.api.services.bigquery.model.TableRow;
+import com.purdynet.siqproduct.biqquery.NamedRow;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.message.BasicNameValuePair;
@@ -26,29 +27,6 @@ public class ProductProgress extends AbstractCoreItem {
     private BigDecimal completeDeptRevenue;
     private BigDecimal incompleteDeptRevenue;
     private Date lastDate;
-
-    public ProductProgress() {}
-
-    public static ProductProgress of(TableRow tableRow) {
-        ProductProgress pp = new ProductProgress();
-        pp.setItemId(getString(tableRow,0));
-        pp.setManufacturer(getString(tableRow,1));
-        pp.setRetailerItemId(getString(tableRow,2));
-        pp.setRevPortion(getBigDecimal(tableRow,3));
-        pp.setDescription(getString(tableRow,4));
-        pp.setRetailerDept(getString(tableRow,5));
-        pp.setNacsCategory(getString(tableRow,6));
-        pp.setComplete(getString(tableRow,7));
-        pp.setIsUpc(getString(tableRow,8));
-        pp.setCompleteRevenue(getBigDecimal(tableRow,9));
-        pp.setIncompleteRevenue(getBigDecimal(tableRow,10));
-        pp.setCompleteItems(getInteger(tableRow,11));
-        pp.setIncompleteItems(getInteger(tableRow,12));
-        pp.setCompleteDeptRevenue(getBigDecimal(tableRow,13));
-        pp.setIncompleteDeptRevenue(getBigDecimal(tableRow,14));
-        pp.setLastDate(getDate(tableRow, 15));
-        return pp;
-    }
 
     public String getRetailerItemId() {
         return retailerItemId;

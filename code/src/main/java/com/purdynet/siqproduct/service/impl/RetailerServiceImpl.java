@@ -1,5 +1,7 @@
 package com.purdynet.siqproduct.service.impl;
 
+import com.purdynet.siqproduct.biqquery.NamedRow;
+import com.purdynet.siqproduct.model.ProductProgress;
 import com.purdynet.siqproduct.model.retailer.Retailer;
 import com.purdynet.siqproduct.service.RetailerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,5 +55,27 @@ public class RetailerServiceImpl implements RetailerService {
                 "SELECT itemId, SUM(ABS(quantity)*ABS(extendedAmount/1000)) totalVal, MAX(dateProcessed) lastDate FROM ["+retailer.projectId()+":default.LineItem] GROUP BY 1) a " +
                 "JOIN ["+retailer.projectId()+":default.Product] p ON a.itemId=p.upc WHERE 1=1 " +
                 productWhere;
+    }
+
+    @Override
+    public ProductProgress productProgressOf(NamedRow nr) {
+        ProductProgress productProgress = new ProductProgress();
+        productProgress.setItemId(nr.getString("itemId"));
+        productProgress.setManufacturer(nr.getString("manufacturer"));
+        productProgress.setRetailerItemId(nr.getString("retailerItemId"));
+        productProgress.setRevPortion(nr.getBigDecimal("revPortion"));
+        productProgress.setDescription(nr.getString("description"));
+        productProgress.setRetailerDept(nr.getString("retailerDept"));
+        productProgress.setNacsCategory(nr.getString("nacsCategory"));
+        productProgress.setComplete(nr.getString("complete"));
+        productProgress.setIsUpc(nr.getString("isUpc"));
+        productProgress.setCompleteRevenue(nr.getBigDecimal("completeRevenue"));
+        productProgress.setIncompleteRevenue(nr.getBigDecimal("incompleteRevenue"));
+        productProgress.setCompleteItems(nr.getInteger("completeItems"));
+        productProgress.setIncompleteItems(nr.getInteger("incompleteItems"));
+        productProgress.setCompleteDeptRevenue(nr.getBigDecimal("completeDeptRevenue"));
+        productProgress.setIncompleteDeptRevenue(nr.getBigDecimal("incompleteDeptRevenue"));
+        productProgress.setLastDate(nr.getDate("lastDate"));
+        return productProgress;
     }
 }

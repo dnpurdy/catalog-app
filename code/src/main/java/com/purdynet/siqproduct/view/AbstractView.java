@@ -109,7 +109,7 @@ public class AbstractView {
     }
 
     public String td(String val, String t) {
-        return "<td "+t+">"+val+"</td>";
+        return "<td "+t+">"+(val != null ? val : "")+"</td>";
     }
 
     public String percentFmt(BigDecimal n) {

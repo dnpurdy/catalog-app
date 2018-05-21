@@ -134,6 +134,14 @@ public enum NacsCategories {
         return subCategory;
     }
 
+    public static NacsCategories fromName(String name) {
+        for (NacsCategories nacsCategories : NacsCategories.values()) {
+            if (nacsCategories.name().equalsIgnoreCase(name)) {
+                return nacsCategories;
+            }
+        }
+        return null;
+    }
     public static Optional<NacsCategories> matchCategoryCode(final String categoryCode) {
         return Arrays.stream(NacsCategories.values()).filter(c -> categoryCode.equals(c.getCategoryCode())).findFirst();
     }

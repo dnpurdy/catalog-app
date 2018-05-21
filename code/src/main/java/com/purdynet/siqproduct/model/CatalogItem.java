@@ -1,6 +1,8 @@
 package com.purdynet.siqproduct.model;
 
 import com.google.api.services.bigquery.model.TableRow;
+import com.opencsv.bean.CsvDate;
+import com.purdynet.siqproduct.biqquery.NamedRow;
 
 import java.util.Date;
 
@@ -49,54 +51,8 @@ public class CatalogItem extends AbstractCoreItem {
     private String containerDescription;
     private String distributor;
     private String industryType;
+    @CsvDate("yyyy-MM-dd HH:mm:ss")
     private Date dateCreated;
-
-    public static CatalogItem of(TableRow tableRow) {
-        CatalogItem catalogItem = new CatalogItem();
-        catalogItem.setProductId(getString(tableRow, 0));
-        catalogItem.setItemId(getString(tableRow, 1));
-        catalogItem.setDescription(getString(tableRow, 2));
-        catalogItem.setDepartment(getString(tableRow, 3));
-        catalogItem.setDeptDescription(getString(tableRow, 4));
-        catalogItem.setCategorySubCode(getString(tableRow, 5));
-        catalogItem.setCategorySubDescription(getString(tableRow, 6));
-        catalogItem.setCategory(getString(tableRow, 7));
-        catalogItem.setManufacturer(getString(tableRow, 8));
-        catalogItem.setSubSegmentDescription(getString(tableRow, 9));
-        catalogItem.setSubSegmentId(getString(tableRow, 10));
-        catalogItem.setSegmentDescription(getString(tableRow, 11));
-        catalogItem.setSegmentId(getString(tableRow, 12));
-        catalogItem.setSubCategoryDescription(getString(tableRow, 13));
-        catalogItem.setSubCategoryId(getString(tableRow, 14));
-        catalogItem.setMajorDepartmentDescription(getString(tableRow, 15));
-        catalogItem.setMajorDepartmentId(getString(tableRow, 16));
-        catalogItem.setContainer(getString(tableRow, 17));
-        catalogItem.setSize(getString(tableRow, 18));
-        catalogItem.setUom(getString(tableRow, 19));
-        catalogItem.setActive(getString(tableRow, 20));
-        catalogItem.setPrivateLabelFlag(getString(tableRow, 21));
-        catalogItem.setConsumption(getString(tableRow, 22));
-        catalogItem.setPkg(getString(tableRow, 23));
-        catalogItem.setFlavor(getString(tableRow, 24));
-        catalogItem.setBrand(getString(tableRow, 25));
-        catalogItem.setBrandType(getString(tableRow, 26));
-        catalogItem.setHeight(getString(tableRow, 27));
-        catalogItem.setWidth(getString(tableRow, 28));
-        catalogItem.setDepth(getString(tableRow, 29));
-        catalogItem.setShapeId(getString(tableRow, 30));
-        catalogItem.setFamily(getString(tableRow, 31));
-        catalogItem.setTrademark(getString(tableRow, 32));
-        catalogItem.setCountry(getString(tableRow, 33));
-        catalogItem.setColor(getString(tableRow, 34));
-        catalogItem.setAlternateHeight(getString(tableRow, 35));
-        catalogItem.setAlternateWeight(getString(tableRow, 36));
-        catalogItem.setAlternateDepth(getString(tableRow, 37));
-        catalogItem.setContainerDescription(getString(tableRow, 38));
-        catalogItem.setDistributor(getString(tableRow, 39));
-        catalogItem.setIndustryType(getString(tableRow, 40));
-        catalogItem.setDateCreated(getDate(tableRow, 41));
-        return catalogItem;
-    }
 
     public String getProductId() {
         return productId;
