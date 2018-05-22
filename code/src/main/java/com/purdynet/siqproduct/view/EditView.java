@@ -10,7 +10,7 @@ import java.util.List;
 
 @Component
 public class EditView extends AbstractView {
-    public String productForm(EditItem editItem) {
+    public String productFormOld(EditItem editItem) {
         StringBuilder sb = new StringBuilder();
         sb.append("<form method=\"post\" action=\"/edit\">")
                 .append(textField("itemId", editItem.getItemId()))
@@ -27,18 +27,42 @@ public class EditView extends AbstractView {
         return sb.toString();
     }
 
+    public String productForm(EditItem editItem) {
+        return "<form method=\"post\" action=\"edit\">\n" +
+                "<ul class=\"form-style-1\">\n" +
+                textField("itemId", editItem.getItemId(), true) +
+                textField("description", editItem.getDescription(), true) +
+                nacs() +
+                textField("manufacturer", editItem.getManufacturer(), true) +
+                textField("container", editItem.getContainer()) +
+                textField("size", editItem.getSize()) +
+                textField("uom", editItem.getUom()) +
+                textField("pkg", editItem.getPkg()) +
+                textField("brand", editItem.getBrand()) +
+                "    <li><input type=\"submit\" value=\"Submit\" /> <input type=\"reset\" value=\"Reset\" /></li>\n" +
+                "</ul>\n" +
+                "</form>";
+    }
+
     private String nacs() {
         StringBuilder sb = new StringBuilder();
-        sb.append("<select name=\"nacs\">");
+        sb.append("<li><select name=\"nacs\" class=\"field-select\">");
         for (NacsCategories nacsCategories : NacsCategories.values()) {
             sb.append("<option value=\""+nacsCategories.name()+"\">"+nacsCategories.getCategoryCode()+" - "+nacsCategories.getCategory()+" - "+nacsCategories.getSubCategory()+"</option>");
         }
-        sb.append("</select></br>");
+        sb.append("</select></li>");
         return sb.toString();
     }
 
     private String textField(String id, String value) {
-        return "<label for=\""+id+"\">"+id+"</label><input id=\""+id+"\" name=\""+id+"\" type=\"text\" "+(Strings.isNotEmpty(value) ? "value=\""+value+"\"" : "" ) +"></input><br/>";
+        return textField(id, value, false);
+    }
+
+    private String textField(String id, String value, boolean required) {
+        return "<li><label for=\""+id+"\">"+id +
+                (required ? "<span class=\"required\">*</span>" : "") +
+                "<input class=\"field-long\" id=\""+id+"\" name=\""+id+"\" type=\"text\" "+(Strings.isNotEmpty(value) ? "value=\""+value+"\"" : "" ) +"></input></li>";
+        //return "<label for=\""+id+"\">"+id+"</label><br/>";
     }
 
     public String toEditTable(List<CatalogItem> catalogItems) {

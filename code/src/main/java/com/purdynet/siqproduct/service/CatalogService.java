@@ -18,4 +18,6 @@ public interface CatalogService {
     TableDataInsertAllResponse insertCatalogRow(CatalogItem catalogItem);
 
     CatalogItem catalogItemOf(NamedRow nr);
+
+    boolean hasItemId(final String upc);
 }
