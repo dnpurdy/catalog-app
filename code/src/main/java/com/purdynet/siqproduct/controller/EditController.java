@@ -45,9 +45,13 @@ public class EditController {
     public String editPagePost(@ModelAttribute EditItem editItem) throws Exception {
         NacsCategories nacsCategories = NacsCategories.fromName(editItem.getNacs());
         CatalogItem converted = catalogService.convert(editItem, nacsCategories);
-        TableDataInsertAllResponse tableDataInsertAllResponse = catalogService.insertCatalogRow(converted);
-        logger.info(tableDataInsertAllResponse.toPrettyString());
-        catalogService.updateCatalog();
-        return editView.wrapHtmlBody(converted.prettyPrint());
+
+        if (!catalogService.hasItemId(editItem.getItemId())) {
+            TableDataInsertAllResponse tableDataInsertAllResponse = catalogService.insertCatalogRow(converted);
+            logger.info(tableDataInsertAllResponse.toPrettyString());
+            return editView.wrapHtmlBody(converted.prettyPrint());
+        } else {
+            return editView.wrapHtmlBody("Product UPC "+editItem.getItemId()+" aleady in catalog!! not duplicating...");
+        }
     }
 }

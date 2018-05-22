@@ -45,7 +45,8 @@ public class CatalogServiceImpl implements CatalogService {
 
     @Override
     public List<CatalogItem> genNearMatches(final String upc) {
-        return genNearMatches(upc, upc.length(), new ArrayList<>());
+        if (upc != null ) return genNearMatches(upc, upc.length(), new ArrayList<>());
+        else return new ArrayList<>();
     }
 
     private List<CatalogItem> genNearMatches(final String upc, final int length, final List<CatalogItem> bestGuess) {
@@ -133,7 +134,9 @@ public class CatalogServiceImpl implements CatalogService {
         List<TableDataInsertAllRequest.Rows> rows = new ArrayList<>();
         rows.add(genInsertRow(catalogItem));
         content.setRows(rows);
-        return bqClient.insertAll(SIQ_DATASET_ID, CATALOG_TABLE_ID, content);
+        TableDataInsertAllResponse tableDataInsertAllResponse = bqClient.insertAll(SIQ_DATASET_ID, CATALOG_TABLE_ID, content);
+        if (tableDataInsertAllResponse.getInsertErrors() == null || tableDataInsertAllResponse.getInsertErrors().isEmpty()) catalog.add(catalogItem);
+        return tableDataInsertAllResponse;
     }
 
     private TableDataInsertAllRequest.Rows genInsertRow(CatalogItem catalogItem) {
@@ -204,5 +207,10 @@ public class CatalogServiceImpl implements CatalogService {
         catalogItem.setIndustryType(nr.getString("industryType"));
         catalogItem.setDateCreated(nr.getDate("dateCreated"));
         return catalogItem;
+    }
+
+    @Override
+    public boolean hasItemId(final String upc) {
+        return catalog.stream().filter(ci -> ci.getItemId().equals(upc)).collect(Collectors.toList()).size() != 0;
     }
 }
