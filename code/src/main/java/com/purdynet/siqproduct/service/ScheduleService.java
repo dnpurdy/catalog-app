@@ -19,11 +19,14 @@ public class ScheduleService {
 
     private final String projectId;
     private final CatalogService catalogService;
+    private final HealthService healthService;
 
     @Autowired
-    public ScheduleService(@Value("${project.id}") String projectId, CatalogService catalogService) {
+    public ScheduleService(@Value("${project.id}") String projectId,
+                           final CatalogService catalogService, final HealthService healthService) {
         this.projectId = projectId;
         this.catalogService = catalogService;
+        this.healthService = healthService;
     }
 
     @Scheduled(fixedRate = 86400000L, initialDelay = 3600000L)
@@ -45,5 +48,12 @@ public class ScheduleService {
     public void updateInMemCatalog() {
         logger.info("Updating in memory catalog...");
         catalogService.updateCatalog();
+    }
+
+    @Scheduled(fixedRate = 3600000L, initialDelay = 10000L)
+    public void updateHealth() {
+        logger.info("Updating the health...");
+        healthService.generateHealthReport();
+        logger.info("...update health complete.");
     }
 }
