@@ -5,11 +5,10 @@
 
     <groupId>com.purdynet</groupId>
     <artifactId>siqproduct</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>siqproduct</name>
-    <description>Demo project for Spring Boot</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -26,6 +25,8 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <servlet-api.version>3.1.0</servlet-api.version>
+        <buildtimestamp>${maven.build.timestamp}</buildtimestamp>
+        <maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
     </properties>
 
     <dependencies>
