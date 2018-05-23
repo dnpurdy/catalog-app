@@ -30,11 +30,11 @@ public class NoDuplicateUPCHealthCheck extends AbstractHealthCheck implements He
 
     @Override
     public void runCheck(HealthResource healthResource, HealthCheckParams params) throws Exception {
-        List<CatalogItem> catalog = catalogService.getCatalog();
-        Map<String, Long> duplicates = catalog.stream().collect(Collectors.groupingBy(AbstractCoreItem::getItemId, Collectors.counting())).entrySet().stream()
+        Map<String, Long> duplicates = catalogService.getCatalog().stream()
+                .collect(Collectors.groupingBy(AbstractCoreItem::getItemId, Collectors.counting())).entrySet().stream()
                 .filter(entry -> entry.getValue() > 1).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
         if (!duplicates.isEmpty()) {
-            setDegraded(healthResource, "Duplicate UPCs found!");
+            setBroken(healthResource, "Duplicate UPCs found!");
             duplicates.forEach((k,v) -> healthResource.addStat("UPC: " + k, String.valueOf(v)));
         }
     }
