@@ -36,11 +36,11 @@ public class ScheduleService {
         BQClient BQClient = new BQClient(projectId);
 
         TableReference catalog = new TableReference();
-        catalog.setProjectId("swiftiq-master");
+        catalog.setProjectId(projectId);
         catalog.setDatasetId("siq");
         catalog.setTableId("Catalog");
 
-        BQClient.extractTable(catalog, "gs://swiftiq-master/catalog/"+fileName);
+        BQClient.extractTable(catalog, "gs://"+projectId+"/catalog/"+fileName);
         BQClient.pollForCompletion();
     }
 

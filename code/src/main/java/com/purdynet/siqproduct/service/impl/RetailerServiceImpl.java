@@ -5,6 +5,7 @@ import com.purdynet.siqproduct.model.ProductProgress;
 import com.purdynet.siqproduct.model.retailer.Retailer;
 import com.purdynet.siqproduct.service.RetailerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
@@ -13,10 +14,12 @@ import java.util.List;
 @Service
 public class RetailerServiceImpl implements RetailerService {
 
+    private final String projectId;
     private final List<Retailer> retailers;
 
     @Autowired
-    public RetailerServiceImpl(List<Retailer> retailers) {
+    public RetailerServiceImpl(@Value("${project.id}") String projectId, final List<Retailer> retailers) {
+        this.projectId = projectId;
         this.retailers = retailers;
         retailers.sort(Comparator.comparing(Retailer::name));
     }
@@ -35,7 +38,7 @@ public class RetailerServiceImpl implements RetailerService {
                 " IF(c.description IS NULL,0,1) as completeItems, IF(c.description IS NULL,1,0) as incompleteItems, " +
                 " IF(c.description IS NULL,0,pp.perDept) as completeDeptRevenue, IF(c.description IS NULL,pp.perDept,0) as incompleteDeptRevenue, pp.lastDate lastDate FROM ( " +
                 getMappedBase(retailer, "") +
-                " ) pp LEFT OUTER JOIN [swiftiq-master:siq.Catalog] c ON pp.itemId = c.upc " +
+                " ) pp LEFT OUTER JOIN ["+projectId+":siq.Catalog] c ON pp.itemId = c.upc " +
                 where +
                 " ORDER BY pp.per DESC " + (limit != null ? " LIMIT " + limit + " " : "");
     }
