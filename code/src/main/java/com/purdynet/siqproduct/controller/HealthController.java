@@ -44,7 +44,7 @@ public class HealthController {
     }
 
     @PostMapping(value = "/health")
-    public String editPagePost(@ModelAttribute EditItem editItem) throws Exception {
+    public String editPagePost() {
         logger.info("Updating the health...");
         healthService.generateHealthReport();
         logger.info("...update health complete.");

@@ -17,6 +17,7 @@ import static java.util.stream.Collectors.toList;
 @Service
 public class HealthServiceImpl implements HealthService {
 
+    private final String applicationId;
     private final String buildVersion;
     private final String buildTimestamp;
     private final List<HealthCheck> healthChecks;
@@ -25,8 +26,9 @@ public class HealthServiceImpl implements HealthService {
     private HealthReport healthReport;
 
     @Autowired
-    public HealthServiceImpl(@Value("${build.version}") String buildVersion, @Value("${build.timestamp}") String buildTimestamp,
+    public HealthServiceImpl(@Value("${application.name}") String applicationId, @Value("${build.version}") String buildVersion, @Value("${build.timestamp}") String buildTimestamp,
                              final List<HealthCheck> healthChecks, final FreemarkerService freemarkerService) {
+        this.applicationId = applicationId;
         this.buildVersion = buildVersion;
         this.buildTimestamp = buildTimestamp;
         this.healthChecks = healthChecks;
@@ -36,9 +38,7 @@ public class HealthServiceImpl implements HealthService {
     @Override
     public void generateHealthReport() {
         final HealthCheckParams params = new HealthCheckParams(
-                "catalog-app",
-                buildVersion,
-                buildTimestamp,
+                applicationId, buildVersion, buildTimestamp,
                 healthReport != null ? healthReport.getSkippedTests() : null);
 
         List<HealthResource> resourceList = healthChecks.stream().map(hc -> hc.runOrSkipResource(params)).collect(toList());
@@ -72,7 +72,7 @@ public class HealthServiceImpl implements HealthService {
     @Override
     public String getCurrentHealthReportHtml(HealthReport currentHealth) throws IOException,TemplateException {
         if (currentHealth != null ) {
-            return freemarkerService.processTemplate("HealthPage.ftl", currentHealth);
+            return freemarkerService.processTemplate("templates/HealthPage.ftl", currentHealth);
         } else {
             return "No health has been generated yet";
         }

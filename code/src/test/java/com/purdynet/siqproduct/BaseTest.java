@@ -34,7 +34,7 @@ public abstract class BaseTest {
 
         @Bean
         public RetailerService retailerService() {
-            return new RetailerServiceImpl(retailers());
+            return new RetailerServiceImpl(projectId(), retailers());
         }
 
         @Bean
