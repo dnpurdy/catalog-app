@@ -23,7 +23,7 @@ public class HealthServiceImpl implements HealthService {
     private final List<HealthCheck> healthChecks;
     private final FreemarkerService freemarkerService;
 
-    private HealthReport healthReport;
+    private HealthReport healthReport = new HealthReport();
 
     @Autowired
     public HealthServiceImpl(@Value("${application.name}") String applicationId, @Value("${build.version}") String buildVersion, @Value("${build.timestamp}") String buildTimestamp,
