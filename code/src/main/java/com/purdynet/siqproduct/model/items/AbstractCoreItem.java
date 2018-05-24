@@ -1,4 +1,4 @@
-package com.purdynet.siqproduct.model;
+package com.purdynet.siqproduct.model.items;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.http.NameValuePair;
@@ -6,7 +6,6 @@ import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.message.BasicNameValuePair;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public abstract class AbstractCoreItem implements Comparable<AbstractCoreItem> {

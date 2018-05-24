@@ -1,4 +1,4 @@
-package com.purdynet.siqproduct.model;
+package com.purdynet.siqproduct.model.items;
 
 import java.util.Arrays;
 import java.util.Optional;

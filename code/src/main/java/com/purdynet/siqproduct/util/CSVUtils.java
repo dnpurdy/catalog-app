@@ -3,19 +3,16 @@ package com.purdynet.siqproduct.util;
 import com.google.api.services.bigquery.model.TableFieldSchema;
 import com.google.api.services.bigquery.model.TableRow;
 import com.google.common.base.Joiner;
-import com.opencsv.CSVWriter;
 import com.opencsv.bean.ColumnPositionMappingStrategy;
-import com.opencsv.bean.HeaderColumnNameMappingStrategy;
 import com.opencsv.bean.StatefulBeanToCsv;
 import com.opencsv.bean.StatefulBeanToCsvBuilder;
 import com.purdynet.siqproduct.biqquery.BqTableData;
-import com.purdynet.siqproduct.model.CatalogItem;
+import com.purdynet.siqproduct.model.items.CatalogItem;
 
 import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
 
 public class CSVUtils {

@@ -1,7 +1,6 @@
 package com.purdynet.siqproduct.model.health.impl;
 
-import com.purdynet.siqproduct.model.AbstractCoreItem;
-import com.purdynet.siqproduct.model.CatalogItem;
+import com.purdynet.siqproduct.model.items.AbstractCoreItem;
 import com.purdynet.siqproduct.model.health.HealthCheck;
 import com.purdynet.siqproduct.model.health.HealthCheckParams;
 import com.purdynet.siqproduct.model.health.HealthResource;
@@ -9,7 +8,6 @@ import com.purdynet.siqproduct.service.CatalogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 

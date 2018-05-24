@@ -1,14 +1,7 @@
-package com.purdynet.siqproduct.model;
-
-import com.google.api.services.bigquery.model.TableRow;
-import com.opencsv.bean.CsvDate;
-import com.purdynet.siqproduct.biqquery.NamedRow;
+package com.purdynet.siqproduct.model.items;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import static com.purdynet.siqproduct.util.BQUtils.getDate;
-import static com.purdynet.siqproduct.util.BQUtils.getString;
 
 public class CatalogItem extends AbstractCoreItem {
     private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSSSS"); //2018-04-22 16:54:00.219568

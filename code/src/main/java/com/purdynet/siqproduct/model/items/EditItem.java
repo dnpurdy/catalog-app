@@ -1,6 +1,4 @@
-package com.purdynet.siqproduct.model;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
+package com.purdynet.siqproduct.model.items;
 
 public class EditItem extends AbstractCoreItem {
     private String container;

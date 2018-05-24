@@ -3,10 +3,9 @@ package com.purdynet.siqproduct.view;
 import com.google.api.services.bigquery.model.TableFieldSchema;
 import com.google.api.services.bigquery.model.TableRow;
 import com.purdynet.siqproduct.biqquery.BqTableData;
-import com.purdynet.siqproduct.model.AbstractCoreItem;
+import com.purdynet.siqproduct.model.items.AbstractCoreItem;
 import com.purdynet.siqproduct.model.Function;
-import com.purdynet.siqproduct.model.MissingItem;
-import com.purdynet.siqproduct.model.ProductProgress;
+import com.purdynet.siqproduct.model.items.MissingItem;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;

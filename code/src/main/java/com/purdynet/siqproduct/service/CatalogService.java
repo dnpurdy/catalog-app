@@ -2,9 +2,9 @@ package com.purdynet.siqproduct.service;
 
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
 import com.purdynet.siqproduct.biqquery.NamedRow;
-import com.purdynet.siqproduct.model.CatalogItem;
-import com.purdynet.siqproduct.model.EditItem;
-import com.purdynet.siqproduct.model.NacsCategories;
+import com.purdynet.siqproduct.model.items.CatalogItem;
+import com.purdynet.siqproduct.model.items.EditItem;
+import com.purdynet.siqproduct.model.items.NacsCategories;
 
 import java.util.List;
 

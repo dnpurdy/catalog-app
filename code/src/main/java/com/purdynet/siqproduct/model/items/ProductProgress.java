@@ -1,17 +1,7 @@
-package com.purdynet.siqproduct.model;
-
-import com.google.api.services.bigquery.model.TableRow;
-import com.purdynet.siqproduct.biqquery.NamedRow;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.utils.URLEncodedUtils;
-import org.apache.http.message.BasicNameValuePair;
+package com.purdynet.siqproduct.model.items;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-
-import static com.purdynet.siqproduct.util.BQUtils.*;
 
 public class ProductProgress extends AbstractCoreItem {
     private String retailerItemId;
