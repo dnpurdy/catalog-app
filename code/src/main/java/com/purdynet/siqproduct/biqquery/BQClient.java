@@ -23,9 +23,11 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.UUID;
 import java.util.concurrent.Callable;
-import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -77,7 +79,7 @@ public class BQClient {
     }
 
     private static InputStream getClientSecretsStream() {
-        return BQClient.class.getResourceAsStream("/client_secrets.json");
+        return BQClient.class.getResourceAsStream("/credentials/client_secrets.json");
     }
 
     private Bigquery initializeAndBuild(HttpRequestInitializer credential) {
