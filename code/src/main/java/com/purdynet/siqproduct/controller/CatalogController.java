@@ -1,6 +1,6 @@
 package com.purdynet.siqproduct.controller;
 
-import com.purdynet.siqproduct.model.CatalogItem;
+import com.purdynet.siqproduct.model.items.CatalogItem;
 import com.purdynet.siqproduct.service.CatalogService;
 import com.purdynet.siqproduct.service.FreemarkerService;
 import com.purdynet.siqproduct.util.CSVUtils;

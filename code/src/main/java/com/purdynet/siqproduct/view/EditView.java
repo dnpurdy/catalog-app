@@ -1,8 +1,8 @@
 package com.purdynet.siqproduct.view;
 
-import com.purdynet.siqproduct.model.CatalogItem;
-import com.purdynet.siqproduct.model.EditItem;
-import com.purdynet.siqproduct.model.NacsCategories;
+import com.purdynet.siqproduct.model.items.CatalogItem;
+import com.purdynet.siqproduct.model.items.EditItem;
+import com.purdynet.siqproduct.model.items.NacsCategories;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.stereotype.Component;
 

@@ -1,5 +1,6 @@
 package com.purdynet.siqproduct.model;
 
+import com.purdynet.siqproduct.model.items.NacsCategories;
 import org.junit.Test;
 
 import java.util.Optional;

@@ -1,12 +1,7 @@
-package com.purdynet.siqproduct.model;
-
-import com.google.api.services.bigquery.model.TableRow;
-import com.purdynet.siqproduct.biqquery.NamedRow;
+package com.purdynet.siqproduct.model.items;
 
 import java.math.BigDecimal;
 import java.util.Date;
-
-import static com.purdynet.siqproduct.util.BQUtils.*;
 
 public class MissingItem extends AbstractCoreItem {
     private String projectId;

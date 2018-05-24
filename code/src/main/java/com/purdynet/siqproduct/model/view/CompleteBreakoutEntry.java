@@ -1,6 +1,6 @@
 package com.purdynet.siqproduct.model.view;
 
-import com.purdynet.siqproduct.model.ProductProgress;
+import com.purdynet.siqproduct.model.items.ProductProgress;
 
 import java.math.BigDecimal;
 import java.util.function.Function;

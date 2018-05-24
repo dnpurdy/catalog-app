@@ -1,7 +1,7 @@
 package com.purdynet.siqproduct.controller;
 
 import com.purdynet.siqproduct.biqquery.BqTableData;
-import com.purdynet.siqproduct.model.MissingItem;
+import com.purdynet.siqproduct.model.items.MissingItem;
 import com.purdynet.siqproduct.service.*;
 import com.purdynet.siqproduct.biqquery.BQClient;
 import com.purdynet.siqproduct.model.retailer.Retailer;

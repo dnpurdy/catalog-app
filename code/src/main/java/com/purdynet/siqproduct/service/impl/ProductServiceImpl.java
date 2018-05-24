@@ -1,8 +1,7 @@
 package com.purdynet.siqproduct.service.impl;
 
 import com.purdynet.siqproduct.biqquery.NamedRow;
-import com.purdynet.siqproduct.model.MissingItem;
-import com.purdynet.siqproduct.model.ProductProgress;
+import com.purdynet.siqproduct.model.items.MissingItem;
 import com.purdynet.siqproduct.model.retailer.Retailer;
 import com.purdynet.siqproduct.service.ProductService;
 import com.purdynet.siqproduct.service.RetailerService;

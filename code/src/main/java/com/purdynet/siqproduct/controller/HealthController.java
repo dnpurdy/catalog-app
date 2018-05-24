@@ -1,19 +1,10 @@
 package com.purdynet.siqproduct.controller;
 
-import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
-import com.purdynet.siqproduct.model.CatalogItem;
-import com.purdynet.siqproduct.model.EditItem;
-import com.purdynet.siqproduct.model.NacsCategories;
-import com.purdynet.siqproduct.service.CatalogService;
 import com.purdynet.siqproduct.service.HealthService;
-import com.purdynet.siqproduct.view.EditView;
-import freemarker.template.TemplateException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.io.IOException;
 
 @RestController
 public class HealthController {

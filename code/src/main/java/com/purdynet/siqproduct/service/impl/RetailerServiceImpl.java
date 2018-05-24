@@ -1,7 +1,7 @@
 package com.purdynet.siqproduct.service.impl;
 
 import com.purdynet.siqproduct.biqquery.NamedRow;
-import com.purdynet.siqproduct.model.ProductProgress;
+import com.purdynet.siqproduct.model.items.ProductProgress;
 import com.purdynet.siqproduct.model.retailer.Retailer;
 import com.purdynet.siqproduct.service.RetailerService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,17 +1,15 @@
 package com.purdynet.siqproduct.controller;
 
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
-import com.purdynet.siqproduct.model.CatalogItem;
-import com.purdynet.siqproduct.model.EditItem;
-import com.purdynet.siqproduct.model.NacsCategories;
+import com.purdynet.siqproduct.model.items.CatalogItem;
+import com.purdynet.siqproduct.model.items.EditItem;
+import com.purdynet.siqproduct.model.items.NacsCategories;
 import com.purdynet.siqproduct.service.CatalogService;
 import com.purdynet.siqproduct.view.EditView;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Optional;
 
 @RestController
 public class EditController {

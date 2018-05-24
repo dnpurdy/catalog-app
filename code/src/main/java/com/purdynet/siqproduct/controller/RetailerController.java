@@ -3,7 +3,7 @@ package com.purdynet.siqproduct.controller;
 import com.google.common.collect.Sets;
 import com.purdynet.siqproduct.biqquery.BQClient;
 import com.purdynet.siqproduct.biqquery.BqTableData;
-import com.purdynet.siqproduct.model.ProductProgress;
+import com.purdynet.siqproduct.model.items.ProductProgress;
 import com.purdynet.siqproduct.model.retailer.Retailer;
 import com.purdynet.siqproduct.model.view.CompleteBreakoutEntry;
 import com.purdynet.siqproduct.service.FreemarkerService;
