@@ -128,3 +128,31 @@ select {
 #products {
     width: 800px;
 }
+
+.HEALTHY {
+    background-color: lightgreen;
+}
+
+.HEALTHY a {
+    color: green;
+}
+
+.DEGRADED {
+    background-color: lightyellow;
+}
+
+.DEGRADED a {
+    color: yellow;
+}
+
+.BROKEN {
+    background-color: lightpink;
+}
+
+.BROKEN a {
+    color: red;
+}
+
+.box {
+    border: 1px solid #ccc;
+}

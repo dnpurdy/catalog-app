@@ -11,7 +11,7 @@ public class HealthReport {
     private Date creationTime;
     private String overallHealth;
     private String skippedTests;
-    private List<HealthResource> healthResourcesList;
+    private List<HealthResource> healthResourcesList = new ArrayList<>();
 
     public HealthReport() {
     }

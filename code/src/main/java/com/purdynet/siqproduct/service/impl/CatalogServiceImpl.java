@@ -187,7 +187,7 @@ public class CatalogServiceImpl implements CatalogService {
         catalogItem.setActive(nr.getString("active"));
         catalogItem.setPrivateLabelFlag(nr.getString("privateLabelFlag"));
         catalogItem.setConsumption(nr.getString("consumption"));
-        catalogItem.setPkg(nr.getString("pkg"));
+        catalogItem.setPkg(nr.getString("package"));
         catalogItem.setFlavor(nr.getString("flavor"));
         catalogItem.setBrand(nr.getString("brand"));
         catalogItem.setBrandType(nr.getString("brandType"));
