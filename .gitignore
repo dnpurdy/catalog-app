@@ -2,3 +2,4 @@
 */.idea*
 */target
 loadAll.sh
+client_secrets.json
