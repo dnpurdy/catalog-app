@@ -39,7 +39,9 @@ public class HealthServiceImpl implements HealthService {
     public void generateHealthReport() {
         final HealthCheckParams params = new HealthCheckParams(
                 applicationId, buildVersion, buildTimestamp,
-                healthReport != null ? healthReport.getSkippedTests() : null);
+                healthReport.getSkippedTests());
+
+        params.setSkippedTests("ConsistentManufacturerCodeHealthCheck");
 
         List<HealthResource> resourceList = healthChecks.stream().map(hc -> hc.runOrSkipResource(params)).collect(toList());
 
