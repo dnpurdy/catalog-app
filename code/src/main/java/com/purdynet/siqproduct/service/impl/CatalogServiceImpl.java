@@ -151,7 +151,6 @@ public class CatalogServiceImpl implements CatalogService {
         safePut(json, "container", catalogItem.getContainer());
         safePut(json, "size", catalogItem.getSize());
         safePut(json, "uom", catalogItem.getUom());
-        safePut(json, "package", catalogItem.getPkg());
         safePut(json, "brand", catalogItem.getBrand());
         safePut(json, "dateCreated", Math.floor(catalogItem.getDateCreated().getTime()/1000));
         row.setJson(json);

@@ -18,7 +18,7 @@
         <#list missingItems as missingItem>
             <tr>
                 <td>
-                    <a href="/edit?${missingItem.toQueryParams()}">${missingItem.getItemId()}</a>
+                    <a href="/edit?${missingItem.toQueryParams()}" target="_blank">${missingItem.getItemId()}</a>
                 </td>
                 <td>${missingItem.getProjectId()}</td>
                 <td>${missingItem.getNumProjects()}</td>
