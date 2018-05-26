@@ -27,7 +27,7 @@
                     <#if productProgressItem.complete>
                         ${productProgressItem.itemId}
                     <#else>
-                        <a href="/edit?${productProgressItem.toQueryParams() target="_blank"}">
+                        <a href="/edit?${productProgressItem.toQueryParams()}" target="_blank">
                             ${productProgressItem.itemId}
                         </a>
                     </#if>
