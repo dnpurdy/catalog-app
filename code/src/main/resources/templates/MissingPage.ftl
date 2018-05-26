@@ -24,9 +24,9 @@
                 <td>${missingItem.getNumProjects()}</td>
                 <td>${missingItem.getManufacturer()}</td>
                 <td>${missingItem.getDescription()}</td>
-                <td>${missingItem.getLastDate()?date?iso_utc}</td>
-                <td align="right">${missingItem.getTotalRevenue()?string.currency}</td>
-                <td align="right">${missingItem.getPercentTotalRevenue()?string(",##0.000000%")}</td>
+                <td>${(missingItem.getLastDate()?date?iso_utc)!"n/a"}</td>
+                <td align="right">${(missingItem.getTotalRevenue()?string.currency)!"n/a"}</td>
+                <td align="right">${(missingItem.getPercentTotalRevenue()?string(",##0.000000%"))!"n/a"}</td>
             </tr>
         </#list>
         </table>

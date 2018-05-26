@@ -12,6 +12,8 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Optional;
 
+import static com.purdynet.siqproduct.util.ValueUtils.nvl;
+
 @Component
 public class ProperNACSCategoryHealthCheck extends AbstractHealthCheck implements HealthCheck {
 
@@ -49,9 +51,5 @@ public class ProperNACSCategoryHealthCheck extends AbstractHealthCheck implement
                 }
             }
         }
-    }
-
-    public <T> T nvl(T a, T b) {
-        return (a == null)?b:a;
     }
 }

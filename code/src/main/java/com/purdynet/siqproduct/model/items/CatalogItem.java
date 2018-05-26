@@ -1,11 +1,8 @@
 package com.purdynet.siqproduct.model.items;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class CatalogItem extends AbstractCoreItem {
-    private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSSSS"); //2018-04-22 16:54:00.219568
-
     private String productId;
     //itemId
     //description
@@ -359,9 +356,9 @@ public class CatalogItem extends AbstractCoreItem {
 
     public String getDateCreatedBQ() {
         try {
-            return sdf.format(dateCreated);
+            return String.valueOf(dateCreated.getTime()/1000);
         } catch (NullPointerException e) {
-            return sdf.format(new Date());
+            return String.valueOf(1525132800L);
         }
     }
 

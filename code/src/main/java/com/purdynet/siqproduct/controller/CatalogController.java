@@ -6,7 +6,10 @@ import com.purdynet.siqproduct.service.FreemarkerService;
 import com.purdynet.siqproduct.util.CSVUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
 import java.util.List;
@@ -78,6 +81,11 @@ public class CatalogController {
     @GetMapping(value = "/catalog-csv", produces = MediaType.TEXT_PLAIN_VALUE)
     public String catalogCSV() {
         return CSVUtils.catalogItemtoCSV(catalogService.getCatalog());
+    }
+
+    @PostMapping(value = "/catalog/backup", produces = MediaType.TEXT_PLAIN_VALUE)
+    public String catalogBackup() {
+        return catalogService.backupCatalog();
     }
 
 

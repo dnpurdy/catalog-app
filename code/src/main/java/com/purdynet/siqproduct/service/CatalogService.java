@@ -20,4 +20,6 @@ public interface CatalogService {
     CatalogItem catalogItemOf(NamedRow nr);
 
     boolean hasItemId(final String upc);
+
+    String backupCatalog();
 }

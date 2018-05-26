@@ -2,6 +2,7 @@ package com.purdynet.siqproduct.service.impl;
 
 import com.google.api.services.bigquery.model.TableDataInsertAllRequest;
 import com.google.api.services.bigquery.model.TableDataInsertAllResponse;
+import com.google.api.services.bigquery.model.TableReference;
 import com.purdynet.siqproduct.biqquery.BQClient;
 import com.purdynet.siqproduct.biqquery.NamedRow;
 import com.purdynet.siqproduct.model.items.CatalogItem;
@@ -15,6 +16,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.math.BigInteger;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -23,6 +26,7 @@ import static org.apache.commons.lang3.StringUtils.rightPad;
 
 @Service
 public class CatalogServiceImpl implements CatalogService {
+    private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
     private static final String SIQ_DATASET_ID = "siq";
     private static final String CATALOG_TABLE_ID = "Catalog";
     private static final String CATALOG_SELECT_SQL = "SELECT * FROM ["+SIQ_DATASET_ID+"."+CATALOG_TABLE_ID+"]";
@@ -40,6 +44,7 @@ public class CatalogServiceImpl implements CatalogService {
 
     @Override
     public List<CatalogItem> getCatalog() {
+        Collections.sort(catalog);
         return catalog;
     }
 
@@ -211,5 +216,21 @@ public class CatalogServiceImpl implements CatalogService {
     @Override
     public boolean hasItemId(final String upc) {
         return catalog.stream().filter(ci -> ci.getItemId().equals(upc)).collect(Collectors.toList()).size() != 0;
+    }
+
+    @Override
+    public String backupCatalog() {
+        String fileName = "catalog_"+dateTimeFormatter.format(LocalDateTime.now())+".csv";
+        BQClient BQClient = new BQClient(projectId);
+
+        TableReference catalog = new TableReference();
+        catalog.setProjectId(projectId);
+        catalog.setDatasetId("siq");
+        catalog.setTableId("Catalog");
+
+        BQClient.extractTable(catalog, "gs://"+projectId+"/catalog/"+fileName);
+        BQClient.pollForCompletion();
+
+        return fileName;
     }
 }
