@@ -10,6 +10,7 @@ public class ListUtils {
         return list;
     }
 
+    @SafeVarargs
     public static <T> List<T> asList(T... items) {
         List<T> list = new ArrayList<>();
         for (T item : items) {
