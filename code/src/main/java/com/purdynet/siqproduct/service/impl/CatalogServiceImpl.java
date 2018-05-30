@@ -44,8 +44,9 @@ public class CatalogServiceImpl implements CatalogService {
 
     @Override
     public List<CatalogItem> getCatalog() {
-        Collections.sort(catalog);
-        return catalog;
+        List<CatalogItem> ret = new ArrayList<>(catalog);
+        Collections.sort(ret);
+        return ret;
     }
 
     @Override

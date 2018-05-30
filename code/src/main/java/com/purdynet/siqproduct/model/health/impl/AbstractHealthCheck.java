@@ -8,6 +8,8 @@ import com.purdynet.siqproduct.model.health.HealthEnum;
 import com.purdynet.siqproduct.model.health.HealthResource;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.commons.lang3.tuple.Pair;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -15,6 +17,8 @@ import java.util.Date;
 import java.util.List;
 
 public abstract class AbstractHealthCheck implements HealthCheck {
+
+    protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Override
     public String getSkipKey() {

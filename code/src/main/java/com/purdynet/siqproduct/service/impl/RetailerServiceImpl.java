@@ -30,16 +30,21 @@ public class RetailerServiceImpl implements RetailerService {
     }
 
     @Override
-    public String progressSql(Retailer retailer, Integer limit, String where) {
+    public String progressSql(Retailer retailer, Integer limit, String outerWhere) {
+        return progressSql(retailer, limit, outerWhere, "");
+    }
+
+    @Override
+    public String progressSql(Retailer retailer, Integer limit, String outerWhere, String productWhere) {
         return "SELECT pp.itemId itemId, pp.manufacturer manufacturer, pp.retailerItemId retailerItemId, pp.per revPortion, " +
                 "NVL(c.description,pp.description) description, pp.deptDescription as retailerDept, c.category as nacsCategory, " +
                 " IF(c.description IS NULL,\"TODO\",\"COMPLETE\") as complete, IF(" + retailer.isUpcLogic() + ",\"UPC\",\"PLU\") isUpc," +
                 " IF(c.description IS NULL,0,pp.per) as completeRevenue, IF(c.description IS NULL,pp.per,0) as incompleteRevenue, " +
                 " IF(c.description IS NULL,0,1) as completeItems, IF(c.description IS NULL,1,0) as incompleteItems, " +
                 " IF(c.description IS NULL,0,pp.perDept) as completeDeptRevenue, IF(c.description IS NULL,pp.perDept,0) as incompleteDeptRevenue, pp.lastDate lastDate FROM ( " +
-                getMappedBase(retailer, "") +
+                getMappedBase(retailer, productWhere) +
                 " ) pp LEFT OUTER JOIN ["+projectId+":siq.Catalog] c ON pp.itemId = c.upc " +
-                where +
+                outerWhere +
                 " ORDER BY pp.per DESC " + (limit != null ? " LIMIT " + limit + " " : "");
     }
 

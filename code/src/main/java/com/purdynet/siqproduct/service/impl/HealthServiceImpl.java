@@ -43,7 +43,7 @@ public class HealthServiceImpl implements HealthService {
 
         params.setSkippedTests("ConsistentManufacturerCodeHealthCheck");
 
-        List<HealthResource> resourceList = healthChecks.stream().map(hc -> hc.runOrSkipResource(params)).collect(toList());
+        final List<HealthResource> resourceList = healthChecks.parallelStream().map((healthCheck -> healthCheck.runOrSkipResource(params))).collect(toList());
 
         setHealthReport(new HealthReport(params.getApplicationId(), params.getApplicationVersion(), params.getApplicationDeploymentDate(), new Date(), params.getSkippedTests(), resourceList));
     }
