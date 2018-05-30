@@ -5,7 +5,7 @@
 
     <groupId>com.purdynet</groupId>
     <artifactId>catalog-app</artifactId>
-    <version>1.2.3-SNAPSHOP</version>
+    <version>1.2.3</version>
     <packaging>jar</packaging>
 
     <name>siqproduct</name>
