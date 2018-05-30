@@ -21,7 +21,7 @@ public class Sunoco implements Retailer {
 
     @Override
     public String beverageClause() {
-        return " AND p.department IN ('111','R05','104') ";
+        return " AND p.department IN ('111','R05','104') AND p.categorySubCode NOT IN ('78','79','80','81','612','930','931','932','933','934','935') ";
     }
 
     @Override
