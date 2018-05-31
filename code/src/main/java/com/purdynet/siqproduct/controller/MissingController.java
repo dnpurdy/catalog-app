@@ -1,10 +1,12 @@
 package com.purdynet.siqproduct.controller;
 
+import com.purdynet.siqproduct.biqquery.BQClient;
 import com.purdynet.siqproduct.biqquery.BqTableData;
 import com.purdynet.siqproduct.model.items.MissingItem;
-import com.purdynet.siqproduct.service.*;
-import com.purdynet.siqproduct.biqquery.BQClient;
 import com.purdynet.siqproduct.model.retailer.Retailer;
+import com.purdynet.siqproduct.service.FreemarkerService;
+import com.purdynet.siqproduct.service.ProductService;
+import com.purdynet.siqproduct.service.RetailerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
@@ -42,11 +44,6 @@ public class MissingController {
 
     @RequestMapping(value = {"/missing","/missing/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
     public String missingHTML(@PathVariable(name = "upc", required = false) String upc) {
-        return getHtml(missingJson(upc));
-    }
-
-    @RequestMapping(value = {"/ag/missing","/missing-ag/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
-    public String missingAG(@PathVariable(name = "upc", required = false) String upc) {
         return getAGHtml("/missing" + (upc != null ? "/"+upc : ""));
     }
 
@@ -57,11 +54,6 @@ public class MissingController {
 
     @RequestMapping(value = {"/missing-beer","/missing-beer/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
     public String missingBeerHTML(@PathVariable(name = "upc", required = false) String upc) {
-        return getHtml(missingBeerJson(upc));
-    }
-
-    @RequestMapping(value = {"/ag/missing-beer","/ag/missing-beer/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
-    public String missingBeerAG(@PathVariable(name = "upc", required = false) String upc) {
         return getAGHtml("/missing-beer" + (upc != null ? "/"+upc : ""));
     }
 
@@ -72,11 +64,6 @@ public class MissingController {
 
     @RequestMapping(value = {"/missing-beverage","/missing-beverage/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
     public String missingBeverageHTML(@PathVariable(name = "upc", required = false) String upc) {
-        return getHtml(missingBeverageJson(upc));
-    }
-
-    @RequestMapping(value = {"/ag/missing-beverage","/ag/missing-beverage/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
-    public String missingBeverageAG(@PathVariable(name = "upc", required = false) String upc) {
         return getAGHtml("/missing-beverage" + (upc != null ? "/"+upc : ""));
     }
 
@@ -87,11 +74,6 @@ public class MissingController {
 
     @RequestMapping(value = {"/missing-tobacco","/missing-tobacco/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
     public String missingTobaccoHTML(@PathVariable(name = "upc", required = false) String upc) {
-        return getHtml(missingTobaccoJson(upc));
-    }
-
-    @RequestMapping(value = {"/ag/missing-tobacco","/ag/missing-tobacco/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
-    public String missingTobaccoAG(@PathVariable(name = "upc", required = false) String upc) {
         return getAGHtml("/missing-tobacco" + (upc != null ? "/"+upc : ""));
     }
 
@@ -102,24 +84,12 @@ public class MissingController {
 
     @RequestMapping(value = {"/missing-saltysnack","/missing-saltysnack/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
     public String missingSaltySnackHTML(@PathVariable(name = "upc", required = false) String upc) {
-        return getHtml(missingSaltySnackJson(upc));
-    }
-
-    @RequestMapping(value = {"/ag/missing-saltysnack","/ag/missing-saltysnack/{upc}"}, produces = MediaType.TEXT_HTML_VALUE)
-    public String missingSaltySnackAG(@PathVariable(name = "upc", required = false) String upc) {
-        String uri = "/missing-saltysnack" + (upc != null ? "/"+upc : "");
-        return getAGHtml(uri);
+        return getAGHtml("/missing-saltysnack" + (upc != null ? "/"+upc : ""));
     }
 
     @RequestMapping(value = {"/missing-saltysnack","/missing-saltysnack/{upc}"}, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<MissingItem> missingSaltySnackJson(@PathVariable(name = "upc", required = false) String upc) {
         return makeMissingItemList(upc, Retailer::saltySnacksClause);
-    }
-
-    private String getHtml(final List<MissingItem> missingItems) {
-        Map<String,Object> dataModel = new HashMap<>();
-        dataModel.put("missingItems", missingItems);
-        return freemarkerService.processTemplate("templates/MissingPage.ftl", dataModel);
     }
 
     private String getAGHtml(final String uri) {
@@ -140,14 +110,14 @@ public class MissingController {
 
     private String getCatalogAGCol() {
         return "    var columnDefs = [\n" +
-                "      {headerName: \"UPC\", field: \"itemId\", width: 110},\n" +
-                "      {headerName: \"projectId\", field: \"projectId\"},\n" +
+                "      {headerName: \"UPC\", field: \"itemId\", width: 110, cellRenderer: editLinkRenderer},\n" +
+                "      {headerName: \"Project Id\", field: \"projectId\"},\n" +
                 "      {headerName: \"# Projects\", field: \"numProjects\", width: 100},\n" +
-                "      {headerName: \"manufacturer\", field: \"manufacturer\", width: 450},\n" +
-                "      {headerName: \"description\", field: \"description\", width: 450},\n" +
-                "      {headerName: \"lastDate\", field: \"lastDate\", valueFormatter: dateFormatter},\n" +
-                "      {headerName: \"totalRevenue\", field: \"totalRevenue\", cellStyle: { 'text-align': 'right' }, valueFormatter: currencyFormatter},\n" +
-                "      {headerName: \"percentTotalRevenue\", field: \"percentTotalRevenue\", valueFormatter: percentFormatter},\n" +
+                "      {headerName: \"Manufacturer\", field: \"manufacturer\", width: 450},\n" +
+                "      {headerName: \"Description\", field: \"description\", width: 450},\n" +
+                "      {headerName: \"last Sold Date\", field: \"lastDate\", valueFormatter: dateFormatter},\n" +
+                "      {headerName: \"Total Revenue\", field: \"totalRevenue\", cellStyle: { 'text-align': 'right' }, valueFormatter: currencyFormatter},\n" +
+                "      {headerName: \"% Total Revenue\", field: \"percentTotalRevenue\", valueFormatter: percentFormatter},\n" +
                 "    ];\n";
     }
 }

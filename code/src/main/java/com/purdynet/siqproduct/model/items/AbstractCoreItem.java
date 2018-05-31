@@ -46,7 +46,7 @@ public abstract class AbstractCoreItem implements Comparable<AbstractCoreItem> {
         }
     }
 
-    public String toQueryParams() {
+    public String getQueryParams() {
         List<NameValuePair> params = new ArrayList<>();
         params.add(new BasicNameValuePair("itemId", getItemId()));
         params.add(new BasicNameValuePair("description", getDescription()));

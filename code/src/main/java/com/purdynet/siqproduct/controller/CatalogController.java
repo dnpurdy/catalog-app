@@ -30,13 +30,6 @@ public class CatalogController {
     @GetMapping(value = "/catalog", produces = MediaType.TEXT_HTML_VALUE)
     public String catalogViewHTML() {
         Map<String,Object> dataModel = new HashMap<>();
-        dataModel.put("catalogItems", catalogViewJSON());
-        return freemarkerService.processTemplate("templates/CatalogPage.ftl", dataModel);
-    }
-
-    @GetMapping(value = "/ag/catalog", produces = MediaType.TEXT_HTML_VALUE)
-    public String catalogViewAG() {
-        Map<String,Object> dataModel = new HashMap<>();
         dataModel.put("agColumns", getCatalogAGCol());
         dataModel.put("dataUri", "/catalog");
         return freemarkerService.processTemplate("templates/AGGridPage.ftl", dataModel);
@@ -49,13 +42,6 @@ public class CatalogController {
 
     @GetMapping(value = "/catalog/{upc}", produces = MediaType.TEXT_HTML_VALUE)
     public String catalogViewPartialHTML(@PathVariable(name = "upc", required = false) String upc) {
-        Map<String,Object> dataModel = new HashMap<>();
-        dataModel.put("catalogItems", catalogViewPartialJSON(upc));
-        return freemarkerService.processTemplate("templates/CatalogPage.ftl", dataModel);
-    }
-
-    @GetMapping(value = "/ag/catalog/{upc}", produces = MediaType.TEXT_HTML_VALUE)
-    public String catalogViewPartialAG(@PathVariable(name = "upc", required = false) String upc) {
         Map<String,Object> dataModel = new HashMap<>();
         dataModel.put("agColumns", getCatalogAGCol());
         dataModel.put("dataUri", "/catalog"+upc);

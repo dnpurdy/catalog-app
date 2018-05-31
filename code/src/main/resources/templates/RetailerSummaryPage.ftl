@@ -42,7 +42,7 @@
     <#list topProducts as topProductsItem>
     <tr>
         <td>${topProductsItem.getIsUpc()}</td>
-        <td><a href="/edit?${topProductsItem.toQueryParams()}" target="_blank">${topProductsItem.getItemId()}</a></td>
+        <td><a href="/edit?${topProductsItem.getQueryParams()}" target="_blank">${topProductsItem.getItemId()}</a></td>
         <td>${topProductsItem.getDescription()}</td>
         <td>${topProductsItem.getManufacturer()}</td>
     </tr>

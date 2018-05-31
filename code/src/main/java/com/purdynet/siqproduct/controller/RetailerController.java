@@ -16,7 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.*;
-import java.util.function.*;
+import java.util.function.BiConsumer;
+import java.util.function.BinaryOperator;
+import java.util.function.Function;
+import java.util.function.Supplier;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
@@ -29,6 +32,7 @@ public class RetailerController {
     private final String projectId;
     private final RetailerService retailerService;
     private final FreemarkerService freemarkerService;
+
     @Autowired
     public RetailerController(@Value("${project.id}") String projectId,
                               final RetailerService retailerService,
@@ -40,13 +44,6 @@ public class RetailerController {
 
     @RequestMapping(value = "/retailer/{id}/missing", produces = MediaType.TEXT_HTML_VALUE)
     public String missingHTML(@PathVariable("id") String requestId) {
-        Map<String,Object> dataModel = new HashMap<>();
-        dataModel.put("productProgressItems", missingJson(requestId));
-        return freemarkerService.processTemplate("templates/RetailerDetailPage.ftl", dataModel);
-    }
-
-    @RequestMapping(value = "/ag/retailer/{id}/missing", produces = MediaType.TEXT_HTML_VALUE)
-    public String missingAG(@PathVariable("id") String requestId) {
         Map<String,Object> dataModel = new HashMap<>();
         dataModel.put("agColumns", getCatalogAGCol());
         dataModel.put("dataUri", "/retailer/"+requestId+"/missing");
@@ -60,13 +57,6 @@ public class RetailerController {
 
     @RequestMapping(value = "/retailer/{id}/detail", produces = MediaType.TEXT_HTML_VALUE)
     public String detailHTML(@PathVariable("id") String requestId) {
-        Map<String,Object> dataModel = new HashMap<>();
-        dataModel.put("productProgressItems", detailJson(requestId));
-        return freemarkerService.processTemplate("templates/RetailerDetailPage.ftl", dataModel);
-    }
-
-    @RequestMapping(value = "/ag/retailer/{id}/detail", produces = MediaType.TEXT_HTML_VALUE)
-    public String detailAG(@PathVariable("id") String requestId) {
         Map<String,Object> dataModel = new HashMap<>();
         dataModel.put("agColumns", getCatalogAGCol());
         dataModel.put("dataUri", "/retailer/"+requestId+"/detail");
@@ -154,7 +144,7 @@ public class RetailerController {
 
     private String getCatalogAGCol() {
         return "    var columnDefs = [\n" +
-                "      {headerName: \"itemId\", field: \"itemId\"},\n" +
+                "      {headerName: \"itemId\", field: \"itemId\", cellRenderer: editLinkRenderer},\n" +
                 "      {headerName: \"manufacturer\", field: \"manufacturer\"},\n" +
                 "      {headerName: \"retailerItemId\", field: \"retailerItemId\"},\n" +
                 "      {headerName: \"revPortion\", field: \"revPortion\", valueFormatter: percentFormatter},\n" +

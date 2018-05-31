@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
     <link href="/style.css" rel="stylesheet"/>
@@ -11,7 +10,7 @@
 <div >
     <!-- Give the grid a default size of 100% x 100%. The buttons then change this
          style as the user selects. -->
-    <div id="myGrid" class="ag-theme-balham" style="height: 700px;"></div>
+    <div id="myGrid" class="ag-theme-balham"></div>
 </div>
 
 <script type="text/javascript" charset="utf-8">
@@ -26,7 +25,6 @@
     };
 
     function dateFormatter(params) {
-        console.log(params);
         var dateobj = new Date(params.value);
         var mm = dateobj.getMonth() + 1; // getMonth() is zero-based
         var dd = dateobj.getDate();
@@ -57,6 +55,17 @@
 
     // create the grid passing in the div to use together with the columns & data we want to use
     new agGrid.Grid(eGridDiv, gridOptions);
+
+    function editLinkRenderer(params) {
+        console.log(params);
+        if (typeof params.node.data.notComplete == "undefined") {
+            return "<a href=\"/edit?" + params.node.data.queryParams + "\" target=\"_blank\">" + params.value + "</a>";
+        } else if (eval(params.node.data.notComplete)) {
+            return "<a href=\"/edit?" + params.node.data.queryParams + "\" target=\"_blank\">" + params.value + "</a>";
+        } else {
+            return params.value
+        }
+    }
 
     fetch('${dataUri}').then(function(response) {
         return response.json();
