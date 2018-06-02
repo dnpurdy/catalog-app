@@ -10,6 +10,9 @@ import com.purdynet.siqproduct.util.BQUtils;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static com.purdynet.siqproduct.biqquery.BQClient.runQuerySync;
 
@@ -21,7 +24,7 @@ public abstract class AbstractCompletenessHealthCheck extends AbstractHealthChec
 
     public AbstractCompletenessHealthCheck(final RetailerService retailerService) {
         this.retailerService = retailerService;
-        this.percent.setMaximumFractionDigits(2);
+        this.percent.setMaximumFractionDigits(3);
     }
 
     @Override
@@ -31,7 +34,7 @@ public abstract class AbstractCompletenessHealthCheck extends AbstractHealthChec
 
     @Override
     public void runCheck(HealthResource healthResource, HealthCheckParams params) throws Exception {
-        retailerService.getRetailers().parallelStream().forEach((retailer -> {
+        List<BigDecimal> scores = retailerService.getRetailers().parallelStream().map((retailer) -> {
             String sql = "SELECT SUM(completeRevenue) / SUM(completeRevenue+incompleteRevenue) precentComplete FROM (\n" +
                     retailerService.progressSql(retailer, null, "", getTypeClause(retailer)) +
                     ")";
@@ -39,7 +42,10 @@ public abstract class AbstractCompletenessHealthCheck extends AbstractHealthChec
             BQClient BQClient = runQuerySync("swiftiq-master", sql);
             BigDecimal bigDecimal = BQUtils.getBigDecimal(BQClient.getBqTableData().getTableRowList().get(0), 0);
             healthResource.addStat(retailer.name(), bigDecimal == null ? "n/a" : percent.format(bigDecimal));
-        }));
+            return bigDecimal == null ? BigDecimal.ONE : bigDecimal;
+        }).collect(Collectors.toList());
+
+        healthResource.setDescription("Minimum completeness: " + percent.format(Collections.min(scores)));
     }
 
     abstract String getTypeName();
