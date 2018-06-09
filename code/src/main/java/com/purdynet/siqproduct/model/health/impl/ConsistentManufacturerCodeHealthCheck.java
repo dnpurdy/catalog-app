@@ -5,10 +5,14 @@ import com.purdynet.siqproduct.model.health.HealthCheckParams;
 import com.purdynet.siqproduct.model.health.HealthResource;
 import com.purdynet.siqproduct.model.items.CatalogItem;
 import com.purdynet.siqproduct.service.CatalogService;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.util.*;
+
+import static java.nio.charset.StandardCharsets.UTF_8;
 
 @Component
 public class ConsistentManufacturerCodeHealthCheck extends AbstractHealthCheck implements HealthCheck {
@@ -29,8 +33,9 @@ public class ConsistentManufacturerCodeHealthCheck extends AbstractHealthCheck i
     @Override
     public void runCheck(HealthResource healthResource, HealthCheckParams params) throws Exception {
         List<CatalogItem> catalog = catalogService.getCatalog();
+        List<String> skippedManufacturerCodes = readLinesFromFile("skipped-manufacturer-codes.txt");
 
-        Map<String,Set<String>> manuMap = constructManufacturerMap(catalog);
+        Map<String,Set<String>> manuMap = constructManufacturerMap(catalog, new HashSet<>(skippedManufacturerCodes));
 
         for (Map.Entry<String,Set<String>> entry : manuMap.entrySet()) {
             if (entry.getValue().size() > 1) {
@@ -40,13 +45,23 @@ public class ConsistentManufacturerCodeHealthCheck extends AbstractHealthCheck i
         }
     }
 
-    private Map<String, Set<String>> constructManufacturerMap(final List<CatalogItem> catalog) {
+    private List<String> readLinesFromFile(String resourceName) {
+            try {
+                return Arrays.asList(IOUtils.resourceToString(resourceName, UTF_8, getClass().getClassLoader()).split("\n"));
+            } catch (IOException e) {
+                return new ArrayList<>();
+            }
+    }
+
+    private Map<String, Set<String>> constructManufacturerMap(final List<CatalogItem> catalog, HashSet<String> skippedCodes) {
         Map<String, Set<String>> manufacturerMap = new HashMap<>();
         for (CatalogItem ci : catalog) {
-            if (ci.getItemId().length() < MANUFACTURER_PREFIX_LENGTH) continue;;
+            if (ci.getItemId().length() < MANUFACTURER_PREFIX_LENGTH) continue;
 
             String manuId = ci.getItemId().substring(0,MANUFACTURER_PREFIX_LENGTH);
             String manufacturer = ci.getManufacturer();
+
+            if (skippedCodes.contains(manuId)) continue;
 
             mapSetAdd(manufacturerMap, manuId, manufacturer);
         }
