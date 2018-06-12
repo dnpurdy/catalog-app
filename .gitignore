@@ -27,3 +27,4 @@ hs_err_pid*
 */target
 loadAll.sh
 client_secrets.json
+catalog-app-user-key.pem
