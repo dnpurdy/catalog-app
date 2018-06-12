@@ -20,13 +20,12 @@ import com.purdynet.siqproduct.util.ListUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.UUID;
+import java.security.GeneralSecurityException;
+import java.util.*;
 import java.util.concurrent.Callable;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -72,8 +71,13 @@ public class BQClient {
     private GoogleCredential getCredential() {
         try {
             //return GoogleCredential.getApplicationDefault();
-            return GoogleCredential.fromStream(getClientSecretsStream(), HTTP_TRANSPORT, JSON_FACTORY);
-        } catch (IOException e) {
+            //return GoogleCredential.fromStream(getClientSecretsStream(), HTTP_TRANSPORT, JSON_FACTORY);
+            return new GoogleCredential.Builder().setTransport(HTTP_TRANSPORT).setJsonFactory(JSON_FACTORY)
+                    .setServiceAccountId("catalog-app-user@swiftiq-master.iam.gserviceaccount.com")
+                    .setServiceAccountScopes(Arrays.asList(BigqueryScopes.BIGQUERY))
+                    .setServiceAccountPrivateKeyFromPemFile(new File(BQClient.class.getResource("/credentials/catalog-app-user-key.pem").getFile()))
+                    .build();
+        } catch (IOException | GeneralSecurityException e) {
             throw new RuntimeException(e);
         }
     }

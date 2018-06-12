@@ -29,16 +29,18 @@ public class CatalogServiceImpl implements CatalogService {
     private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss");
     private static final String SIQ_DATASET_ID = "siq";
     private static final String CATALOG_TABLE_ID = "Catalog";
-    private static final String CATALOG_SELECT_SQL = "SELECT * FROM ["+SIQ_DATASET_ID+"."+CATALOG_TABLE_ID+"]";
+
     private static final int TRY_AGAIN_FOR_MORE = 5;
     private static final int MAX_RETURN = 15;
 
     private final String projectId;
+    private final String catalogSelectSql;
     private List<CatalogItem> catalog;
 
     @Autowired
     public CatalogServiceImpl(@Value("${project.id}") String projectId) {
         this.projectId = projectId;
+        this.catalogSelectSql = "SELECT * FROM ["+projectId+":"+SIQ_DATASET_ID+"."+CATALOG_TABLE_ID+"]";
         this.catalog = new ArrayList<>();
     }
 
@@ -90,7 +92,7 @@ public class CatalogServiceImpl implements CatalogService {
 
     @Override
     public void updateCatalog() {
-        BQClient bqClient = BQClient.runQuerySync(projectId, CATALOG_SELECT_SQL);
+        BQClient bqClient = BQClient.runQuerySync(projectId, catalogSelectSql);
         catalog = convertTableRowToModel(bqClient.getBqTableData(), this::catalogItemOf);
         Collections.sort(catalog);
     }
