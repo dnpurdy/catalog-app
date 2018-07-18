@@ -18,7 +18,7 @@ public class BQUtils {
 
     public static Integer getInteger(TableRow tableRow, int idx) {
         try {
-            return new Integer(getString(tableRow, idx));
+            return Integer.valueOf(getString(tableRow, idx));
         } catch (Exception e) {
             return null;
         }

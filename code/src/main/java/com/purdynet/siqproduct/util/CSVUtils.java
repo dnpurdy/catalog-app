@@ -23,12 +23,12 @@ public class CSVUtils {
         return ret;
     }
 
-    public static String toCSV(TableRow tableRow) {
+    private static String toCSV(TableRow tableRow) {
         return String.join(",", tableRow.getF().stream().map(f -> f.getV().toString()).collect(Collectors.toList()));
     }
 
-    public static String toCSV(List<TableFieldSchema> schemaFieldNames) {
-        return String.join(",", schemaFieldNames.stream().map(tfs -> tfs.getName()).collect(Collectors.toList()));
+    private static String toCSV(List<TableFieldSchema> schemaFieldNames) {
+        return String.join(",", schemaFieldNames.stream().map(TableFieldSchema::getName).collect(Collectors.toList()));
     }
 
     public static String catalogItemtoCSV(final List<CatalogItem> catalog) {
